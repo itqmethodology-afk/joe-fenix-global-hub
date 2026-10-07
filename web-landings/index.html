@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOE FENIX METHOD - EPIGENETIC MATRIX INTERACTIVE SYSTEM</title>
+    <style>
+        :root {
+            --bg-absolute: #050505;
+            --surface-dark: #0d0d0d;
+            --border-neon: #ff5500;
+            --text-sovereign: #ffffff;
+            --text-muted: #888888;
+        }
+        body {
+            background-color: var(--bg-absolute);
+            color: var(--text-sovereign);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            border-bottom: 2px solid var(--border-neon);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .matrix-box {
+            background-color: var(--surface-dark);
+            border: 1px solid #222;
+            padding: 30px;
+            border-radius: 4px;
+        }
+        .matrix-box.active {
+            border-color: var(--border-neon);
+        }
+        h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-top: 0;
+            border-left: 3px solid var(--border-neon);
+            padding-left: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+        input, select {
+            width: 100%;
+            background: #151515;
+            border: 1px solid #333;
+            color: white;
+            padding: 12px;
+            font-family: monospace;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            border-color: var(--border-neon);
+            outline: none;
+        }
+        .btn-action {
+            background-color: var(--border-neon);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .vector-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .vector-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .vector-tag {
+            color: var(--border-neon);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>[ EPIGENETIC MATRIX CALCULATOR ]</h1>
+        <div class="subtitle">HAZR: The Regenerative Process that makes you Never Better. Master Core UI.</div>
+    </header>
+
+    <div class="grid-layout">
+        <!-- SEZIONE INPUT CALCOLATORE EM-CALC -->
+        <div class="matrix-box active" id="em-calc-ui">
+            <h2>Estrazione Parametri Biomeccanici</h2>
+            <div id="calculator-form">
+                <div class="form-group">
+                    <label>Pressione Cognitiva / Stress Score (1-100)</label>
+                    <input type="number" id="stressInput" min="1" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label>Ore di Sonno Profondo / Sleep Hours</label>
+                    <input type="number" id="sleepInput" min="1" max="12" value="7">
+                </div>
+                <div class="form-group">
+                    <label>Rilevamento Asimmetria Posturale (38 Punti)</label>
+                    <select id="postureInput">
+                        <option value="false">Allineamento Sovrano (Stabile)</option>
+                        <option value="true">Disallineamento Somatico Rilevato</option>
+                    </select>
+                </div>
+                <button class="btn-action" id="bootCalcBtn">Esegui Boot Algoritmo</button>
+            </div>
+        </div>
+
+        <!-- SEZIONE OUTPUT HARDWARE HAZR -->
+        <div class="matrix-box" id="hazr-protocol-section">
+            <h2>Configurazione Vettori HAZR</h2>
+            <ul class="vector-list">
+                <li class="vector-item"><span class="vector-tag">[ HAZR-MVP ]</span> Membrane Voltage Potential (-70mV Base)</li>
+                <li class="vector-item"><span class="vector-tag">[ HAZR-COB ]</span> Cortisol Override Blocker</li>
+                <li class="vector-item"><span class="vector-tag">[ HAZR-EMR ]</span> Epigenetic Matrix Restoration</li>
+                <li class="vector-item"><span class="vector-tag">[ HAZR-SAS ]</span> Somatic Alignment Synchronizer (38 Nodes)</li>
+                <li class="vector-item"><span class="vector-tag">[ HAZR-HPA ]</span> High-Performance Amplification Seal</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="../core-app/em-calculator.js"></script>
+<script src="../core-app/routing.js"></script>
+</body>
+</html>
