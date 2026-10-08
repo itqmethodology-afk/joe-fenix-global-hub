@@ -1,0 +1,32 @@
+{
+  "distributionPlatform": "Amazon KDP",
+  "author": "Joe Fenix",
+  "trilogyTitle": "Joe Fenix Method Somatic Core",
+  "books": {
+    "book3_never_better": {
+      "title": "Never Better: Il Protocollo di Reset Biologico per Leader ad Alta Performance",
+      "formats": {
+        "hardcover_stampa": {
+          "status": "pending_deployment",
+          "targetMarketplaces": {
+            "it": "https://amazon.it",
+            "us": "https://amazon.com",
+            "uk": "https://amazon.co.uk"
+          }
+        },
+        "digital_epub_pdf": {
+          "status": "pending_deployment",
+          "targetMarketplaces": {
+            "it": "https://amazon.it",
+            "us": "https://amazon.com"
+          }
+        }
+      }
+    }
+  },
+  "routingLogic": {
+    "autoRedirectByGeoIP": true,
+    "fallbackMarketplace": "us",
+    "trustLevel": "HIGH-NET-WORTH INTERNATIONAL PERFORMANCE"
+  }
+}
