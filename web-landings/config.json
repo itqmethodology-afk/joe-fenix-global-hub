@@ -1,35 +1,35 @@
 {
-  "appName": "Joe Fenix Method Core System",
-  "version": "1.1.0",
-  "environment": "production",
-  "domain": "joe-fenix-method.com",
-  "trustLevel": "HIGH-NET-WORTH INTERNATIONAL PERFORMANCE",
-  "modules": {
-    "calculator": {
+  "nomeApplicazione": "Sistema centrale del metodo Joe Fenix",
+  "versione": "1.1.0",
+  "ambiente": "produzione",
+  "dominio": "joe-fenix-method.com",
+  "livelloDiFiducia": "PERFORMANCE INTERNAZIONALE PER CLIENTI CON PATRIMONIO ELEVATO",
+  "moduli": {
+    "calcolatrice": {
       "id": "EM-CALC",
-      "path": "/web-landings/index.html",
-      "status": "active"
+      "sentiero": "/web-landings/index.html",
+      "stato": "attivo"
     },
-    "routing": {
-      "id": "GLOBAL-ROUTER",
-      "path": "/core-app/routing.js",
-      "status": "active"
+    "instradamento": {
+      "id": "ROUTER GLOBALE",
+      "sentiero": "/core-app/routing.js",
+      "stato": "attivo"
     },
-    "transactional": {
+    "transazionale": {
       "id": "STRIPE-CHECKOUT",
-      "path": "/core-app/checkout.js",
-      "status": "active"
+      "sentiero": "/core-app/checkout.js",
+      "stato": "attivo"
     },
-    "distribution": {
+    "distribuzione": {
       "id": "KDP-MAPPING",
-      "path": "/core-app/kdp-mapping.json",
-      "status": "active"
+      "sentiero": "/core-app/kdp-mapping.json",
+      "stato": "attivo"
     }
   },
-  "security": {
-    "voltageBaseline": "-70mV",
-    "tradeSecretProtection": true,
-    "legalShieldPath": "/web-landings/legal-disclaimer.txt",
-    "encryption": "AES-256-GCM"
+  "sicurezza": {
+    "lineaDiBaseTensione": "-70mV",
+    "protezioneSegretoCommerciale": true,
+    "sentieroScudoLegale": "/web-landings/legal-disclaimer.txt",
+    "cifratura": "AES-256-GCM"
   }
 }
