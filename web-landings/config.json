@@ -1,6 +1,6 @@
 {
   "appName": "Joe Fenix Method Core System",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "environment": "production",
   "domain": "joe-fenix-method.com",
   "trustLevel": "HIGH-NET-WORTH INTERNATIONAL PERFORMANCE",
@@ -14,11 +14,22 @@
       "id": "GLOBAL-ROUTER",
       "path": "/core-app/routing.js",
       "status": "active"
+    },
+    "transactional": {
+      "id": "STRIPE-CHECKOUT",
+      "path": "/core-app/checkout.js",
+      "status": "active"
+    },
+    "distribution": {
+      "id": "KDP-MAPPING",
+      "path": "/core-app/kdp-mapping.json",
+      "status": "active"
     }
   },
   "security": {
     "voltageBaseline": "-70mV",
     "tradeSecretProtection": true,
+    "legalShieldPath": "/web-landings/legal-disclaimer.txt",
     "encryption": "AES-256-GCM"
   }
 }
