@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Fenix Method - Epigenetic Matrix Calculator</title>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Space Mono', 'Courier New', monospace;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            border: 1px solid #222222;
+            padding: 30px;
+            background: #0a0a0a;
+        }
+        h1 {
+            color: #FF5500;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #888888;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #FF5500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            background: #111111;
+            border: 1px solid #333333;
+            color: #ffffff;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        input:focus {
+            border-color: #FF5500;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #FF5500;
+            border: none;
+            color: #050505;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #ff661a;
+        }
+        .results-box {
+            margin-top: 30px;
+            border-top: 1px dashed #333333;
+            padding-top: 20px;
+            display: none;
+        }
+        .cta-section {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .cta-btn {
+            background: #111111;
+            border: 1px solid #FF5500;
+            color: #FF5500;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        .cta-btn.primary {
+            background: #FF5500;
+            color: #050505;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>[ EM-CALC ]</h1>
+    <div class="subtitle">Epigenetic Matrix Calculator // Joe Fenix Method</div>
+    
+    <div class="form-group">
+        <label>Pressione Cognitiva (Stress Score 1-100):</label>
+        <input type="number" id="stress" min="1" max="100" placeholder="Inserisci valore...">
+    </div>
+    
+    <div class="form-group">
+        <label>Ore di Sonno Profondo Effettive:</label>
+        <input type="number" id="sleep" min="0" max="12" step="0.5" placeholder="Inserisci ore...">
+    </div>
+    
+    <div class="form-group">
+        <label>Allineamento Somatico (38 Punti):</label>
+        <select id="somatic">
+            <option value="allineato">Ottimale (Nessun Blocco)</option>
+            <option value="sovraccarico">Asimmetria / Blocco HPA</option>
+        </select>
+    </div>
+    
+    <button onclick="calculateMetrics()">Esegui Boot Algoritmo</button>
+
+    <div id="results" class="results-box">
+        <h3 style="color: #FF5500;">REPORT BIOLOGICO GENERATO: TARGET -70mV</h3>
+        <p id="report-text"></p>
+        
+        <div class="cta-section">
+            <a href="https://amazon.com" target="_blank" class="cta-btn">Acquista la Trilogia (KDP)</a>
+            <a href="#" onclick="initiateStripe()" class="cta-btn primary">Ordina Cofanetto HAZR</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calculateMetrics() {
+        const stress = document.getElementById('stress').value;
+        const sleep = document.getElementById('sleep').value;
+        
+        if(!stress || !sleep) {
+            alert('Inserisci tutti i parametri biomeccanici.');
+            return;
+        }
+
+        document.getElementById('report-text').innerHTML = `Stato di depolarizzazione rilevato. Il tuo asse HPA richiede una ricalibrazione millimetrica basata sui 5 Vettori Molecolari. Protocollo di ripristino memorizzato nella matrice di sistema.`;
+        document.getElementById('results').style.display = 'block';
+    }
+
+    function initiateStripe() {
+        alert('[STRIPE REDIRECT] Inizializzazione del modulo checkout.js per il blocco del lotto fisico HAZR.');
+    }
+</script>
+
+</body>
+</html>
