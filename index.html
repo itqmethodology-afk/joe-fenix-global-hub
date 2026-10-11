@@ -183,9 +183,7 @@
             <a href="https://amazon.com" target="_blank" class="cta-btn" id="btn-books">Acquista la Trilogia (KDP)</a>
             <a href="#" onclick="initiateStripe()" class="cta-btn primary" id="btn-hazr">Ordina Cofanetto HAZR</a>
         </div>
-    </div>
-
-    <div style="margin-top: 40px; padding-top: 30px; border-top: 1px dashed #333333;">
+    </div> <div style="margin-top: 40px; padding-top: 30px; border-top: 1px dashed #333333;">
         <h2 style="color: #FF5500; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px;" id="harbor-title">[ THE SAFE HARBOR ] // DECOMPRESSIONE FUORI COPIONE</h2>
         <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;" id="harbor-p1">
             Qui, in questo spazio stagna che abbiamo denominato "Il Porto Sicuro", spegniamo le onde Beta alte del mercato, allontaniamo lo sguardo dai monitor e togliamo l'armatura somatica di Joe Fenix. Gestire capitali, strutture aziendali e aspettative internazionali richiede la postura dell'Adulto Assoluto. Il mercato non ammette debolezze e il mondo esterno pretende una performance lineare che non conosca crolli. Questa costante pressione crea una solitudine imprenditoriale spietata.
@@ -212,55 +210,64 @@
             nutriList: "<li><strong>Morning / Lunch:</strong> Healthy MCT fats, Avocado, Clean isolated proteins. Zero carbohydrates to induce ketone body production and lock laser focus.</li><li><strong>Evening:</strong> Targeted complex low-glycemic carbohydrates to boost nightly serotonin and melatonin synthesis.</li>",
             cookingTitle: "60-MINUTE BATCH COOKING GUIDE",
             cookingText: "Apply the Fixed-Matrix protocol: spend just one hour over the weekend to weigh, portion, and vacuum-seal your nutritional hardware for the next 5 working days. Zero menu variations, zero decision friction in front of the fridge.",
-            shoppingTitle: "AUTOMATED SHOPPING LIST (FIXED MATRIX)",shoppingList: "Stable proteins (Chicken breast, Beef fillet, Wild salmon)Clean lipid sources (Pure MCT oil, Avocado, Grass-fed ghee butter)Antioxidant vegetables (Broccoli, Wild spinach, Asparagus)Saline Anchor (Unrefined gray sea salt, Bioavailable potassium)",
-btnBooks: "Purchase the Trilogy (KDP)",
-btnHazr: "Order HAZR Box",
-harborTitle: "[ THE SAFE HARBOR ] // OUTSIDE THE SCRIPT",
-harborP1: "Here, in this sealed space we call 'The Safe Harbor', we shut down the high Beta waves of the market, look away from monitors, and remove the somatic armor of Joe Fenix. Managing capital, corporate structures, and international expectations requires the posture of the Absolute Adult. The market allows no weakness, and the outside world demands a linear performance without crashes. This constant pressure creates a ruthless entrepreneurial isolation.",
-harborP2: "If you feel exhausted today, that is OK. The fatigue you feel in your diaphragm is not a failure of character, but the quantifiable consequence of a biological hardware that has run out of clean chemical fuel. Taking care of your biology, resetting your cellular membrane to -70mV, and protecting your deep sleep are not acts of weakness, but gestures of supreme strategic sovereignty to defend your intellect and preserve your empire. Take a deep breath, decompress the stress axis. The system is online, your biochemistry is OK, and you are officially Never Better."
-}
-};
-const userLang = navigator.language || navigator.userLanguage;
-if (!userLang.startsWith('it')) {
-document.getElementById('main-subtitle').innerText = translations.en.subtitle;
-document.getElementById('label-stress').innerText = translations.en.stress;
-document.getElementById('label-sleep').innerText = translations.en.sleep;
-document.getElementById('label-somatic').innerText = translations.en.somatic;
-document.getElementById('opt-1').innerText = translations.en.opt1;
-document.getElementById('opt-2').innerText = translations.en.opt2;
-document.getElementById('btn-submit').innerText = translations.en.submit;
-document.getElementById('results-title').innerText = translations.en.resTitle;
-document.getElementById('title-nutri').innerText = translations.en.nutriTitle;
-document.getElementById('list-nutri').innerHTML = translations.en.nutriList;
-document.getElementById('title-cooking').innerText = translations.en.cookingTitle;
-document.getElementById('text-cooking').innerText = translations.en.cookingText;
-document.getElementById('title-shopping').innerText = translations.en.shoppingTitle;
-document.getElementById('list-shopping').innerHTML = translations.en.shoppingList;
-document.getElementById('btn-books').innerText = translations.en.btnBooks;
-document.getElementById('btn-hazr').innerText = translations.en.btnHazr;
-document.getElementById('harbor-title').innerText = translations.en.harborTitle;
-document.getElementById('harbor-p1').innerText = translations.en.harborP1;
-document.getElementById('harbor-p2').innerText = translations.en.harborP2;
-}
-function calculateMetrics() {
-const stress = document.getElementById('stress').value;
-const sleep = document.getElementById('sleep').value;
-if(!stress || !sleep) {
-if (!userLang.startsWith('it')) {
-alert('Please input all biomechanical parameters.');
-} else {
-alert('Inserisci tutti i parametri biomeccanici.');
-}
-return;
-}
-if (!userLang.startsWith('it')) {
-document.getElementById('report-text').innerHTML = translations.en.reportText;
-} else {
-document.getElementById('report-text').innerHTML = Stato di depolarizzazione rilevato. Il tuo asse HPA richiede una ricalibrazione millimetrica basata sui 5 Vettori Molecolari. Protocollo di ripristino memorizzato nella matrice di sistema.;
-}
-document.getElementById('results').style.display = 'block';
-}
-function initiateStripe() {
-alert('[STRIPE REDIRECT] Inizializzazione del modulo checkout.js per il blocco del lotto fisico HAZR.');
-}
+            shoppingTitle: "AUTOMATED SHOPPING LIST (FIXED MATRIX)",
+            shoppingList: "<li>Stable proteins (Chicken breast, Beef fillet, Wild salmon)</li><li>Clean lipid sources (Pure MCT oil, Avocado, Grass-fed ghee butter)</li><li>Antioxidant vegetables (Broccoli, Wild spinach, Asparagus)</li><li>Saline Anchor (Unrefined gray sea salt, Bioavailable potassium)</li>",
+            btnBooks: "Purchase the Trilogy (KDP)",
+            btnHazr: "Order HAZR Box",
+            harborTitle: "[ THE SAFE HARBOR ] // OUTSIDE THE SCRIPT",
+            harborP1: "Here, in this sealed space we call 'The Safe Harbor', we shut down the high Beta waves of the market, look away from monitors, and remove the somatic armor of Joe Fenix. Managing capital, corporate structures, and international expectations requires the posture of the Absolute Adult. The market allows no weakness, and the outside world demands a linear performance without crashes. This constant pressure creates a ruthless entrepreneurial isolation.",
+            harborP2: "If you feel exhausted today, that is OK. The fatigue you feel in your diaphragm is not a failure of character, but the quantifiable consequence of a biological hardware that has run out of clean chemical fuel. Taking care of your biology, resetting your cellular membrane to -70mV, and protecting your deep sleep are not acts of weakness, but gestures of supreme strategic sovereignty to defend your intellect and preserve your empire. Take a deep breath, decompress the stress axis. The system is online, your biochemistry is OK, and you are officially Never Better."
+        }
+    };
 
+    const userLang = navigator.language || navigator.userLanguage;
+    if (!userLang.startsWith('it')) {
+        document.getElementById('main-subtitle').innerText = translations.en.subtitle;
+        document.getElementById('label-stress').innerText = translations.en.stress;
+        document.getElementById('label-sleep').innerText = translations.en.sleep;
+        document.getElementById('label-somatic').innerText = translations.en.somatic;
+        document.getElementById('opt-1').innerText = translations.en.opt1;
+        document.getElementById('opt-2').innerText = translations.en.opt2;
+        document.getElementById('btn-submit').innerText = translations.en.submit;
+        document.getElementById('results-title').innerText = translations.en.resTitle;
+        document.getElementById('title-nutri').innerText = translations.en.nutriTitle;
+        document.getElementById('list-nutri').innerHTML = translations.en.nutriList;
+        document.getElementById('title-cooking').innerText = translations.en.cookingTitle;
+        document.getElementById('text-cooking').innerText = translations.en.cookingText;
+        document.getElementById('title-shopping').innerText = translations.en.shoppingTitle;
+        document.getElementById('list-shopping').innerHTML = translations.en.shoppingList;
+        document.getElementById('btn-books').innerText = translations.en.btnBooks;
+        document.getElementById('btn-hazr').innerText = translations.en.btnHazr;
+        document.getElementById('harbor-title').innerText = translations.en.harborTitle;
+        document.getElementById('harbor-p1').innerText = translations.en.harborP1;
+        document.getElementById('harbor-p2').innerText = translations.en.harborP2;
+    }
+
+    function calculateMetrics() {
+        const stress = document.getElementById('stress').value;
+        const sleep = document.getElementById('sleep').value;
+        
+        if(!stress || !sleep) {
+            if (!userLang.startsWith('it')) {
+                alert('Please input all biomechanical parameters.');
+            } else {
+                alert('Inserisci tutti i parametri biomeccanici.');
+            }
+            return;
+        }
+
+        if (!userLang.startsWith('it')) {
+            document.getElementById('report-text').innerHTML = translations.en.reportText;
+        } else {
+            document.getElementById('report-text').innerHTML = `Stato di depolarizzazione rilevato. Il tuo asse HPA richiede una ricalibrazione millimetrica basata sui 5 Vettori Molecolari. Protocollo di ripristino memorizzato nella matrice di sistema.`;
+        }
+        document.getElementById('results').style.display = 'block';
+    }
+
+    function initiateStripe() {
+        alert('[STRIPE REDIRECT] Inizializzazione del modulo checkout.js per il blocco del lotto fisico HAZR.');
+    }
+</script>
+
+</body>
+</html>
