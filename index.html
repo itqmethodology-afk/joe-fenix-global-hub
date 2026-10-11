@@ -79,6 +79,20 @@
             padding-top: 20px;
             display: none;
         }
+        .section-block {
+            margin-top: 25px;
+            padding: 15px;
+            background: #111111;
+            border-left: 3px solid #FF5500;
+        }
+        .section-title {
+            color: #FF5500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
         .cta-section {
             margin-top: 30px;
             display: grid;
@@ -99,6 +113,14 @@
         .cta-btn.primary {
             background: #FF5500;
             color: #050505;
+        }
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+            color: #ccc;
+        }
+        li {
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -132,17 +154,41 @@
         <h3 style="color: #FF5500;" id="results-title">REPORT BIOLOGICO GENERATO: TARGET -70mV</h3>
         <p id="report-text"></p>
         
+        <div class="section-block">
+            <div class="section-title" id="title-nutri">PIANO BIONUTRIZIONALE AD ALTO VALORE PROTEICO</div>
+            <ul id="list-nutri">
+                <li><strong>Mattina / Pranzo:</strong> Grassi sani MCT, Avocado, Proteine nobili isolate. Carboidrati azzerati per favorire la produzione di corpi chetonici e mantenere il focus lineare.</li>
+                <li><strong>Sera:</strong> Inserimento mirato di carboidrati complessi a basso indice glicemico per favorire la sintesi di serotonina e melatonina notturna.</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <div class="section-title" id="title-cooking">GUIDA AL BATCH COOKING IN 60 MINUTI</div>
+            <p style="color: #ccc; font-size: 0.9rem; line-height: 1.5; margin: 0;" id="text-cooking">
+                Applica il protocollo Fixed-Matrix: una sola ora nel weekend per pesare, porzionare e sigillare sottovuoto l'hardware nutrizionale dei successivi 5 giorni lavorativi. Zero variazioni gastronomiche, zero attrito decisionale davanti al frigorifero.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <div class="section-title" id="title-shopping">LISTA DELLA SPESA AUTOMATIZZATA (MATRICE FISSA)</div>
+            <ul id="list-shopping">
+                <li>Proteine stabili (Petto di pollo, Filetto di manzo, Salmone selvaggio)</li>
+                <li>Fonti lipidiche pulite (Olio MCT purissimo, Avocado, Burro chiarificato ghee)</li>
+                <li>Vegetali antiossidanti (Broccoli, Spinaci selvatici, Asparagi)</li>
+                <li>Ancora Salina (Sale marino integrale grigio, Potassio biodisponibile)</li>
+            </ul>
+        </div>
+        
         <div class="cta-section">
             <a href="https://amazon.com" target="_blank" class="cta-btn" id="btn-books">Acquista la Trilogia (KDP)</a>
             <a href="#" onclick="initiateStripe()" class="cta-btn primary" id="btn-hazr">Ordina Cofanetto HAZR</a>
         </div>
     </div>
 
-    <!-- SEZIONE DI DECOMPRESSIONE: THE SAFE HARBOR -->
     <div style="margin-top: 40px; padding-top: 30px; border-top: 1px dashed #333333;">
         <h2 style="color: #FF5500; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px;" id="harbor-title">[ THE SAFE HARBOR ] // DECOMPRESSIONE FUORI COPIONE</h2>
         <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;" id="harbor-p1">
-            Qui, in questo spazio stagna che abbiamo denominato "Il Porto Sicuro", spegniamo le onde Beta alte del mercato, allontaniamo lo sguardo dai monitor e togliamo l'armatura somatica di Joe Fenix. Gestire capitali, strutture aziendali e aspettative internazionali richiede la postura dell'Adulto Assoluto. Il mercato non ammette debolezze e il mondo esterno pretende una performance lineare che non connoosca crolli. Questa costante pressione crea una solitudine imprenditoriale spietata.
+            Qui, in questo spazio stagna che abbiamo denominato "Il Porto Sicuro", spegniamo le onde Beta alte del mercato, allontaniamo lo sguardo dai monitor e togliamo l'armatura somatica di Joe Fenix. Gestire capitali, strutture aziendali e aspettative internazionali richiede la postura dell'Adulto Assoluto. Il mercato non ammette debolezze e il mondo esterno pretende una performance lineare che non conosca crolli. Questa costante pressione crea una solitudine imprenditoriale spietata.
         </p>
         <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;" id="harbor-p2">
             Se oggi ti senti esausto, va bene così. La stanchezza che senti sul diaframma non è un fallimento del tuo carattere, ma la conseguenza quantificabile di un hardware biologico che ha esaurito il suo carburante chimico. Prendersi cura della propria biologia, ricaricare le membrane cellulari al voltaggio ottimale di -70mV e proteggere il proprio sonno profondo non sono atti di debolezza, ma gesti di massima sovranità strategica per difendere il tuo intelletto e preservare il tuo impero. Fai un respiro profondo, decompressa l'asse stressogeno. Il sistema è online, la tua biochimica è OK e tu sei ufficialmente Never Better.
@@ -162,45 +208,59 @@
             submit: "Execute Algorithm Boot",
             resTitle: "BIOLOGICAL REPORT GENERATED: TARGET -70mV",
             reportText: "Depolarization state detected. Your HPA axis requires a millimetric recalibration based on the 5 Molecular Vectors. Reset protocol stored in the system matrix.",
-            btnBooks: "Purchase the Trilogy (KDP)",
-            btnHazr: "Order HAZR Box",
-            harborTitle: "[ THE SAFE HARBOR ] // OUTSIDE THE SCRIPT",
-            harborP1: "Here, in this sealed space we call 'The Safe Harbor', we shut down the high Beta waves of the market, look away from monitors, and remove the somatic armor of Joe Fenix. Managing capital, corporate structures, and international expectations requires the posture of the Absolute Adult. The market allows no weakness, and the outside world demands a linear performance without crashes. This constant pressure creates a ruthless entrepreneurial isolation.",
-            harborP2: "If you feel exhausted today, that is OK. The fatigue you feel in your diaphragm is not a failure of character, but the quantifiable consequence of a biological hardware that has run out of clean chemical fuel. Taking care of your biology, resetting your cellular membrane to -70mV, and protecting your deep sleep are not acts of weakness, but gestures of supreme strategic sovereignty to defend your intellect and preserve your empire. Take a deep breath, decompress the stress axis. The system is online, your biochemistry is OK, and you are officially Never Better."
-        }
-    };
+            nutriTitle: "HIGH-PROTEIN ANTI-INFLAMMATORY NUTRITIONAL PLAN",
+            nutriList: "<li><strong>Morning / Lunch:</strong> Healthy MCT fats, Avocado, Clean isolated proteins. Zero carbohydrates to induce ketone body production and lock laser focus.</li><li><strong>Evening:</strong> Targeted complex low-glycemic carbohydrates to boost nightly serotonin and melatonin synthesis.</li>",
+            cookingTitle: "60-MINUTE BATCH COOKING GUIDE",
+            cookingText: "Apply the Fixed-Matrix protocol: spend just one hour over the weekend to weigh, portion, and vacuum-seal your nutritional hardware for the next 5 working days. Zero menu variations, zero decision friction in front of the fridge.",
+            shoppingTitle: "AUTOMATED SHOPPING LIST (FIXED MATRIX)",shoppingList: "Stable proteins (Chicken breast, Beef fillet, Wild salmon)Clean lipid sources (Pure MCT oil, Avocado, Grass-fed ghee butter)Antioxidant vegetables (Broccoli, Wild spinach, Asparagus)Saline Anchor (Unrefined gray sea salt, Bioavailable potassium)",
+btnBooks: "Purchase the Trilogy (KDP)",
+btnHazr: "Order HAZR Box",
+harborTitle: "[ THE SAFE HARBOR ] // OUTSIDE THE SCRIPT",
+harborP1: "Here, in this sealed space we call 'The Safe Harbor', we shut down the high Beta waves of the market, look away from monitors, and remove the somatic armor of Joe Fenix. Managing capital, corporate structures, and international expectations requires the posture of the Absolute Adult. The market allows no weakness, and the outside world demands a linear performance without crashes. This constant pressure creates a ruthless entrepreneurial isolation.",
+harborP2: "If you feel exhausted today, that is OK. The fatigue you feel in your diaphragm is not a failure of character, but the quantifiable consequence of a biological hardware that has run out of clean chemical fuel. Taking care of your biology, resetting your cellular membrane to -70mV, and protecting your deep sleep are not acts of weakness, but gestures of supreme strategic sovereignty to defend your intellect and preserve your empire. Take a deep breath, decompress the stress axis. The system is online, your biochemistry is OK, and you are officially Never Better."
+}
+};
+const userLang = navigator.language || navigator.userLanguage;
+if (!userLang.startsWith('it')) {
+document.getElementById('main-subtitle').innerText = translations.en.subtitle;
+document.getElementById('label-stress').innerText = translations.en.stress;
+document.getElementById('label-sleep').innerText = translations.en.sleep;
+document.getElementById('label-somatic').innerText = translations.en.somatic;
+document.getElementById('opt-1').innerText = translations.en.opt1;
+document.getElementById('opt-2').innerText = translations.en.opt2;
+document.getElementById('btn-submit').innerText = translations.en.submit;
+document.getElementById('results-title').innerText = translations.en.resTitle;
+document.getElementById('title-nutri').innerText = translations.en.nutriTitle;
+document.getElementById('list-nutri').innerHTML = translations.en.nutriList;
+document.getElementById('title-cooking').innerText = translations.en.cookingTitle;
+document.getElementById('text-cooking').innerText = translations.en.cookingText;
+document.getElementById('title-shopping').innerText = translations.en.shoppingTitle;
+document.getElementById('list-shopping').innerHTML = translations.en.shoppingList;
+document.getElementById('btn-books').innerText = translations.en.btnBooks;
+document.getElementById('btn-hazr').innerText = translations.en.btnHazr;
+document.getElementById('harbor-title').innerText = translations.en.harborTitle;
+document.getElementById('harbor-p1').innerText = translations.en.harborP1;
+document.getElementById('harbor-p2').innerText = translations.en.harborP2;
+}
+function calculateMetrics() {
+const stress = document.getElementById('stress').value;
+const sleep = document.getElementById('sleep').value;
+if(!stress || !sleep) {
+if (!userLang.startsWith('it')) {
+alert('Please input all biomechanical parameters.');
+} else {
+alert('Inserisci tutti i parametri biomeccanici.');
+}
+return;
+}
+if (!userLang.startsWith('it')) {
+document.getElementById('report-text').innerHTML = translations.en.reportText;
+} else {
+document.getElementById('report-text').innerHTML = Stato di depolarizzazione rilevato. Il tuo asse HPA richiede una ricalibrazione millimetrica basata sui 5 Vettori Molecolari. Protocollo di ripristino memorizzato nella matrice di sistema.;
+}
+document.getElementById('results').style.display = 'block';
+}
+function initiateStripe() {
+alert('[STRIPE REDIRECT] Inizializzazione del modulo checkout.js per il blocco del lotto fisico HAZR.');
+}
 
-    const userLang = navigator.language || navigator.userLanguage;
-    if (!userLang.startsWith('it')) {
-        document.getElementById('main-subtitle').innerText = translations.en.subtitle;
-        document.getElementById('label-stress').innerText = translations.en.stress;
-        document.getElementById('label-sleep').innerText = translations.en.sleep;
-        document.getElementById('label-somatic').innerText = translations.en.somatic;
-        document.getElementById('opt-1').innerText = translations.en.opt1;
-        document.getElementById('opt-2').innerText = translations.en.opt2;
-        document.getElementById('btn-submit').innerText = translations.en.submit;
-        document.getElementById('results-title').innerText = translations.en.resTitle;
-        document.getElementById('btn-books').innerText = translations.en.btnBooks;
-        document.getElementById('btn-hazr').innerText = translations.en.btnHazr;
-        document.getElementById('harbor-title').innerText = translations.en.harborTitle;
-        document.getElementById('harbor-p1').innerText = translations.en.harborP1;
-        document.getElementById('harbor-p2').innerText = translations.en.harborP2;
-    }
-
-    function calculateMetrics() {
-        const stress = document.getElementById('stress').value;
-        const sleep = document.getElementById('sleep').value;
-        
-        if(!stress || !sleep) {
-            if (!userLang.startsWith('it')) {
-                alert('Please input all biomechanical parameters.');
-            } else {
-                alert('Inserisci tutti i parametri biomeccanici.');
-            }
-            return;
-        }
-
-        if (!userLang.startsWith('it')) {
-            document.getElementById('report-text').innerHTML = translations.en.reportText;
-        } else {
-          
