@@ -105,68 +105,102 @@
 <body>
 
 <div class="container">
-    <h1>[ EM-CALC ]</h1>
-    <div class="subtitle">Epigenetic Matrix Calculator // Joe Fenix Method</div>
+    <h1 id="main-title">[ EM-CALC ]</h1>
+    <div id="main-subtitle" class="subtitle">Calcolatore della matrice epigenetica // Joe Fenix Method</div>
     
     <div class="form-group">
-        <label>Pressione Cognitiva (Stress Score 1-100):</label>
-        <input type="number" id="stress" min="1" max="100" placeholder="Inserisci valore...">
+        <label id="label-stress">Pressione Cognitiva (Stress Score 1-100):</label>
+        <input type="number" id="stress" min="1" max="100" placeholder="...">
     </div>
     
     <div class="form-group">
-        <label>Ore di Sonno Profondo Effettive:</label>
-        <input type="number" id="sleep" min="0" max="12" step="0.5" placeholder="Inserisci ore...">
+        <label id="label-sleep">Ore di Sonno Profondo Effettive:</label>
+        <input type="number" id="sleep" min="0" max="12" step="0.5" placeholder="...">
     </div>
     
     <div class="form-group">
-        <label>Allineamento Somatico (38 Punti):</label>
+        <label id="label-somatic">Allineamento Somatico (38 Punti):</label>
         <select id="somatic">
-            <option value="allineato">Ottimale (Nessun Blocco)</option>
-            <option value="sovraccarico">Asimmetria / Blocco HPA</option>
+            <option value="allineato" id="opt-1">Ottimale (Nessun Blocco)</option>
+            <option value="sovraccarico" id="opt-2">Asimmetria / Blocco HPA</option>
         </select>
     </div>
     
-    <button onclick="calculateMetrics()">Esegui Boot Algoritmo</button>
+    <button onclick="calculateMetrics()" id="btn-submit">Esegui Boot Algoritmo</button>
 
     <div id="results" class="results-box">
-        <h3 style="color: #FF5500;">REPORT BIOLOGICO GENERATO: TARGET -70mV</h3>
+        <h3 style="color: #FF5500;" id="results-title">REPORT BIOLOGICO GENERATO: TARGET -70mV</h3>
         <p id="report-text"></p>
         
         <div class="cta-section">
-            <a href="https://amazon.com" target="_blank" class="cta-btn">Acquista la Trilogia (KDP)</a>
-            <a href="#" onclick="initiateStripe()" class="cta-btn primary">Ordina Cofanetto HAZR</a>
+            <a href="https://amazon.com" target="_blank" class="cta-btn" id="btn-books">Acquista la Trilogia (KDP)</a>
+            <a href="#" onclick="initiateStripe()" class="cta-btn primary" id="btn-hazr">Ordina Cofanetto HAZR</a>
         </div>
     </div>
-</div> <!-- ========================================== -->
+
     <!-- SEZIONE DI DECOMPRESSIONE: THE SAFE HARBOR -->
-    <!-- ========================================== -->
     <div style="margin-top: 40px; padding-top: 30px; border-top: 1px dashed #333333;">
-        <h2 style="color: #FF5500; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px;">[ THE SAFE HARBOR ] // DECOMPRESSIONE FUORI COPIONE</h2>
-        <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;">
-            Qui, in questo spazio stagna che abbiamo denominato "Il Porto Sicuro", spegniamo le onde Beta alte del mercato, allontaniamo lo sguardo dai monitor e togliamo l'armatura somatica di Joe Fenix. Gestire capitali, strutture aziendali e aspettative internazionali richiede la postura dell'Adulto Assoluto. Il mercato non ammette debolezze e il mondo esterno pretende una performance lineare che non conosca crolli. Questa costante pressione crea una solitudine imprenditoriale spietata.
+        <h2 style="color: #FF5500; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px;" id="harbor-title">[ THE SAFE HARBOR ] // DECOMPRESSIONE FUORI COPIONE</h2>
+        <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;" id="harbor-p1">
+            Qui, in questo spazio stagna che abbiamo denominato "Il Porto Sicuro", spegniamo le onde Beta alte del mercato, allontaniamo lo sguardo dai monitor e togliamo l'armatura somatica di Joe Fenix. Gestire capitali, strutture aziendali e aspettative internazionali richiede la postura dell'Adulto Assoluto. Il mercato non ammette debolezze e il mondo esterno pretende una performance lineare che non connoosca crolli. Questa costante pressione crea una solitudine imprenditoriale spietata.
         </p>
-        <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;">
+        <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;" id="harbor-p2">
             Se oggi ti senti esausto, va bene così. La stanchezza che senti sul diaframma non è un fallimento del tuo carattere, ma la conseguenza quantificabile di un hardware biologico che ha esaurito il suo carburante chimico. Prendersi cura della propria biologia, ricaricare le membrane cellulari al voltaggio ottimale di -70mV e proteggere il proprio sonno profondo non sono atti di debolezza, ma gesti di massima sovranità strategica per difendere il tuo intelletto e preservare il tuo impero. Fai un respiro profondo, decompressa l'asse stressogeno. Il sistema è online, la tua biochimica è OK e tu sei ufficialmente Never Better.
         </p>
+    </div>
+</div>
 
 <script>
+    const translations = {
+        en: {
+            subtitle: "Epigenetic Matrix Calculator // Joe Fenix Method",
+            stress: "Cognitive Pressure (Stress Score 1-100):",
+            sleep: "Effective Deep Sleep Hours:",
+            somatic: "Somatic Alignment (38 Points):",
+            opt1: "Optimal (No Block)",
+            opt2: "Asymmetry / HPA Block",
+            submit: "Execute Algorithm Boot",
+            resTitle: "BIOLOGICAL REPORT GENERATED: TARGET -70mV",
+            reportText: "Depolarization state detected. Your HPA axis requires a millimetric recalibration based on the 5 Molecular Vectors. Reset protocol stored in the system matrix.",
+            btnBooks: "Purchase the Trilogy (KDP)",
+            btnHazr: "Order HAZR Box",
+            harborTitle: "[ THE SAFE HARBOR ] // OUTSIDE THE SCRIPT",
+            harborP1: "Here, in this sealed space we call 'The Safe Harbor', we shut down the high Beta waves of the market, look away from monitors, and remove the somatic armor of Joe Fenix. Managing capital, corporate structures, and international expectations requires the posture of the Absolute Adult. The market allows no weakness, and the outside world demands a linear performance without crashes. This constant pressure creates a ruthless entrepreneurial isolation.",
+            harborP2: "If you feel exhausted today, that is OK. The fatigue you feel in your diaphragm is not a failure of character, but the quantifiable consequence of a biological hardware that has run out of clean chemical fuel. Taking care of your biology, resetting your cellular membrane to -70mV, and protecting your deep sleep are not acts of weakness, but gestures of supreme strategic sovereignty to defend your intellect and preserve your empire. Take a deep breath, decompress the stress axis. The system is online, your biochemistry is OK, and you are officially Never Better."
+        }
+    };
+
+    const userLang = navigator.language || navigator.userLanguage;
+    if (!userLang.startsWith('it')) {
+        document.getElementById('main-subtitle').innerText = translations.en.subtitle;
+        document.getElementById('label-stress').innerText = translations.en.stress;
+        document.getElementById('label-sleep').innerText = translations.en.sleep;
+        document.getElementById('label-somatic').innerText = translations.en.somatic;
+        document.getElementById('opt-1').innerText = translations.en.opt1;
+        document.getElementById('opt-2').innerText = translations.en.opt2;
+        document.getElementById('btn-submit').innerText = translations.en.submit;
+        document.getElementById('results-title').innerText = translations.en.resTitle;
+        document.getElementById('btn-books').innerText = translations.en.btnBooks;
+        document.getElementById('btn-hazr').innerText = translations.en.btnHazr;
+        document.getElementById('harbor-title').innerText = translations.en.harborTitle;
+        document.getElementById('harbor-p1').innerText = translations.en.harborP1;
+        document.getElementById('harbor-p2').innerText = translations.en.harborP2;
+    }
+
     function calculateMetrics() {
         const stress = document.getElementById('stress').value;
         const sleep = document.getElementById('sleep').value;
         
         if(!stress || !sleep) {
-            alert('Inserisci tutti i parametri biomeccanici.');
+            if (!userLang.startsWith('it')) {
+                alert('Please input all biomechanical parameters.');
+            } else {
+                alert('Inserisci tutti i parametri biomeccanici.');
+            }
             return;
         }
 
-        document.getElementById('report-text').innerHTML = `Stato di depolarizzazione rilevato. Il tuo asse HPA richiede una ricalibrazione millimetrica basata sui 5 Vettori Molecolari. Protocollo di ripristino memorizzato nella matrice di sistema.`;
-        document.getElementById('results').style.display = 'block';
-    }
-
-    function initiateStripe() {
-        alert('[STRIPE REDIRECT] Inizializzazione del modulo checkout.js per il blocco del lotto fisico HAZR.');
-    }
-</script>
-
-</body>
-</html>
+        if (!userLang.startsWith('it')) {
+            document.getElementById('report-text').innerHTML = translations.en.reportText;
+        } else {
+          
