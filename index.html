@@ -146,7 +146,44 @@
             <option value="allineato" id="opt-1">Ottimale (Nessun Blocco)</option>
             <option value="sovraccarico" id="opt-2">Asimmetria / Blocco HPA</option>
         </select>
-    </div>
+    </div>        <div class="form-group">
+            <label>Età Anagrafica (Anni):</label>
+            <input type="number" id="age" min="1" max="120" placeholder="...">
+        </div>
+        <div class="form-group">
+            <label>Altezza Staturale (cm):</label>
+            <input type="number" id="height" min="100" max="250" placeholder="...">
+        </div>
+        <div class="form-group">
+            <label>Massa Corporea Attuale (kg):</label>
+            <input type="number" id="weight" min="30" max="250" placeholder="...">
+        </div>
+        <div class="form-group">
+            <label>Orientamento Alimentare Attuale:</label>
+            <select id="diet">
+                <option value="onnivora">`[ ONNIVORA ]` // Matrice fissa standard</option>
+                <option value="vegetariana">`[ VEGETARIANA ]` // No tessuto muscolare</option>
+                <option value="vegana">`[ VEGANA ]` // Esclusione totale derivati</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Obiettivo Primario di Configurazione:</label>
+            <select id="goal">
+                <option value="recon-energy">[ RECON-ENERGY ] // Azzerare stanchezza / ATP</option>
+                <option value="body-recomp">[ BODY-RECOMP ] // Riduzione ritenzione infiammatoria</option>
+                <option value="brain-shield">[ BRAIN-SHIELD ] // Eradicazione Brain Fog / Focus Laser</option>
+            </select>
+        </div>
+        <div class="form-group" style="margin-top: 25px; border-top: 1px solid #333; padding-top: 15px;">
+            <p style="font-size: 0.8rem; color: #888; line-height: 1.4; text-align: justify;">
+                <strong>🛑 DICHIARAZIONE DI SOVRANITÀ, PROTOCOLLO PRIVACY E DISCLAIMER DI RESPONSABILITÀ:</strong><br>
+                Questo calcolatore ([EM-CALC]) elabora i dati secondo modelli di neuroscienze ed epigenetica applicata. Ha scopo informativo e di bio-hacking esecutivo; non costituisce diagnosi o consiglio medico. I dati vengono crittografati e protetti secondo le normative GDPR/HIPAA.
+            </p>
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #fff; cursor: pointer;">
+                <input type="checkbox" id="privacy-consent" required style="margin-top: 3px;">
+                <span>Presto il mio consenso esplicito al trattamento dei miei dati per l'elaborazione del Joe Fenix Method, sotto la mia responsabilità, per accedere agli stati di Never Better e Top of the World.</span>
+            </label>
+
     
     <button onclick="calculateMetrics()" id="btn-submit">Esegui Boot Algoritmo</button>
 
