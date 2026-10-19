@@ -1,191 +1,88 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Fenix Method - Epigenetic Matrix Calculator</title>
-    <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Space Mono', 'Courier New', monospace;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: #0d0d0d;
-            border: 1px solid #1a1a1a;
-            padding: 30px;
-            box-sizing: border-box;
-        }
-        h1 {
-            color: #FF5500;
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #aaa;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            background: #111;
-            border: 1px solid #222;
-            color: #fff;
-            font-family: inherit;
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
-        input:focus, select:focus, textarea:focus {
-            border-color: #FF5500;
-            outline: none;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h1>[ EM-CALC ] // COGNITIVE & EPIGENETIC MATRIX</h1>
-    <form id="matrix-form">
-        <div class="form-group">
-            <label>Età Anagrafica (Anni):</label>
-            <input type="number" id="age" min="1" max="120" placeholder="...">
-        </div>
-        <div class="form-group">
-            <label>Altezza Staturale (cm):</label>
-            <input type="number" id="height" min="100" max="250" placeholder="...">
-        </div>
-        <div class="form-group">
-            <label>Massa Corporea Attuale (kg):</label>
-            <input type="number" id="weight" min="30" max="250" placeholder="...">
-        </div>
-        <div class="form-group">
-            <label>Orientamento Alimentare Attuale:</label>
-            <select id="diet">
-                <option value="onnivora">[ ONNIVORA ] // Matrice fissa standard</option>
-                <option value="vegetariana">[ VEGETARIANA ] // No tessuto muscolare</option>
-                <option value="vegana">[ VEGANA ] // Esclusione totale derivati</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Attività Fisica / Dispendio Energetico Core:</label>
-            <select id="activity-type">
-                <option value="sedentario">[ SEDENTARIO ] // Lavoro d'ufficio e PC, zero sport</option>
-                <option value="camminata">[ WALKING ] // Camminata quotidiana o Tai Chi (Attività Vagale)</option>
-                <option value="palestra">[ RESISTANCE ] // Palestra, pesi o contrazioni isometriche brevi</option>
-                <option value="cardio">[ CARDIO HIGH ] // Corsa, nuoto, arti marziali (Massimo Attrito)</option>
-                <option value="sessuale">[ REPRODUCTIVE EXP ] // Attività riproduttiva/intima ad alta intensità (Spesa Endocrina)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Durata Media dell'Attività (Minuti al giorno):</label>
-            <input type="number" id="activity-duration" min="0" max="240" value="0">
-        </div>
-        <div class="form-group">
-            <label>Marker di Sequestro Endocrino (Asse HPA):</label>
-            <select id="hpa-marker">
-                <option value="safe">[ CODE SAFE ] // Estremità calde, respiro profondo diaframmatico</option>
-                <option value="warning">[ CODE WARNING ] // Nebbia cognitiva latente, mani fredde, respiro corto</option>
-                <option value="critical">[ CRITICAL OVERLOAD ] // Stanchezza mitocondriale cronica, risvegli notturni</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Obiettivo Primario di Configurazione:</label>
-            <select id="goal">
-                <option value="recon-energy">[ RECON-ENERGY ] // Azzerare stanchezza / ATP</option>
-                <option value="body-recomp">[ BODY-RECOMP ] // Riduzione ritenzione infiammatoria</option>
-                <option value="brain-shield">[ BRAIN-SHIELD ] // Eradicazione Brain Fog / Focus Laser</option>
-            </select>
-        </div>
-        <div class="form-group" style="margin-top: 25px; border-top: 1px solid #333; padding-top: 15px;">
-            <p style="font-size: 0.8rem; color: #888; line-height: 1.4; text-align: justify;">
-                <strong>🛑 DICHIARAZIONE DI SOVRANITÀ, PROTOCOLLO PRIVACY E DISCLAIMER DI RESPONSABILITÀ:</strong><br>
-                Questo calcolatore ([EM-CALC]) elabora i dati secondo modelli di neuroscienze ed epigenetica applicata. Ha scopo informativo e di bio-hacking esecutivo; non costituisce diagnosi o consiglio medico. I dati vengono crittografati e protetti secondo le normative GDPR/HIPAA.
-            </p>
-            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #fff; cursor: pointer;">
-                <input type="checkbox" id="privacy-consent" required style="margin-top: 3px;">
-                <span>Presto il mio consenso esplicito al trattamento dei miei dati per l'elaborazione del Joe Fenix Method, sotto la mia responsabilità, per accedere agli stati di Never Better e Top of the World.</span>
-            </label>
-        </div>
-        <button type="button" onclick="calcolaEcosistemaSomatico()" style="margin-top: 30px; width: 100%; padding: 15px; background-color: #FF5500; color: #fff; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">[ AVVIA TELEMETRIA EM-CALC ]</button>
-    </form>
-</div>
+Joe Fenix Method - Epigenetic Matrix Calculator
 
-<script>
+body { background-color: #050505; color: #ffffff; font-family: 'Space Mono', 'Courier New', monospace; margin: 0; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
+.container { max-width: 800px; width: 100%; background: #0d0d0d; border: 1px solid #1a1a1a; padding: 30px; box-sizing: border-box; }
+h1 { color: #FF5500; text-align: center; font-size: 1.8rem; margin-bottom: 30px; letter-spacing: 1px; }
+.form-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; font-size: 0.95rem; color: #aaa; }
+input, select, textarea { width: 100%; padding: 12px; background: #111; border: 1px solid #222; color: #fff; font-family: inherit; font-size: 1rem; box-sizing: border-box; }
+input:focus, select:focus, textarea:focus { border-color: #FF5500; outline: none; }
+
+
+
+
+[ EM-CALC ] // COGNITIVE & EPIGENETIC MATRIX
+
+Età Anagrafica (Anni):
+Altezza Staturale (cm):
+Massa Corporea Attuale (kg):
+Orientamento Alimentare Attuale:
+[ ONNIVORA ] // Matrice fissa standard
+[ VEGETARIANA ] // No tessuto muscolare
+[ VEGANA ] // Esclusione totale derivati
+
+
+Attività Fisica / Dispendio Energetico Core:
+[ SEDENTARIO ] // Lavoro d'ufficio e PC, zero sport
+[ WALKING ] // Camminata quotidiana o Tai Chi (Attività Vagale)
+[ RESISTANCE ] // Palestra, pesi o contrazioni isometriche brevi
+[ CARDIO HIGH ] // Corsa, nuoto, arti marziali (Massimo Attrito)
+[ REPRODUCTIVE EXP ] // Attività riproduttiva/intima ad alta intensità (Spesa Endocrina)
+
+
+Durata Media dell'Attività (Minuti al giorno):
+Marker di Sequestro Endocrino (Asse HPA):
+[ CODE SAFE ] // Estremità calde, respiro profondo diaframmatico
+[ CODE WARNING ] // Nebbia cognitiva latente, mani fredde, respiro corto
+[ CRITICAL OVERLOAD ] // Stanchezza mitocondriale cronica, risvegli notturni
+
+
+Obiettivo Primario di Configurazione:
+[ RECON-ENERGY ] // Azzerare stanchezza / ATP
+[ BODY-RECOMP ] // Riduzione ritenzione infiammatoria
+[ BRAIN-SHIELD ] // Eradicazione Brain Fog / Focus Laser
+
+
+
+
+🛑 DICHIARAZIONE DI SOVRANITÀ, PROTOCOLLO PRIVACY E DISCLAIMER DI RESPONSABILITÀ:
+
+Questo calcolatore ([EM-CALC]) elabora i dati secondo modelli di neuroscienze ed epigenetica applicata. Ha scopo informativo e di bio-hacking esecutivo; non costituisce diagnosi o consiglio medico. I dati vengono crittografati e protetti secondo le normative GDPR/HIPAA.
+[ AVVIA TELEMETRIA EM-CALC ]
+
+
+
 function calcolaEcosistemaSomatico() {
-    const age = parseInt(document.getElementById('age').value);
-    const height = parseInt(document.getElementById('height').value);
-    const weight = parseInt(document.getElementById('weight').value);
-    const diet = document.getElementById('diet').value;
-    const goal = document.getElementById('goal').value;
-    const actType = document.getElementById('activity-type').value;
-    const actDuration = parseInt(document.getElementById('activity-duration').value) || 0;
-    const hpaMarker = document.getElementById('hpa-marker').value;
-
-    if (!age || !height || !weight) {
-        alert("Inserire tutti i parametri biometrici hardware per il boot.");
-        return;
-    }
-
-    if (!document.getElementById('privacy-consent').checked) {
-        alert("È necessario prestare il consenso obbligatorio per sbloccare l'hardware.");
-        return;
-    }
-
-    let bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-    
-    let met = 1.0; 
-    if (actType === "camminata") met = 3.5; 
-    if (actType === "palestra")  met = 5.5; 
-    if (actType === "cardio")    met = 7.5; 
-    if (actType === "sessuale")  met = 4.5; 
-    
-    let calorieAttivita = (met * 3.5 * weight / 200) * actDuration;
-    let fabbisognoTotale = bmr + calorieAttivita;
-    
-    let proteine, grassi, carboidrati;
-    let lineaGuidaAlimentare = "";
-    let alertHardware = "";
-    let ripristinoOrmonale = "";
-
-    if (diet === "onnivora") {
-        proteine = weight * 2.0; 
-        lineaGuidaAlimentare = "Fonti core: Tessuto muscolare magro (pollo, tacchino, manzo grass-fed), albumi d'uovo d'élite.";
-    } else if (diet === "vegetariana") {
-        proteine = weight * 2.2; 
-        lineaGuidaAlimentare = "Fonti core (ZERO CARNE): Uova biologiche (colina per neurotrasmettitori), parmigiano reggiano oltre 30 mesi, isolate del siero purissime.";
-    } else if (diet === "vegana") {
-        proteine = weight * 2.4;
-        lineaGuidaAlimentare = "Fonti: Isolate del pisello e del riso. NOTA: È tassativa l'integrazione di donatori di gruppi metilici (Vettore EMR).";
-    }
-
-    if (actType === "sessuale" && actDuration > 0) {
-        ripristinoOrmonale = "\n\n⚠️ DETOX REPERTORIALE POST-ATTO: Rilevato picco dopaminergico ed elettrolitico. Per prevenire il crash midday e ricostituire la forza strutturale, assumere immediatamente l'Ancora Salina potenziata con Magnesio L-Treonato. Forzare il ripristino dei recettori D2 con 10 minuti di Silenzio Radar assoluto.";
-    }
-
-    if (hpaMarker === "safe") {
-        alertHardware = "SISTEMA OPERATIVO OPTIMAL: Mantieni il basale dei 5 Vettori HAZR per preservare i -70mV." + ripristinoOrmonale;
-    } else if (hpaMarker === "warning") {
-        alertHardware = "RILIEVO ATTIVAZIONE ASSE HPA: Avviare la Decompressione Vagale Meccanica. Raddoppiare il dosaggio di [HAZR - COB]." + ripristinoOrmonale;
-    } else if (hpaMarker === "critical") {
-        alertHardware = "CRITICAL METABOLIC COLLAPSE: Neuroinfiammazione latente. Attivare il Buffer Anti-Citochine. Assumere [HAZR - MVP] prima di ogni sessione esecutiva." + ripristinoOrmonale;
-    }
-
-    grassi = weight * 1.0;
-    let calorieResidue = fabbisognoTotale - ((proteine * 4) + (grassi * 9));
-    carboidrati = calorieResidue > 0 ? (calorieResidue / 4) : (fabbisognoTotale * 0.2 / 4);
-
-    alert(`[ EM-CALC TELEMETRY BOOT SUCCESSFUL ]\n\nFabbisogno Energetico dell'Hardware: ${Math.round(fabbisognoTotale)} kcal.\nRipartizione hardware macronutrienti:\n- Proteine Strutturali: ${Math.round(proteine)}g\n- Lipidi d'Élite: ${Math.round(grassi)}g\n- Carboidrati Serali (Segregati): ${Math.round(carboidrati)}g\n\nLinea Nutrizionale: ${lineaGuidaAlimentare}\n\nSTATO TELEMETRICO CORPO:\n--> ${alertHardware}\n\nLa tua plancia cerebrale è protetta. Il voltaggio è ancorato a -70mV.`);
-
+const age = parseInt(document.getElementById('age').value);
+const height = parseInt(document.getElementById('height').value);
+const weight = parseInt(document.getElementById('weight').value);
+const diet = document.getElementById('diet').value;
+const goal = document.getElementById('goal').value;
+const actType = document.getElementById('activity-type').value;
+const actDuration = parseInt(document.getElementById('activity-duration').value) || 0;
+const hpaMarker = document.getElementById('hpa-marker').value;
+if (!age || !height || !weight) { alert("Inserire tutti i parametri biometrici hardware per il boot."); return; }
+if (!document.getElementById('privacy-consent').checked) { alert("È necessario prestare il consenso obbligatorio per sbloccare l'hardware."); return; }
+let bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+let met = 1.0;
+if (actType === "camminata") met = 3.5;
+if (actType === "palestra")  met = 5.5;
+if (actType === "cardio")    met = 7.5;
+if (actType === "sessuale")  met = 4.5;
+let calorieAttivita = (met * 3.5 * weight / 200) * actDuration;
+let fabbisognoTotale = bmr + calorieAttivita;
+let proteine, grassi, carboidrati;
+let lineaGuidaAlimentare = ""; let alertHardware = ""; let ripristinoOrmonale = "";
+if (diet === "onnivora") { proteine = weight * 2.0; lineaGuidaAlimentare = "Fonti core: Tessuto muscolare magro (pollo, tacchino, manzo grass-fed), albumi d'uovo d'élite."; }
+else if (diet === "vegetariana") { proteine = weight * 2.2; lineaGuidaAlimentare = "Fonti core (ZERO CARNE): Uova biologiche (colina per neurotrasmettitori), parmigiano reggiano oltre 30 mesi, isolate del siero purissime."; }
+else if (diet === "vegana") { proteine = weight * 2.4; lineaGuidaAlimentare = "Fonti: Isolate del pisello e del riso. NOTA: È tassativa l'integrazione di donatori di gruppi metilici (Vettore EMR)."; }
+if (actType === "sessuale" && actDuration > 0) { ripristinoOrmonale = "\n\n⚠️ DETOX REPERTORIALE POST-ATTO: Rilevato picco dopaminergico ed elettrolitico. Per prevenire il crash midday e ricostituire la forza strutturale, assumere immediatamente l'Ancora Salina potenziata con Magnesio L-Treonato. Forzare il ripristino dei recettori D2 con 10 minuti di Silenzio Radar assoluto."; }
+if (hpaMarker === "safe") { alertHardware = "SISTEMA OPERATIVO OPTIMAL: Mantieni il basale dei 5 Vettori HAZR per preservare i -70mV." + ripristinoOrmonale; }
+else if (hpaMarker === "warning") { alertHardware = "RILIEVO ATTIVAZIONE ASSE HPA: Avviare la Decompressione Vagale Meccanica. Raddoppiare il dosaggio di [HAZR - COB]." + ripristinoOrmonale; }
+else if (hpaMarker === "critical") { alertHardware = "CRITICAL METABOLIC COLLAPSE: Neuroinfiammazione latente. Attivare il Buffer Anti-Citochine. Assumere [HAZR - MVP] prima di ogni sessione esecutiva." + ripristinoOrmonale; }
+grassi = weight * 1.0;
+let calorieResidue = fabbisognoTotale - ((proteine * 4) + (grassi * 9));
+carboidrati = calorieResidue > 0 ? (calorieResidue / 4) : (fabbisognoTotale * 0.2 / 4);
+alert([ EM-CALC TELEMETRY BOOT SUCCESSFUL ]\n\nFabbisogno Energetico dell'Hardware: ${Math.round(fabbisognoTotale)} kcal.\nRipartizione hardware macronutrienti:\n- Proteine Strutturali: ${Math.round(proteine)}g\n- Lipidi d'Élite: ${Math.round(grassi)}g\n- Carboidrati Serali (Segregati): ${Math.round(carboidrati)}g\n\nLinea Nutrizionale: ${lineaGuidaAlimentare}\n\nSTATO TELEMETRICO CORPO:\n--> ${alertHardware}\n\nLa tua plancia cerebrale è protetta. Il voltaggio è ancorato a -70mV.);
+window.location.href = "stripe.com";
+}
