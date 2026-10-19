@@ -18,22 +18,17 @@
         .container {
             max-width: 800px;
             width: 100%;
-            border: 1px solid #222222;
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
             padding: 30px;
-            background: #0a0a0a;
+            box-sizing: border-box;
         }
         h1 {
             color: #FF5500;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            color: #888888;
-            font-size: 0.9rem;
+            text-align: center;
+            font-size: 1.8rem;
             margin-bottom: 30px;
-            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .form-group {
             margin-bottom: 20px;
@@ -41,112 +36,30 @@
         label {
             display: block;
             margin-bottom: 8px;
-            color: #FF5500;
-            text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
+            color: #aaa;
         }
-        input, select {
+        input, select, textarea {
             width: 100%;
             padding: 12px;
-            background: #111111;
-            border: 1px solid #333333;
-            color: #ffffff;
+            background: #111;
+            border: 1px solid #222;
+            color: #fff;
             font-family: inherit;
+            font-size: 1rem;
             box-sizing: border-box;
         }
-        input:focus {
+        input:focus, select:focus, textarea:focus {
             border-color: #FF5500;
             outline: none;
-        }
-        button {
-            width: 100%;
-            padding: 15px;
-            background: #FF5500;
-            border: none;
-            color: #050505;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            letter-spacing: 1px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background: #ff661a;
-        }
-        .results-box {
-            margin-top: 30px;
-            border-top: 1px dashed #333333;
-            padding-top: 20px;
-            display: none;
-        }
-        .section-block {
-            margin-top: 25px;
-            padding: 15px;
-            background: #111111;
-            border-left: 3px solid #FF5500;
-        }
-        .section-title {
-            color: #FF5500;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .cta-section {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .cta-btn {
-            background: #111111;
-            border: 1px solid #FF5500;
-            color: #FF5500;
-            padding: 15px;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 0.85rem;
-        }
-        .cta-btn.primary {
-            background: #FF5500;
-            color: #050505;
-        }
-        ul {
-            margin: 5px 0;
-            padding-left: 20px;
-            color: #ccc;
-        }
-        li {
-            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <h1 id="main-title">[ EM-CALC ]</h1>
-    <div id="main-subtitle" class="subtitle">Calcolatore della matrice epigenetica // Joe Fenix Method</div>
-    
-    <div class="form-group">
-        <label id="label-stress">Pressione Cognitiva (Stress Score 1-100):</label>
-        <input type="number" id="stress" min="1" max="100" placeholder="...">
-    </div>
-    
-    <div class="form-group">
-        <label id="label-sleep">Ore di Sonno Profondo Effettive:</label>
-        <input type="number" id="sleep" min="0" max="12" step="0.5" placeholder="...">
-    </div>
-    
-    <div class="form-group">
-        <label id="label-somatic">Allineamento Somatico (38 Punti):</label>
-        <select id="somatic">
-            <option value="allineato" id="opt-1">Ottimale (Nessun Blocco)</option>
-            <option value="sovraccarico" id="opt-2">Asimmetria / Blocco HPA</option>
-        </select>
-    </div>        <div class="form-group">
+    <h1>[ EM-CALC ] // COGNITIVE & EPIGENETIC MATRIX</h1>
+    <form id="matrix-form">
+        <div class="form-group">
             <label>Età Anagrafica (Anni):</label>
             <input type="number" id="age" min="1" max="120" placeholder="...">
         </div>
@@ -161,9 +74,31 @@
         <div class="form-group">
             <label>Orientamento Alimentare Attuale:</label>
             <select id="diet">
-                <option value="onnivora">`[ ONNIVORA ]` // Matrice fissa standard</option>
-                <option value="vegetariana">`[ VEGETARIANA ]` // No tessuto muscolare</option>
-                <option value="vegana">`[ VEGANA ]` // Esclusione totale derivati</option>
+                <option value="onnivora">[ ONNIVORA ] // Matrice fissa standard</option>
+                <option value="vegetariana">[ VEGETARIANA ] // No tessuto muscolare</option>
+                <option value="vegana">[ VEGANA ] // Esclusione totale derivati</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Attività Fisica / Dispendio Energetico Core:</label>
+            <select id="activity-type">
+                <option value="sedentario">[ SEDENTARIO ] // Lavoro d'ufficio e PC, zero sport</option>
+                <option value="camminata">[ WALKING ] // Camminata quotidiana o Tai Chi (Attività Vagale)</option>
+                <option value="palestra">[ RESISTANCE ] // Palestra, pesi o contrazioni isometriche brevi</option>
+                <option value="cardio">[ CARDIO HIGH ] // Corsa, nuoto, arti marziali (Massimo Attrito)</option>
+                <option value="sessuale">[ REPRODUCTIVE EXP ] // Attività riproduttiva/intima ad alta intensità (Spesa Endocrina)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Durata Media dell'Attività (Minuti al giorno):</label>
+            <input type="number" id="activity-duration" min="0" max="240" value="0">
+        </div>
+        <div class="form-group">
+            <label>Marker di Sequestro Endocrino (Asse HPA):</label>
+            <select id="hpa-marker">
+                <option value="safe">[ CODE SAFE ] // Estremità calde, respiro profondo diaframmatico</option>
+                <option value="warning">[ CODE WARNING ] // Nebbia cognitiva latente, mani fredde, respiro corto</option>
+                <option value="critical">[ CRITICAL OVERLOAD ] // Stanchezza mitocondriale cronica, risvegli notturni</option>
             </select>
         </div>
         <div class="form-group">
@@ -183,128 +118,77 @@
                 <input type="checkbox" id="privacy-consent" required style="margin-top: 3px;">
                 <span>Presto il mio consenso esplicito al trattamento dei miei dati per l'elaborazione del Joe Fenix Method, sotto la mia responsabilità, per accedere agli stati di Never Better e Top of the World.</span>
             </label>
-
-    
-    <button onclick="calculateMetrics()" id="btn-submit">Esegui Boot Algoritmo</button>
-
-    <div id="results" class="results-box">
-        <h3 style="color: #FF5500;" id="results-title">REPORT BIOLOGICO GENERATO: TARGET -70mV</h3>
-        <p id="report-text"></p>
-        
-        <div class="section-block">
-            <div class="section-title" id="title-nutri">PIANO BIONUTRIZIONALE AD ALTO VALORE PROTEICO</div>
-            <ul id="list-nutri">
-                <li><strong>Mattina / Pranzo:</strong> Grassi sani MCT, Avocado, Proteine nobili isolate. Carboidrati azzerati per favorire la produzione di corpi chetonici e mantenere il focus lineare.</li>
-                <li><strong>Sera:</strong> Inserimento mirato di carboidrati complessi a basso indice glicemico per favorire la sintesi di serotonina e melatonina notturna.</li>
-            </ul>
         </div>
-
-        <div class="section-block">
-            <div class="section-title" id="title-cooking">GUIDA AL BATCH COOKING IN 60 MINUTI</div>
-            <p style="color: #ccc; font-size: 0.9rem; line-height: 1.5; margin: 0;" id="text-cooking">
-                Applica il protocollo Fixed-Matrix: una sola ora nel weekend per pesare, porzionare e sigillare sottovuoto l'hardware nutrizionale dei successivi 5 giorni lavorativi. Zero variazioni gastronomiche, zero attrito decisionale davanti al frigorifero.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <div class="section-title" id="title-shopping">LISTA DELLA SPESA AUTOMATIZZATA (MATRICE FISSA)</div>
-            <ul id="list-shopping">
-                <li>Proteine stabili (Petto di pollo, Filetto di manzo, Salmone selvaggio)</li>
-                <li>Fonti lipidiche pulite (Olio MCT purissimo, Avocado, Burro chiarificato ghee)</li>
-                <li>Vegetali antiossidanti (Broccoli, Spinaci selvatici, Asparagi)</li>
-                <li>Ancora Salina (Sale marino integrale grigio, Potassio biodisponibile)</li>
-            </ul>
-        </div>
-        
-        <div class="cta-section">
-            <a href="https://amazon.com" target="_blank" class="cta-btn" id="btn-books">Acquista la Trilogia (KDP)</a>
-            <a href="#" onclick="initiateStripe()" class="cta-btn primary" id="btn-hazr">Ordina Cofanetto HAZR</a>
-        </div>
-    </div> <div style="margin-top: 40px; padding-top: 30px; border-top: 1px dashed #333333;">
-        <h2 style="color: #FF5500; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px;" id="harbor-title">[ THE SAFE HARBOR ] // DECOMPRESSIONE FUORI COPIONE</h2>
-        <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;" id="harbor-p1">
-            Qui, in questo spazio stagna che abbiamo denominato "Il Porto Sicuro", spegniamo le onde Beta alte del mercato, allontaniamo lo sguardo dai monitor e togliamo l'armatura somatica di Joe Fenix. Gestire capitali, strutture aziendali e aspettative internazionali richiede la postura dell'Adulto Assoluto. Il mercato non ammette debolezze e il mondo esterno pretende una performance lineare che non conosca crolli. Questa costante pressione crea una solitudine imprenditoriale spietata.
-        </p>
-        <p style="color: #aaaaaa; line-height: 1.6; font-size: 0.95rem; text-align: justify;" id="harbor-p2">
-            Se oggi ti senti esausto, va bene così. La stanchezza che senti sul diaframma non è un fallimento del tuo carattere, ma la conseguenza quantificabile di un hardware biologico che ha esaurito il suo carburante chimico. Prendersi cura della propria biologia, ricaricare le membrane cellulari al voltaggio ottimale di -70mV e proteggere il proprio sonno profondo non sono atti di debolezza, ma gesti di massima sovranità strategica per difendere il tuo intelletto e preservare il tuo impero. Fai un respiro profondo, decompressa l'asse stressogeno. Il sistema è online, la tua biochimica è OK e tu sei ufficialmente Never Better.
-        </p>
-    </div>
+        <button type="button" onclick="calcolaEcosistemaSomatico()" style="margin-top: 30px; width: 100%; padding: 15px; background-color: #FF5500; color: #fff; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">[ AVVIA TELEMETRIA EM-CALC ]</button>
+    </form>
 </div>
 
 <script>
-    const translations = {
-        en: {
-            subtitle: "Epigenetic Matrix Calculator // Joe Fenix Method",
-            stress: "Cognitive Pressure (Stress Score 1-100):",
-            sleep: "Effective Deep Sleep Hours:",
-            somatic: "Somatic Alignment (38 Points):",
-            opt1: "Optimal (No Block)",
-            opt2: "Asymmetry / HPA Block",
-            submit: "Execute Algorithm Boot",
-            resTitle: "BIOLOGICAL REPORT GENERATED: TARGET -70mV",
-            reportText: "Depolarization state detected. Your HPA axis requires a millimetric recalibration based on the 5 Molecular Vectors. Reset protocol stored in the system matrix.",
-            nutriTitle: "HIGH-PROTEIN ANTI-INFLAMMATORY NUTRITIONAL PLAN",
-            nutriList: "<li><strong>Morning / Lunch:</strong> Healthy MCT fats, Avocado, Clean isolated proteins. Zero carbohydrates to induce ketone body production and lock laser focus.</li><li><strong>Evening:</strong> Targeted complex low-glycemic carbohydrates to boost nightly serotonin and melatonin synthesis.</li>",
-            cookingTitle: "60-MINUTE BATCH COOKING GUIDE",
-            cookingText: "Apply the Fixed-Matrix protocol: spend just one hour over the weekend to weigh, portion, and vacuum-seal your nutritional hardware for the next 5 working days. Zero menu variations, zero decision friction in front of the fridge.",
-            shoppingTitle: "AUTOMATED SHOPPING LIST (FIXED MATRIX)",
-            shoppingList: "<li>Stable proteins (Chicken breast, Beef fillet, Wild salmon)</li><li>Clean lipid sources (Pure MCT oil, Avocado, Grass-fed ghee butter)</li><li>Antioxidant vegetables (Broccoli, Wild spinach, Asparagus)</li><li>Saline Anchor (Unrefined gray sea salt, Bioavailable potassium)</li>",
-            btnBooks: "Purchase the Trilogy (KDP)",
-            btnHazr: "Order HAZR Box",
-            harborTitle: "[ THE SAFE HARBOR ] // OUTSIDE THE SCRIPT",
-            harborP1: "Here, in this sealed space we call 'The Safe Harbor', we shut down the high Beta waves of the market, look away from monitors, and remove the somatic armor of Joe Fenix. Managing capital, corporate structures, and international expectations requires the posture of the Absolute Adult. The market allows no weakness, and the outside world demands a linear performance without crashes. This constant pressure creates a ruthless entrepreneurial isolation.",
-            harborP2: "If you feel exhausted today, that is OK. The fatigue you feel in your diaphragm is not a failure of character, but the quantifiable consequence of a biological hardware that has run out of clean chemical fuel. Taking care of your biology, resetting your cellular membrane to -70mV, and protecting your deep sleep are not acts of weakness, but gestures of supreme strategic sovereignty to defend your intellect and preserve your empire. Take a deep breath, decompress the stress axis. The system is online, your biochemistry is OK, and you are officially Never Better."
-        }
-    };
+function calcolaEcosistemaSomatico() {
+    const age = parseInt(document.getElementById('age').value);
+    const height = parseInt(document.getElementById('height').value);
+    const weight = parseInt(document.getElementById('weight').value);
+    const diet = document.getElementById('diet').value;
+    const goal = document.getElementById('goal').value;
+    const actType = document.getElementById('activity-type').value;
+    const actDuration = parseInt(document.getElementById('activity-duration').value) || 0;
+    const hpaMarker = document.getElementById('hpa-marker').value;
 
-    const userLang = navigator.language || navigator.userLanguage;
-    if (!userLang.startsWith('it')) {
-        document.getElementById('main-subtitle').innerText = translations.en.subtitle;
-        document.getElementById('label-stress').innerText = translations.en.stress;
-        document.getElementById('label-sleep').innerText = translations.en.sleep;
-        document.getElementById('label-somatic').innerText = translations.en.somatic;
-        document.getElementById('opt-1').innerText = translations.en.opt1;
-        document.getElementById('opt-2').innerText = translations.en.opt2;
-        document.getElementById('btn-submit').innerText = translations.en.submit;
-        document.getElementById('results-title').innerText = translations.en.resTitle;
-        document.getElementById('title-nutri').innerText = translations.en.nutriTitle;
-        document.getElementById('list-nutri').innerHTML = translations.en.nutriList;
-        document.getElementById('title-cooking').innerText = translations.en.cookingTitle;
-        document.getElementById('text-cooking').innerText = translations.en.cookingText;
-        document.getElementById('title-shopping').innerText = translations.en.shoppingTitle;
-        document.getElementById('list-shopping').innerHTML = translations.en.shoppingList;
-        document.getElementById('btn-books').innerText = translations.en.btnBooks;
-        document.getElementById('btn-hazr').innerText = translations.en.btnHazr;
-        document.getElementById('harbor-title').innerText = translations.en.harborTitle;
-        document.getElementById('harbor-p1').innerText = translations.en.harborP1;
-        document.getElementById('harbor-p2').innerText = translations.en.harborP2;
+    if (!age || !height || !weight) {
+        alert("Inserire tutti i parametri biometrici hardware per il boot.");
+        return;
     }
 
-    function calculateMetrics() {
-        const stress = document.getElementById('stress').value;
-        const sleep = document.getElementById('sleep').value;
-        
-        if(!stress || !sleep) {
-            if (!userLang.startsWith('it')) {
-                alert('Please input all biomechanical parameters.');
-            } else {
-                alert('Inserisci tutti i parametri biomeccanici.');
-            }
-            return;
-        }
-
-        if (!userLang.startsWith('it')) {
-            document.getElementById('report-text').innerHTML = translations.en.reportText;
-        } else {
-            document.getElementById('report-text').innerHTML = `Stato di depolarizzazione rilevato. Il tuo asse HPA richiede una ricalibrazione millimetrica basata sui 5 Vettori Molecolari. Protocollo di ripristino memorizzato nella matrice di sistema.`;
-        }
-        document.getElementById('results').style.display = 'block';
+    if (!document.getElementById('privacy-consent').checked) {
+        alert("È necessario prestare il consenso obbligatorio per sbloccare l'hardware.");
+        return;
     }
 
-    function initiateStripe() {
-        alert('[STRIPE REDIRECT] Inizializzazione del modulo checkout.js per il blocco del lotto fisico HAZR.');
+    let bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    
+    let met = 1.0; 
+    if (actType === "camminata") met = 3.5; 
+    if (actType === "palestra")  met = 5.5; 
+    if (actType === "cardio")    met = 7.5; 
+    if (actType === "sessuale")  met = 4.5; 
+    
+    let calorieAttivita = (met * 3.5 * weight / 200) * actDuration;
+    let fabbisognoTotale = bmr + calorieAttivita;
+    
+    let proteine, grassi, carboidrati;
+    let lineaGuidaAlimentare = "";
+    let alertHardware = "";
+    let ripristinoOrmonale = "";
+
+    if (diet === "onnivora") {
+        proteine = weight * 2.0; 
+        lineaGuidaAlimentare = "Fonti core: Tessuto muscolare magro (pollo, tacchino, manzo grass-fed), albumi d'uovo d'élite.";
+    } else if (diet === "vegetariana") {
+        proteine = weight * 2.2; 
+        lineaGuidaAlimentare = "Fonti core (ZERO CARNE): Uova biologiche (colina per neurotrasmettitori), parmigiano reggiano oltre 30 mesi, isolate del siero purissime.";
+    } else if (diet === "vegana") {
+        proteine = weight * 2.4;
+        lineaGuidaAlimentare = "Fonti: Isolate del pisello e del riso. NOTA: È tassativa l'integrazione di donatori di gruppi metilici (Vettore EMR).";
     }
+
+    if (actType === "sessuale" && actDuration > 0) {
+        ripristinoOrmonale = "\n\n⚠️ DETOX REPERTORIALE POST-ATTO: Rilevato picco dopaminergico ed elettrolitico. Per prevenire il crash midday e ricostituire la forza strutturale, assumere immediatamente l'Ancora Salina potenziata con Magnesio L-Treonato. Forzare il ripristino dei recettori D2 con 10 minuti di Silenzio Radar assoluto.";
+    }
+
+    if (hpaMarker === "safe") {
+        alertHardware = "SISTEMA OPERATIVO OPTIMAL: Mantieni il basale dei 5 Vettori HAZR per preservare i -70mV." + ripristinoOrmonale;
+    } else if (hpaMarker === "warning") {
+        alertHardware = "RILIEVO ATTIVAZIONE ASSE HPA: Avviare la Decompressione Vagale Meccanica. Raddoppiare il dosaggio di [HAZR - COB]." + ripristinoOrmonale;
+    } else if (hpaMarker === "critical") {
+        alertHardware = "CRITICAL METABOLIC COLLAPSE: Neuroinfiammazione latente. Attivare il Buffer Anti-Citochine. Assumere [HAZR - MVP] prima di ogni sessione esecutiva." + ripristinoOrmonale;
+    }
+
+    grassi = weight * 1.0;
+    let calorieResidue = fabbisognoTotale - ((proteine * 4) + (grassi * 9));
+    carboidrati = calorieResidue > 0 ? (calorieResidue / 4) : (fabbisognoTotale * 0.2 / 4);
+
+    alert(`[ EM-CALC TELEMETRY BOOT SUCCESSFUL ]\n\nFabbisogno Energetico dell'Hardware: ${Math.round(fabbisognoTotale)} kcal.\nRipartizione hardware macronutrienti:\n- Proteine Strutturali: ${Math.round(proteine)}g\n- Lipidi d'Élite: ${Math.round(grassi)}g\n- Carboidrati Serali (Segregati): ${Math.round(carboidrati)}g\n\nLinea Nutrizionale: ${lineaGuidaAlimentare}\n\nSTATO TELEMETRICO CORPO:\n--> ${alertHardware}\n\nLa tua plancia cerebrale è protetta. Il voltaggio è ancorato a -70mV.`);
+}
 </script>
-
 </body>
 </html>
