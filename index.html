@@ -34,7 +34,7 @@
     <div class="preview-section">
         <h2 style="color: #FF5500; text-transform: uppercase;">SBLOCCO CALIBRAZIONE: ANTEPRIMA CAPITOLO 3</h2>
         <div class="preview-box">
-            <p><strong>BIOGENESI MITOCONDRIALE REALE REALE</strong></p>
+            <p><strong>BIOGENESI MITOCONDRIALE REALE</strong></p>
             <p>La determinazione non è un costrutto astratto: è una reazione biochimica quantificabile che dipende esclusivamente dal numero, dalla densità e dall'efficienza elettrica dei tuoi mitocondri all'interno della corteccia prefrontale. Quando l'allarme ormonale dell'asse stressogeno HPA rimane costantemente attivato, i mitocondri subiscono un processo di usura acuta, riducendo la produzione di adenosina trifosfato (ATP) e trascinando la biologia cellulare sotto la soglia critica di -70mV. La soluzione ingegneristica è forzare la Biogenesi Mitocondriale via PGC-1α...</p>
         </div>
     </div>
@@ -84,7 +84,7 @@
                     <span>[CONVALIDA OBBLIGATORIA] Confermo di aver espresso la mia recensione su Amazon basata sull'anteprima del Capitolo 3 per sbloccare il Calcolatore.</span>
                 </label>
                 <p style="font-size: 0.75rem; color: #777; text-align: justify;">
-                    <strong>NOTA DI CENSO FINANZIARIO:</strong> La quota di 197,00 € richiesta costituisce esclusivamente un anticipo di prenotazione sul costo totale del Protocollo HAZR completo. Il versamento garantisce l'accesso immediato alla Trilogia Cartacea Autografata.
+                    <strong>NOTE DI CENSO FINANZIARIO:</strong> La quota di 197,00 € richiesta costituisce esclusivamente un anticipo di prenotazione sul costo totale del Protocollo HAZR completo. Il versamento garantisce l'accesso immediato alla Trilogia Cartacea Autografata.
                 </p>
                 <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #fff; cursor: pointer; margin-top: 15px;">
                     <input type="checkbox" id="privacy-consent" required>
@@ -96,15 +96,16 @@
     </div>
 <script>
 function calcolaEcosistemaSomatico() {
-    if (!document.getElementById('age').value || !document.getElementById('height').value || !document.getElementById('weight').value) { alert("Inserire parametri hardware."); return; }
-    if (!document.getElementById('review-consent').checked || !document.getElementById('privacy-consent').checked) { alert("Accettare le convalide obbligatorie."); return; }
+    var age = document.getElementById('age').value;
+    var height = document.getElementById('height').value;
+    var weight = document.getElementById('weight').value;
+    var rConsent = document.getElementById('review-consent').checked;
+    var pConsent = document.getElementById('privacy-consent').checked;
+    if (!age || !height || !weight) { alert("Inserire parametri hardware."); return; }
+    if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
     alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\nHardware calibrato a -70mV. Fai clic su OK per convalidare l'anticipo di prenotazione su Stripe.");
-    window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03
+   window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03
 }
 </script>
 </body>
 </html>
-
-     
-
-    
