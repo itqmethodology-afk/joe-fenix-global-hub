@@ -35,15 +35,15 @@
         <h2 style="color: #FF5500; text-transform: uppercase;">SBLOCCO CALIBRAZIONE: ANTEPRIMA CAPITOLO 3</h2>
         <div class="preview-box">
             <p><strong>BIOGENESI MITOCONDRIALE REALE</strong></p>
-            <p>La determinazione non è un costrutto astratto: è una reazione biochimica quantificabile che dipende esclusivamente dal numero, dalla densità e dall'efficienza elettrica dei tuoi mitocondri all'interno della corteccia prefrontale. Quando l'allarme ormonale dell'asse stressogeno HPA rimane costantemente attivato, i mitocondri subiscono un processo di usura acuta, riducendo la produzione di adenosina trifosfato (ATP) e trascinando la biologia cellulare sotto la soglia critica di -70mV. La soluzione ingegneristica è forzare la Biogenesi Mitocondriale via PGC-1α...</p>
+            <p>La determinazione non è un costrutto astratto: è una reazione biochimica quantificabile che dipende esclusivamente dal numero, dalla densità e dall'efficienza elettrica dei tuoi mitocondri all'interno della corteccia prefrontale. Quando l'allarme ormonale dell'asse stressogeno HPA rimane costantemente attivato, i mitocondri subiscono un processo di usura acuta, ordinando la riduzione di adenosina trifosfato (ATP) e trascinando la biologia cellulare sotto la soglia critica di -70mV. La soluzione ingegneristica è forzare la Biogenesi Mitocondriale via PGC-1α...</p>
         </div>
     </div>
     <div class="container">
         <h2 style="color: #FF5500; text-transform: uppercase; text-align:center;">TELEMETRIA EM-CALC</h2>
         <form id="matrix-form">
-            <div class="form-group"><label>Età Anagrafica (Anni):</label><input type="number" id="age" required></div>
-            <div class="form-group"><label>Altezza Staturale (cm):</label><input type="number" id="height" required></div>
-            <div class="form-group"><label>Massa Corporea (kg):</label><input type="number" id="weight" required></div>
+            <div class="form-group"><label>Età Anagrafica (Anni):</label><input type="number" id="age" required placeholder="..."></div>
+            <div class="form-group"><label>Altezza Staturale (cm):</label><input type="number" id="height" required placeholder="..."></div>
+            <div class="form-group"><label>Massa Corporea (kg):</label><input type="number" id="weight" required placeholder="..."></div>
             <div class="form-group">
                 <label>Orientamento Alimentare:</label>
                 <select id="diet">
@@ -103,8 +103,8 @@ function calcolaEcosistemaSomatico() {
     var pConsent = document.getElementById('privacy-consent').checked;
     if (!age || !height || !weight) { alert("Inserire parametri hardware."); return; }
     if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
-    alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\nHardware calibrato a -70mV. Fai clic su OK per convalidare l'anticipo di prenotazione su Stripe.");
-   window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03
+    alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\nHardware calibrato a -70mV. Fai clic su OK per accedere al modulo transazionale di Stripe.");
+  window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03 
 }
 </script>
 </body>
