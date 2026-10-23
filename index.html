@@ -19,6 +19,8 @@
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-size: 0.95rem; color: #aaa; }
         input, select { width: 100%; padding: 12px; background: #111; border: 1px solid #222; color: #fff; font-family: inherit; font-size: 1rem; box-sizing: border-box; }
+        .market-link { display: block; padding: 15px; background: #0d0d0d; border: 1px solid #FF5500; color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: bold; text-align: left; margin-bottom: 12px; transition: background 0.3s; }
+        .market-link:hover { background: #141414; }
     </style>
 </head>
 <body>
@@ -35,7 +37,7 @@
         <h2 style="color: #FF5500; text-transform: uppercase;">SBLOCCO CALIBRAZIONE: ANTEPRIMA CAPITOLO 3</h2>
         <div class="preview-box">
             <p><strong>BIOGENESI MITOCONDRIALE REALE</strong></p>
-            <p>La determinazione non è un costrutto astratto: è una reazione biochimica quantificabile che dipende esclusivamente dal numero, dalla densità e dall'efficienza elettrica dei tuoi mitocondri all'interno della corteccia prefrontale. Quando l'allarme ormonale dell'asse stressogeno HPA rimane costantemente attivato, i mitocondri subiscono un processo di usura acuta, ordinando la riduzione di adenosina trifosfato (ATP) e trascinando la biologia cellulare sotto la soglia critica di -70mV. La soluzione ingegneristica è forzare la Biogenesi Mitocondriale via PGC-1α...</p>
+            <p>La determinazione non è un construct astratto: è una reazione biochimica quantificabile che dipende esclusivamente dal numero, dalla densità e dall'efficienza elettrica dei tuoi mitocondri all'interno della corteccia prefrontale. Quando l'allarme ormonale dell'asse stressogeno HPA rimane costantemente attivato, i mitocondri subiscono un processo di usura acuta, ordinando la riduzione di adenosina trifosfato (ATP) e trascinando la biologia cellulare sotto la soglia critica di -70mV. La soluzione ingegneristica è forzare la Biogenesi Mitocondriale via PGC-1α...</p>
         </div>
     </div>
     <div class="container">
@@ -94,18 +96,30 @@
             <button type="button" onclick="calcolaEcosistemaSomatico()" style="margin-top: 25px; width: 100%; padding: 15px; background-color: #FF5500; color: #fff; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; text-transform: uppercase;">[ AVVIA TELEMETRIA EM-CALC ]</button>
         </form>
     </div>
+
+    <!-- 📚 VETRINA COMMERCIALE FLOTTA LIBRARIA AMAZON (NAZIONALIZZATA) -->
+    <div class="preview-section" style="max-width: 800px; width: 100%; margin-bottom: 60px; border-top: 1px solid #222; padding-top: 30px;">
+        <h2 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px;">ACQUISTA I SINGOLI VOLUMI COMMERCIALI SU AMAZON</h2>
+        <p style="color: #888; font-size: 0.9rem; margin-bottom: 25px;">Se non sei pronto per il Protocollo HAZR Fisico e Autografato, ordina i singoli testi d'anagrafica standard.</p>
+        <div style="display: flex; flex-direction: column; gap: 5px; max-width: 600px; margin: 0 auto;">
+            <a href="http://amazon.it" target="_blank" class="market-link">[ ITA ] JOE FENIX METHOD: MAI STATO MEGLIO ➔</a>
+            <a href="http://amazon.com" target="_blank" class="market-link">[ USA ] HIGH SOMATIC MASTERY: ZERO CORTISOL ➔</a>
+            <a href="http://amazon.com" target="_blank" class="market-link">[ USA ] METODO JOE FENIX: 10 PRINCIPI ➔</a>
+            <a href="http://amazon.com" target="_blank" class="market-link">[ USA ] ANTI-INFLAMMATORY MEAL PREP (OVER 60) ➔</a>
+        </div>
+    </div>
+
 <script>
 function calcolaEcosistemaSomatico() {
     var age = document.getElementById('age').value;
-    var height = document.getElementById('height').value;
+    var heignt = document.getElementById('height').value;
     var weight = document.getElementById('weight').value;
     var rConsent = document.getElementById('review-consent').checked;
     var pConsent = document.getElementById('privacy-consent').checked;
     if (!age || !height || !weight) { alert("Inserire parametri hardware."); return; }
     if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
     alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\nHardware calibrato a -70mV. Fai clic su OK per accedere al modulo transazionale di Stripe.");
-  window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03 
-}
-</script>
-</body>
-</html>
+    window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03;
+   
+            
+                 
