@@ -43,6 +43,16 @@
     <div class="container">
         <h2 style="color: #FF5500; text-transform: uppercase; text-align:center;">TELEMETRIA EM-CALC</h2>
         <form id="matrix-form">
+             <!-- 🗓️ LE 4 FASCE D'ETÀ STRUTTURATE -->
+            <div class="form-group">
+                <label>Fascia d'Età Biologica:</label>
+                <select id="age-range">
+                    <option value="20-35">[ FASCIA ALPHA ] // Da 20 a 35 anni</option>
+                    <option value="36-50">[ FASCIA SOVEREIGN ] // Da 36 a 50 anni</option>
+                    <option value="51-65">[ FASCIA MASTER ] // Da 51 a 65 anni</option>
+                    <option value="66+">[ FASCIA LONGEVITY ] // Oltre 66 anni</option>
+                </select>
+            </div>
             <div class="form-group"><label>Età Anagrafica (Anni):</label><input type="number" id="age" required placeholder="..."></div>
             <div class="form-group"><label>Altezza Staturale (cm):</label><input type="number" id="height" required placeholder="..."></div>
             <div class="form-group"><label>Massa Corporea (kg):</label><input type="number" id="weight" required placeholder="..."></div>
