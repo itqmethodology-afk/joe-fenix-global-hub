@@ -8,7 +8,7 @@
         body { background-color: #050505; color: #ffffff; font-family: 'Space Mono', 'Courier New', monospace; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         .hero-section { max-width: 800px; width: 100%; padding: 60px 20px; text-align: center; box-sizing: border-box; border-bottom: 1px solid #111; }
         .logo-placeholder { font-size: 2.5rem; font-weight: bold; color: #FF5500; letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase; }
-        .subtitle { font-size: 1.1rem; color: #888; line-height: 1.6; margin-bottom: 40px; }
+        .subtitle { font-size: 1.1rem; color: #888; line-height: 1.6; margin-bottom: 40px; text-transform: uppercase; }
         .triad-container { max-width: 800px; width: 100%; padding: 40px 20px; box-sizing: border-box; }
         .axis-card { background: #0d0d0d; border-left: 3px solid #FF5500; padding: 25px; margin-bottom: 25px; box-sizing: border-box; }
         .axis-title { color: #FF5500; font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
@@ -17,20 +17,26 @@
         .preview-box { width: 100%; height: 250px; background: #0d0d0d; border: 1px solid #222; padding: 20px; overflow-y: scroll; text-align: justify; box-sizing: border-box; font-size: 0.9rem; color: #bbb; line-height: 1.6; margin-bottom: 25px; }
         .container { max-width: 800px; width: 100%; background: #0d0d0d; border: 1px solid #1a1a1a; padding: 30px; box-sizing: border-box; margin-bottom: 60px; }
         .form-group { margin-bottom: 20px; }
-            .table-wrapper { width: 100%; overflow-x: auto; margin: 30px 0 15px 0; background: #0d0d0d; border: 1px solid #222; }
+        label { display: block; margin-bottom: 8px; font-size: 0.95rem; color: #aaa; }
+        input, select { width: 100%; padding: 12px; background: #111; border: 1px solid #222; color: #fff; font-family: inherit; font-size: 1rem; box-sizing: border-box; }
+        .market-link { display: block; padding: 15px; background: #0d0d0d; border: 1px solid #FF5500; color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: bold; text-align: left; margin-bottom: 12px; transition: background 0.3s; }
+        .market-link:hover { background: #141414; }
+        
+        /* 📱 RESPONSIVE MATRIX TABLE */
+        .table-wrapper { width: 100%; overflow-x: auto; margin: 30px 0 15px 0; background: #0d0d0d; border: 1px solid #222; }
         .matrix-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; min-width: 600px; }
         .matrix-table th { background: #111; color: #FF5500; padding: 12px; border-bottom: 2px solid #222; text-transform: uppercase; font-size: 0.9rem; }
         .matrix-table td { padding: 12px; border-bottom: 1px solid #1a1a1a; vertical-align: top; line-height: 1.4; }
+        .matrix-table tr:hover { background: #141414; }
         .row-param { font-weight: bold; color: #fff; background: #111; width: 20%; }
         .row-glp { color: #aaa; width: 40%; border-right: 1px solid #1a1a1a; }
         .row-hazr { color: #fff; width: 40%; background: #080808; }
     </style>
 </head>
 <body>
-    
     <div class="hero-section">
         <div class="logo-placeholder">JOE FENIX METHOD</div>
-        <div class="subtitle">SISTEMA DI SOVRANITÀ BIOLOGICA PER LEADER AD ALTE PRESTAZIONI CHE APPLICA IL PROTOCOLLO RIGENERATIVO A 5 VETTORI MOLECOLARI HAZR, AGISCE SUI TRE ASSI SOTTOSTANTI</div>
+        <div class="subtitle">SISTEMA DI SOVRANITÀ BIOLOGICA PER LEADER AD ALTE PRESTAZIONI CHE APPLICA IL PROTOCOLLO RIGENERATIVO A 5 VETTORI MOLECOLARI</div>
     </div>
     <div class="triad-container">
         <div class="axis-card"><div class="axis-title">ASSE 1: FISICO IN FORMA</div><div class="axis-text">Eradicazione dell'infiammazione periferica per i -70mV.</div></div>
@@ -44,6 +50,7 @@
             <p>La determinazione non è un costrutto astratto: è una reazione biochimica quantificabile che dipende esclusivamente dal numero, dalla densità e dall'efficienza elettrica dei tuoi mitocondri all'interno della corteccia prefrontale. Quando l'allarme ormonale dell'asse stressogeno HPA rimane costantemente attivato, i mitocondri subiscono un processo di usura acuta, ordinando la riduzione di adenosina trifosfato (ATP) e trascinando la biologia cellulare sotto la soglia critica di -70mV. La soluzione ingegneristica è forzare la Biogenesi Mitocondriale via PGC-1α...</p>
         </div>
     </div>
+
     <div class="container" style="margin-bottom: 20px; border-bottom: none; padding-bottom: 0;">
         <h2 style="color: #FF5500; text-transform: uppercase; text-align:center; margin-bottom: 5px;">HAZR vs INIEZIONI GLP-1: IL CONFRONTO D'ALTO CENSO</h2>
         <div class="table-wrapper">
@@ -51,7 +58,7 @@
                 <thead>
                     <tr>
                         <th>Parametro Biologico</th>
-                        <th>Iniezioni Esogene GLP-1 (Farmaci Costosi di Moda)</th>
+                        <th>Iniezioni Esogene GLP-1 (Senza Sovranità)</th>
                         <th>Protocollo Ingegneristico HAZR</th>
                     </tr>
                 </thead>
@@ -63,27 +70,34 @@
                     </tr>
                     <tr>
                         <td class="row-param">Impatto sul Tessuto Muscolare</td>
-                        <td class="row-glp">Disastro somatico. Fino al 40% del peso perso con i farmaci GLP-1 è massa magra strutturale, riducendo l'imprenditore a un corpo svuotato e debole.</td>
+                        <td class="row-glp">Disastro somatico. Fino al 40% del peso perso con i farmaci GLP-1 è massa magra strutturale, riducendo l'organismo a un corpo svuotato.</td>
                         <td class="row-hazr">Preservazione e conio strutturale. Fornisce i Lipidi d'Élite e le Proteine Strutturali del Capitolo 3 per nutrire la cellula mantenendo il tono muscolare.</td>
                     </tr>
                     <tr>
                         <td class="row-param">Stato dei Lobi Frontali</td>
-                        <td class="row-glp">Nebbia e apatia dopaminergica. Spegnendo i recettori del piacere generale, priva il leader del focus laser e della spinta aggressiva sul mercato.</td>
+                        <td class="row-glp">Nebbia e apatia dopaminergica. Spegnendo i recettori del piacere generale, priva la mente del focus laser e della spinta aggressiva.</td>
                         <td class="row-hazr">Focus Laser stabile Alpha/Theta. Protegge la corteccia prefrontale dalla neuroinfiammazione, ancorando il potenziale a -70mV.</td>
                     </tr>
                     <tr>
                         <td class="row-param">Dipendenza Finanziaria</td>
-                        <td class="row-glp">Schiavitù a vita. Se interrompi le iniezioni, l'appetito rimbalza e distrugge il metabolismo. Un abbonamento perpetuo a Big Pharma.</td>
+                        <td class="row-glp">Schiavitù a vita. Se interrompi le iniezioni, l'appetito rimbalza e distrugge il metabolismo. Un abbonamento perpetuo esogeno.</td>
                         <td class="row-hazr">Sovranità Biologica totale. Educa l'hardware attraverso Ancore Circadiane Meccaniche. Il corpo impara a camminare da solo, libero dal mercato.</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
- <div class="container">
+
+    <div class="container">
         <h2 style="color: #FF5500; text-transform: uppercase; text-align:center;">TELEMETRIA EM-CALC</h2>
         <form id="matrix-form">
-             <!-- 🗓️ LE 4 FASCE D'ETÀ STRUTTURATE -->
+            <div class="form-group">
+                <label>Genere Hardware Somatico:</label>
+                <select id="gender">
+                    <option value="M">[ BIOMASS MASCHILE ]</option>
+                    <option value="F">[ BIOMASS FEMMINILE ]</option>
+                </select>
+            </div>
             <div class="form-group">
                 <label>Fascia d'Età Biologica:</label>
                 <select id="age-range">
@@ -93,7 +107,6 @@
                     <option value="66+">[ FASCIA LONGEVITY ] // Oltre 66 anni</option>
                 </select>
             </div>
-           
             <div class="form-group"><label>Altezza Staturale (cm):</label><input type="number" id="height" required placeholder="..."></div>
             <div class="form-group"><label>Massa Corporea (kg):</label><input type="number" id="weight" required placeholder="..."></div>
             <div class="form-group">
@@ -111,7 +124,6 @@
                     <option value="camminata">[ WALKING ]</option>
                     <option value="palestra">[ RESISTANCE ]</option>
                     <option value="cardio">[ CARDIO HIGH ]</option>
-                    <option value="Sexual">[ RELATIONS HIGH ]</option>
                 </select>
             </div>
             <div class="form-group"><label>Durata (Minuti al giorno):</label><input type="number" id="activity-duration" value="0"></div>
