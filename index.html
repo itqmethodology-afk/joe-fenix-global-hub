@@ -128,38 +128,21 @@
             </div>
             <div class="form-group"><label>Durata (Minuti al giorno):</label><input type="number" id="activity-duration" value="0"></div>
             <div class="form-group">
-                <label>Marker Sequestro Endocrino (Asse HPA):</label>
-                <select id="hpa-marker">
-                    <option value="safe">[ CODE SAFE ]</option>
-                    <option value="warning">[ CODE WARNING ]</option>
-                    <option value="critical">[ CRITICAL OVERLOAD ]</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Obiettivo Configurazione:</label>
-                <select id="goal">
-                    <option value="recon-energy">[ RECON-ENERGY ]</option>
-                    <option value="body-recomp">[ BODY-RECOMP ]</option>
-                    <option value="brain-shield">[ BRAIN-SHIELD ]</option>
-                </select>
-            </div>
-            <div class="form-group" style="border-top: 1px solid #333; padding-top: 15px;">
-                <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #FF5500; cursor: pointer; margin-bottom: 15px;">
-                    <input type="checkbox" id="review-consent" required>
-                    <span>[CONVALIDA OBBLIGATORIA] Confermo di aver espresso la mia recensione su Amazon basata sull'anteprima del Capitolo 3 per sbloccare il Calcolatore.</span>
-                </label>
-                <p style="font-size: 0.75rem; color: #777; text-align: justify;">
-                    <strong>NOTE DI CENSO FINANZIARIO:</strong> La quota di 197,00 € richiesta costituisce esclusivamente un anticipo di prenotazione sul costo totale del Protocollo HAZR completo. Il versamento garantisce l'accesso immediato alla Trilogia Cartacea Autografata.
-                </p>
-                <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #fff; cursor: pointer; margin-top: 15px;">
-                    <input type="checkbox" id="privacy-consent" required>
-                    <span>Consenso obbligatorio al trattamento dati e termini di anticipo HAZR.</span>
-                </label>
-            </div>
-            <button type="button" onclick="calcolaEcosistemaSomatico()" style="margin-top: 25px; width: 100%; padding: 15px; background-color: #FF5500; color: #fff; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; text-transform: uppercase;">[ AVVIA TELEMETRIA EM-CALC ]</button>
-        </form>
     
+Marker Sequestro Endocrino (Asse HPA):
+[ CODE SAFE ]
+[ CODE WARNING ]
+[ CRITICAL OVERLOAD ]
 
+
+Obiettivo Configurazione:
+[ RECON-ENERGY ]
+[ BODY-RECOMP ]
+[ BRAIN-SHIELD ]
+
+
+NOTE DI CENSO FINANZIARIO: La quota di attivazione richiesta costituisce la prenotazione del tuo lotto specifico basato sul protocollo a marchio HAZR. La logica di consegna è completamente integrata all'officina di produzione autorizzata.
+[ AVVIA TELEMETRIA EM-CALC ]
     <!-- 📚 VETRINA COMMERCIALE FLOTTA LIBRARIA AMAZON (NAZIONALIZZATA E SICURA) -->
     <div class="preview-section" style="max-width: 800px; width: 100%; margin-bottom: 60px; border-top: 1px solid #222; padding-top: 30px;">
         <h2 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px;">ACQUISTA I SINGOLI VOLUMI COMMERCIALI SU AMAZON</h2>
@@ -175,13 +158,41 @@
 
 <script>
 function calcolaEcosistemaSomatico() {
-    var height = document.getElementById('height').value;
-    var weight = document.getElementById('weight').value;
-    var rConsent = document.getElementById('review-consent').checked;
-    var pConsent = document.getElementById('privacy-consent').checked;
-    if (!height || !weight) { alert("Inserire parametri hardware."); return; }
-    if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
-    alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\nHardware calibrato a -70mV. Fai clic su OK per accedere al modulo transazionale di Stripe.");
+var height = document.getElementById('height').value;
+var weight = document.getElementById('weight').value;
+var ageRange = document.getElementById('age-range').value;
+var rConsent = document.getElementById('review-consent').checked;
+var pConsent = document.getElementById('privacy-consent').checked;
+if (!height || !weight) { alert("Inserire parametri hardware."); return; }
+if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
+let subProtocollo = "";
+let formulaNaturale = "";
+let stripeUrl = "";
+if (ageRange === "36-50") {
+subProtocollo = "HAZR PREMIUM // Configurazione Somatica ad Alte Prestazioni";
+formulaNaturale = "Integrazione Core: Protocollo a 5 Vettori Molecolari completo. Include l'invio del Cofanetto Fisico Soft-Touch, la Triade dei libri autografati di pugno e i flaconi in Vetro Biofotonico Viola Miron.";
+stripeUrl = "stripe.com";
+} else {
+if (ageRange === "20-35") {
+subProtocollo = "HAZR TEENS // Reset Dopaminergico & Focus Frontale";
+formulaNaturale = "Integrazione Core Natural-Somatic: Inositolo, Magnesio L-Treonato e L-Teanina. Sintonizzazione lobi su onde Alpha/Theta per eradicare la Brain Fog.";
+} else if (ageRange === "51-65") {
+subProtocollo = "HAZR YOUNG // Buffer Cortisolo & Difesa Massa Magra";
+formulaNaturale = "Integrazione Core Natural-Somatic: Ashwagandha KSM-66, Rodiola Rosea e Zinco Picolinato. Disattivazione allarme asse HPA per proteggere il muscolo magro.";
+} else {
+subProtocollo = "HAZR LONGEVITY // Inversione Usura Cellulare & Voltaggio Mitocondriale";
+formulaNaturale = "Integrazione Core Natural-Somatic: Coenzima Q10 (Ubiquinolo), PQQ e Potassio Citrato. Biogenesi profonda via PGC-1α per ancorare le membrane a -70mV.";
+}
+stripeUrl = "stripe.com"; /* Inserire qui il secondo link Stripe da 47€ per la Massa appena pronto */
+}
+alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
+"Configurazione Hardware Rilevata!\n" +
+"-----------------------------------------\n" +
+"--> SUB-PROTOCOLLO: " + subProtocollo + "\n\n" +
+"--> FORMULA STRUTTURALE: " + formulaNaturale + "\n" +
+"-----------------------------------------\n" +
+"Il tuo ecosistema cellulare è pronto per la somministrazione esecutiva.\n\n" +
+"Fai clic su OK per accedere al modulo di pagamento Stripe e attivare la spedizione diretta dal produttore.");
     window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03; 
         }
 </script>
