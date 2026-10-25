@@ -186,27 +186,28 @@ if (ageRange === "36-50") {
 subProtocollo = "HAZR PREMIUM // Configurazione Somatica ad Alte Prestazioni";
 formulaNaturale = "Integrazione Core: Protocollo a 5 Vettori Molecolari completo. Include l'invio del Cofanetto Fisico Soft-Touch, la Triade dei libri autografati di pugno e i flaconi in Vetro Biofotonico Viola Miron.";
 stripeUrl = "stripe.com";
-} else {
-if (ageRange === "20-35") {
-subProtocollo = "HAZR TEENS // Reset Dopaminergico & Focus Frontale";
-formulaNaturale = "Integrazione Core Natural-Somatic: Inositolo, Magnesio L-Treonato e L-Teanina. Sintonizzazione lobi su onde Alpha/Theta per eradicare la Brain Fog.";
-} else if (ageRange === "51-65") {
-subProtocollo = "HAZR YOUNG // Buffer Cortisolo & Difesa Massa Magra";
-formulaNaturale = "Integrazione Core Natural-Somatic: Ashwagandha KSM-66, Rodiola Rosea e Zinco Picolinato. Disattivazione allarme asse HPA per proteggere il muscolo magro.";
-} else {
-subProtocollo = "HAZR LONGEVITY // Inversione Usura Cellulare & Voltaggio Mitocondriale";
-formulaNaturale = "Integrazione Core Natural-Somatic: Coenzima Q10 (Ubiquinolo), PQQ e Potassio Citrato. Biogenesi profonda via PGC-1α per ancorare le membrane a -70mV.";
-}
-stripeUrl = "stripe.com"; /* Inserire qui il secondo link Stripe da 47€ per la Massa appena pronto */
-}
-alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
-"Configurazione Hardware Rilevata!\n" +
-"-----------------------------------------\n" +
-"--> SUB-PROTOCOLLO: " + subProtocollo + "\n\n" +
-"--> FORMULA STRUTTURALE: " + formulaNaturale + "\n" +
-"-----------------------------------------\n" +
-"Il tuo ecosistema cellulare è pronto per la somministrazione esecutiva.\n\n" +
-"Fai clic su OK per accedere al modulo di pagamento Stripe e attivare la spedizione diretta dal produttore.");
+ } else {
+        if (ageRange === "20-35") {
+            subProtocollo = "HAZR TEENS // Reset Dopaminergico & Focus Frontale";
+            formulaNaturale = "Integrazione Core Natural-Somatic: Inositolo, Magnesio L-Treonato e L-Teanina. Sintonizzazione lobi su onde Alpha/Theta per eradicare la Brain Fog.";
+        } else if (ageRange === "51-65") {
+            subProtocollo = "HAZR YOUNG // Buffer Cortisolo & Difesa Massa Magra";
+            formulaNaturale = "Integrazione Core Natural-Somatic: Ashwagandha KSM-66, Rodiola Rosea e Zinco Picolinato. Disattivazione allarme asse HPA per proteggere il muscolo magro.";
+        } else {
+            subProtocollo = "HAZR LONGEVITY // Inversione Usura Cellulare & Voltaggio Mitocondriale";
+            formulaNaturale = "Integrazione Core Natural-Somatic: Coenzima Q10 (Ubiquinolo), PQQ e Potassio Citrato. Biogenesi profonda via PGC-1α per ancorare le membrane a -70mV.";
+        }
+        stripeUrl = "https://stripe.com";
+    }
+    
+    alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
+          "Configurazione Hardware Rilevata!\n" +
+          "-----------------------------------------\n" +
+          "--> SUB-PROTOCOLLO: " + subProtocollo + "\n\n" +
+          "--> FORMULA STRUTTURALE: " + formulaNaturale + "\n" +
+          "-----------------------------------------\n" +
+          "Il tuo ecosistema cellulare è pronto per la somministrazione esecutiva.\n\n" +
+          "Fai clic su OK per accedere al modulo di pagamento Stripe e attivare la spedizione diretta dal produttore.");
     window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03; 
         }
 </script>
