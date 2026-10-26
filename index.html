@@ -177,45 +177,50 @@
             <a href="https://amazon.com/dp/B0H98F9V8D" target="_blank" class="market-link">[ USA ] ANTI-INFLAMMATORY MEAL PREP (OVER 60) ➔</a>
         </div>
     <script>
-        function calcolaEcosistemaSomatico() {
-var height = document.getElementById('height').value;
-var weight = document.getElementById('weight').value;
-var ageRange = document.getElementById('age-range').value;
-var rConsent = document.getElementById('review-consent').checked;
-var pConsent = document.getElementById('privacy-consent').checked;
-if (!height || !weight) { alert("Inserire parametri hardware."); return; }
-if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
-let subProtocollo = "";
-let formulaNaturale = "";
-let stripeUrl = "";
-if (ageRange === "36-50") {
-subProtocollo = "HAZR PREMIUM // Configurazione Somatica ad Alte Prestazioni";
-formulaNaturale = "Integrazione Core: Protocollo a 5 Vettori Molecolari completo. Include l'invio del Cofanetto Fisico Soft-Touch, la Triade dei libri autografati di pugno e i flaconi in Vetro Biofotonico Viola Miron.";
-stripeUrl = "stripe.com";
- } else {
-        if (ageRange === "20-35") {
-            subProtocollo = "HAZR TEENS // Reset Dopaminergico & Focus Frontale";
-            formulaNaturale = "Integrazione Core Natural-Somatic: Inositolo, Magnesio L-Treonato e L-Teanina. Sintonizzazione lobi su onde Alpha/Theta per eradicare la Brain Fog.";
-        } else if (ageRange === "51-65") {
-            subProtocollo = "HAZR YOUNG // Buffer Cortisolo & Difesa Massa Magra";
-            formulaNaturale = "Integrazione Core Natural-Somatic: Ashwagandha KSM-66, Rodiola Rosea e Zinco Picolinato. Disattivazione allarme asse HPA per proteggere il muscolo magro.";
-        } else {
-            subProtocollo = "HAZR LONGEVITY // Inversione Usura Cellulare & Voltaggio Mitocondriale";
-            formulaNaturale = "Integrazione Core Natural-Somatic: Coenzima Q10 (Ubiquinolo), PQQ e Potassio Citrato. Biogenesi profonda via PGC-1α per ancorare le membrane a -70mV.";
-        }
-        stripeUrl = "https://stripe.com";
-    }
+function calcolaEcosistemaSomatico() {
+    var height = document.getElementById('height').value;
+    var weight = document.getElementById('weight').value;
+    var ageRange = document.getElementById('age-range').value;
+    var rConsent = document.getElementById('review-consent').checked;
+    var pConsent = document.getElementById('privacy-consent').checked;
     
-    alert("[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
-          "Configurazione Hardware Rilevata!\n" +
-          "-----------------------------------------\n" +
-          "--> SUB-PROTOCOLLO: " + subProtocollo + "\n\n" +
-          "--> FORMULA STRUTTURALE: " + formulaNaturale + "\n" +
-          "-----------------------------------------\n" +
-          "Il tuo ecosistema cellulare è pronto per la somministrazione esecutiva.\n\n" +
-        "Fai clic su OK per accedere al modulo di pagamento Stripe e attivare la spedizione diretta dal produttore.");
-    window.location.href = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03"; 
+    if (!height || !weight) { alert("Inserire parametri hardware."); return; }
+    if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
+    
+    let subProtocollo = "";
+    let formulaNaturale = "";
+    let stripeUrl = "";
+    
+    if (ageRange === "36-50") {
+        /* 🏛️ CIRCUITO PREMIUM - LEADER AD ALTE PRESTAZIONI */
+        subProtocollo = "HAZR PREMIUM // Configurazione Somatica ad Alte Prestazioni";
+        formulaNaturale = "Integrazione Core: Cofanetto Fisico Soft-Touch a 5 Vettori Puri (Ubiquinolo, PQQ, Ashwagandha KSM-66, Magnesio L-Treonato, Inositolo) in Vetro Biofotonico Viola Miron. Include la Triade dei libri autografati di pugno.";
+        stripeUrl = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03";
+    } else {
+        /* 🌍 CIRCUITO DI MASSA - DIREZIONE FINALE SUI TUOI 3 LINK REALMENTE DEPLOYATI */
+        if (ageRange === "20-35") {
+            subProtocollo = "HAZR TEENS // Reset Dopaminergico & Focus Frontale (47,00 €/mese)";
+            formulaNaturale = "Integrazione Core Natural-Somatic: Inositolo + Magnesio L-Treonato + L-Teanina. Sintonizzazione lobi su onde Alpha/Theta per eradicare la Brain Fog da sovraccarico digitale.";
+            stripeUrl = "https://buy.stripe.com/8x228t2RNEco5YJ5w61gs06";
+        } else if (ageRange === "51-65") {
+            subProtocollo = "HAZR YOUNG // Buffer Cortisolo & Difesa Massa Magra (67,00 €/mese)";
+            formulaNaturale = "Integrazione Core Natural-Somatic: Ashwagandha KSM-66 + Rodiola Rosea + Zinco Picolinato. Disattivazione dell'allarme dell'asse HPA per bloccare la distruzione dei muscoli.";
+            stripeUrl = "https://buy.stripe.com/8x228t2RNeco5YJ5w61gs06";
+        } else {
+            subProtocollo = "HAZR LONGEVITY // Inversione Usura Cellulare & Voltaggio Mitocondriale (67,00 €/mese)";
+            formulaNaturale = "Integrazione Core Natural-Somatic: Coenzima Q10 (Ubiquinolo) + PQQ + Potassio Citrato. Biogenesi profonda via PGC-1α per ancorare stabili le membrane cellulari a -70mV.";
+            stripeUrl = "https://buy.stripe.com/cNi00leAv6JW5YJ2jU1gs05";
         }
-</script>
-</body>
-</html>
+    }
+let messaggio = "[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
+                    "Configurazione Hardware Rilevata!\n" +
+                    "-----------------------------------------\n" +
+                    "--> SUB-PROTOCOLLO ASSEGNATO:\n" + subProtocollo + "\n\n" +
+                    "--> FORMULA STRUTTURALE VETTORIALE:\n" + formulaNaturale + "\n" +
+                    "-----------------------------------------\n" +
+                    "[ANGELO TUTELARE ATTIVO]: Il tuo piano prevede un ciclo stagna di 90 giorni (Fase ON) seguito dal mese di autonomia somatica a canone azzerato (Fase OFF - La Coccola).\n\n" +
+                    "Fai clic su OK per accedere al modulo sicuro Stripe, inserire i dati di spedizione e sbloccare istantaneamente il PDF del protocollo completo.";
+    
+    alert(messaggio);
+    window.location.href = stripeUrl;
+}
