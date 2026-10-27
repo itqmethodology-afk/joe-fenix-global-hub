@@ -222,7 +222,7 @@ let messaggio = "[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
                     "Fai clic su OK per accedere al modulo sicuro Stripe, inserire i dati di spedizione e sbloccare istantaneamente il PDF del protocollo completo.";
     
     alert(messaggio);
-    window.location.href = stripeUrl;
+    window.open(stripeUrl, "_self");
 }
 </script>
 </body>
