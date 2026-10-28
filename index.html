@@ -198,7 +198,7 @@ function calcolaEcosistemaSomatico() {
         stripeUrl = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03";
     } else {
         /* 🌍 CIRCUITO DI MASSA - DIREZIONE FINALE SUI TUOI 3 LINK REALMENTE DEPLOYATI */
-        if (ageRange === "20-35") {
+       if (ageRange === "20-35" || !ageRange) {
             subProtocollo = "HAZR TEENS // Reset Dopaminergico & Focus Frontale (47,00 €/mese)";
             formulaNaturale = "Integrazione Core Natural-Somatic: Inositolo + Magnesio L-Treonato + L-Teanina. Sintonizzazione lobi su onde Alpha/Theta per eradicare la Brain Fog da sovraccarico digitale.";
             stripeUrl = "https://buy.stripe.com/8x228t2RNEco5YJ5w61gs06";
@@ -222,7 +222,10 @@ let messaggio = "[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
                     "Fai clic su OK per accedere al modulo sicuro Stripe, inserire i dati di spedizione e sbloccare istantaneamente il PDF del protocollo completo.";
     
     alert(messaggio);
-    window.open(stripeUrl, "_self");
+    
+    setTimeout(function() {
+        window.location.href = stripeUrl;
+    }, 100);
 }
 </script>
 </body>
