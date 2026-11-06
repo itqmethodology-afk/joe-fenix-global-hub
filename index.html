@@ -357,5 +357,74 @@ let messaggio = "[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
     }, 100);
 }
 </script>
+       <!-- SELETTORE BILINGUE AUTOMATICO + PULSANTE IT / EN -->
+<div id="lang-switcher" style="position: fixed; top: 15px; right: 15px; z-index: 9999; background: rgba(0, 0, 0, 0.85); border: 1px solid #FF5500; border-radius: 6px; padding: 6px 12px; font-family: sans-serif; font-size: 0.85rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+    <span id="btn-it" onclick="setLanguage('it')" style="cursor: pointer; color: #FF5500; padding-right: 6px;">IT</span>
+    <span style="color: #555;">|</span>
+    <span id="btn-en" onclick="setLanguage('en')" style="cursor: pointer; color: #888; padding-left: 6px;">EN</span>
+</div>
+
+<script>
+const translations = {
+    en: {
+        // 5 Vettori Molecolari
+        "🏛️ I 5 VETTORI MOLECOLARI // LE FUNZIONI SOMATICHE": "🏛️ THE 5 MOLECULAR VECTORS // SOMATIC FUNCTIONS",
+        "L'ingegnerizzazione biologica cellulare profonda espressa attraverso vettori puri e notificati, senza compromessi commerciali.": "Deep cellular biological engineering expressed through pure, notified vectors, with zero commercial compromises.",
+        "1. Reset Dopaminergico": "1. Dopaminergic Reset",
+        "Ripristina i recettori neuronali saturi dall'esposizione ai display. Elimina la brain fog pomeridiana, riattivando il focus laser della corteccia prefrontale.": "Restores neuronal receptors saturated by screen exposure. Eliminates afternoon brain fog, reactivating prefrontal cortex laser focus.",
+        "2. Buffer Cortisolico": "2. Cortisol Buffer",
+        "Scherma l'asse dello stress (HPA). Blocca l'ipersecrezione di cortisolo dovuta al sovraccarico decisionale, proteggendo la sintesi ormonale nativa.": "Shields the stress axis (HPA). Blocks cortisol hypersecretion caused by decision overload, protecting native hormonal synthesis.",
+        "3. Spinta Endoteliale": "3. Endothelial Drive",
+        "Stimola la produzione di ossido nitrico per restituire elasticità ai vasi sanguigni. Garantisce la massima ossigenazione e risposta idraulica profonda.": "Stimulates nitric oxide production to restore blood vessel elasticity. Ensures maximum oxygenation and deep hydraulic response.",
+        "4. Carica Mitocondriale": "4. Mitochondrial Charge",
+        "Innesca la biogenesi cellulare accelerando il passaggio degli elettroni nelle membrane. Satura i serbatoi di ATP per un'energia costante senza crolli.": "Triggers cellular biogenesis by accelerating electron transport across membranes. Saturates ATP reservoirs for steady energy without crashes.",
+        "5. Sintonia Endocrina": "5. Endocrine Tuning",
+        "Fornisce supporto alle ghiandole endocrine per stabilizzare la produzione ormonale, contrastando l'invecchiamento dei tessuti a qualsiasi età.": "Supports endocrine glands to stabilize hormone production, counteracting tissue aging at any stage of life.",
+        
+        // Calcolatore EM-CALC
+        "TELEMETRIA EM-CALC: INSERISCI I TUOI DATI": "EM-CALC TELEMETRY: ENTER YOUR DATA",
+        "[ FASCIA MASTER ] // Da 51 a 60 anni (HAZR YOUNG)": "[ MASTER TIER ] // Ages 51 to 60 (HAZR YOUNG)",
+        "[ FASCIA LONGEVITY ] // Oltre 61 anni (HAZR LONGEVITY)": "[ LONGEVITY TIER ] // Over 61 years (HAZR LONGEVITY)"
+    }
+};
+
+const originalTexts = new Map();
+
+function saveOriginalTexts(node) {
+    if (node.nodeType === 3) {
+        const text = node.nodeValue.trim();
+        if (text.length > 0 && !originalTexts.has(node)) {
+            originalTexts.set(node, node.nodeValue);
+        }
+    } else {
+        for (let child of node.childNodes) {
+            saveOriginalTexts(child);
+        }
+    }
+}
+
+function setLanguage(lang) {
+    saveOriginalTexts(document.body);
+    
+    document.getElementById('btn-it').style.color = (lang === 'it') ? '#FF5500' : '#888';
+    document.getElementById('btn-en').style.color = (lang === 'en') ? '#FF5500' : '#888';
+
+    originalTexts.forEach((origValue, node) => {
+        const trimmed = origValue.trim();
+        if (lang === 'en' && translations.en[trimmed]) {
+            node.nodeValue = origValue.replace(trimmed, translations.en[trimmed]);
+        } else if (lang === 'it') {
+            node.nodeValue = origValue;
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    saveOriginalTexts(document.body);
+    const userLang = navigator.language || navigator.userLanguage;
+    if (!userLang.toLowerCase().startsWith('it')) {
+        setLanguage('en');
+    }
+}); 
 </body>
 </html>
