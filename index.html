@@ -320,21 +320,49 @@ function calcolaEcosistemaSomatico() {
     let formulaNaturale = "";
     let stripeUrl = "";
     
-    if (ageRange === "36-50") {
-        /* 🏛️ CIRCUITO PREMIUM - LEADER AD ALTE PRESTAZIONI */
-        subProtocollo = "HAZR PREMIUM // Configurazione Somatica ad Alte Prestazioni";
-        formulaNaturale = "Integrazione Core: Cofanetto Fisico Soft-Touch a 5 Vettori Puri (Ubiquinolo, PQQ, Ashwagandha KSM-66, Magnesio L-Treonato, Inositolo) in Vetro Biofotonico Viola Miron. Include la Triade dei libri autografati di pugno.";
-        stripeUrl = "https://buy.stripe.com/7sY14p4ZV2tGcn71fQ1gs03";
+// INNESTO DIROTTATORI FINANZIARI STRIPE // HAZR INTERNAZIONALE
+function getStripeLink(gender, age) {
+    // 1. FASCIA TEENS (Adolescenti)
+    if (age <= 20) {
+        return "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b";
+    }
+    
+    // 2. FASCIA LADY (Donne - Qualsiasi Età sopra i 20 anni)
+    if (gender === 'female' || gender === 'F') {
+        return "https://buy.stripe.com/aFadRBeAvfgscn75w61gs09";
+    }
+    
+    // 3. FASCIA HAZR LONGEVITY (Over 61 / Somatic Restore)
+    if (age >= 61) {
+        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a";
+    }
+    
+    // 4. FASCIA HAZR MAN (Uomini tra 21 e 60 anni / Sovereign Performance)
+    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
+}
+
+// Funzione di aggiornamento dinamico del pulsante nella schermata dei risultati
+function renderCheckoutButton(gender, age, lang) {
+    const targetLink = getStripeLink(gender, age);
+    const btnContainer = document.getElementById('stripe-btn-container');
+    
+    let btnText = "";
+    if (lang === 'en') {
+        if (age <= 20) btnText = "UNLOCK HAZR TEENS PROTOCOL 🪓";
+        else if (gender === 'female' || gender === 'F') btnText = "UNLOCK HAZR LADY PROTOCOL 🪓";
+        else if (age >= 61) btnText = "UNLOCK HAZR LONGEVITY PROTOCOL 🏛️";
+        else btnText = "UNLOCK HAZR MAN PROTOCOL 🪓";
     } else {
-        /* 🌍 CIRCUITO DI MASSA - DIREZIONE FINALE SUI TUOI 3 LINK REALMENTE DEPLOYATI */
-       if (ageRange === "20-35" || !ageRange) {
-            subProtocollo = "HAZR TEENS // Reset Dopaminergico & Focus Frontale (47,00 €/mese)";
-            formulaNaturale = "Integrazione Core Natural-Somatic: Inositolo + Magnesio L-Treonato + L-Teanina. Sintonizzazione lobi su onde Alpha/Theta per eradicare la Brain Fog da sovraccarico digitale.";
-            stripeUrl = "https://buy.stripe.com/bJedRbdwr0ly3QB8Ii1gs04";
-        } else if (ageRange === "51-65") {
-            subProtocollo = "HAZR YOUNG // Buffer Cortisolo & Difesa Massa Magra (67,00 €/mese)";
-            formulaNaturale = "Integrazione Core Natural-Somatic: Ashwagandha KSM-66 + Rodiola Rosea + Zinco Picolinato. Disattivazione dell'allarme dell'asse HPA per bloccare la distruzione dei muscoli.";
-            stripeUrl = "https://buy.stripe.com/8x228t2RNeco5YJ5w61gs06";
+        if (age <= 20) btnText = "SBLOCCA IL PROTOCOLLO HAZR TEENS 🪓";
+        else if (gender === 'female' || gender === 'F') btnText = "SBLOCCA IL PROTOCOLLO HAZR LADY 🪓";
+        else if (age >= 61) btnText = "SBLOCCA IL PROTOCOLLO HAZR LONGEVITY 🏛️";
+        else btnText = "SBLOCCA IL PROTOCOLLO HAZR MAN 🪓";
+    }
+    
+    if (btnContainer) {
+        btnContainer.innerHTML = `<a href="${targetLink}" target="_blank" style="display: block; width: 100%; max-width: 350px; margin: 20px auto; padding: 15px; background: #FF5500; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,85,0,0.4);">${btnText}</a>`;
+    }
+}
         } else {
             subProtocollo = "HAZR LONGEVITY // Inversione Usura Cellulare & Voltaggio Mitocondriale (67,00 €/mese)";
             formulaNaturale = "Integrazione Core Natural-Somatic: Coenzima Q10 (Ubiquinolo) + PQQ + Potassio Citrato. Biogenesi profonda via PGC-1α per ancorare stabili le membrane cellulari a -70mV.";
