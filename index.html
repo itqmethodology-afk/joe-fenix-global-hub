@@ -316,9 +316,23 @@ function calcolaEcosistemaSomatico() {
     if (!height || !weight) { alert("Inserire parametri hardware."); return; }
     if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
     
-    let subProtocollo = "";
-    let formulaNaturale = "";
-    let stripeUrl = "";
+  let subProtocollo = "";
+let formulaNaturale = "";
+let stripeUrl = "";
+
+if (ageRange === "0-20") {
+    subProtocollo = (currentLang === 'en') ? "HAZR TEENS // Controlled Flow & Neural Shield" : "HAZR TEENS // Controlled Flow & Neural Shield";
+    formulaNaturale = (currentLang === 'en') ? "Core Integration: Dopaminergic saturation reset. Channels chaotic digital adrenaline into focus and structured creativity. Anchors youth neural networks at -70mV." : "Integrazione Core: Reset da saturazione dopaminergetica digitale. Canalizza la rabbia e l'iperattività ormonale verso il focus lucido e la creatività controllata. Ancora l'hardware a -70mV.";
+} else if (gender === 'female' || gender === 'F') {
+    subProtocollo = (currentLang === 'en') ? "HAZR LADY // Peak Flow & Endocrine Shield" : "HAZR LADY // Peak Flow & Endocrine Shield";
+    formulaNaturale = (currentLang === 'en') ? "Core Integration: HPA-Axis structural barrier (Agnocasto + Dong Quai + Rhodiola Rosea). Erases chronic cortisol burnout and high-stakes decision fatigue." : "Integrazione Core: Schermatura strutturale dell'Asse HPA (Agnocasto + Dong Quai + Rhodiola Rosea + Magnesio Bisglicinato). Azzeramento del burnout cortisolico da sovraccarico decisionale.";
+} else if (ageRange === "51-65" || ageRange === "66+") {
+    subProtocollo = (currentLang === 'en') ? "HAZR LONGEVITY // Master Tier Neuro-Flow" : "HAZR LONGEVITY // Master Tier Neuro-Flow";
+    formulaNaturale = (currentLang === 'en') ? "Premium Integration: High-shield mitochondrial biogenesis (Ubiquinol CoQ10 + PQQ + Alpha-GPC + Lion's Mane). Destroys senile cognitive fog and anchors membrane potential." : "Integrazione Premium: Biogenesi mitocondriale ad altissima schermatura (Ubichinolo CoQ10 + PQQ + Alfa-GPC + Hericium Erinaceus). Elimina la brain fog cognitiva senile e ancora il voltaggio.";
+} else {
+    subProtocollo = (currentLang === 'en') ? "HAZR MAN // Flow State Executive Protocol" : "HAZR MAN // Flow State Executive Protocol";
+    formulaNaturale = (currentLang === 'en') ? "Core Integration: Endothelial Drive and Dopaminergic Reset (L-Citrulline Malate + Arginine AKG + Ashwagandha KSM-66). Maximizes peripheral hydraulic drive and laser focus." : "Integrazione Core: Innesco Endoteliale e Reset Dopaminergico (L-Citrullina Malato + Arginina AKG + Ashwagandha KSM-66® + Zinco). Massimizza la risposta idraulica periferica e il focus laser.";
+}
     
 // INNESTO DIROTTATORI FINANZIARI STRIPE // HAZR INTERNAZIONALE
 function getStripeLink(gender, age) {
