@@ -308,19 +308,29 @@
         </div>
     <script>
 function calcolaEcosistemaSomatico() {
-    var height = document.getElementById('height').value;
-    var weight = document.getElementById('weight').value;
-    var ageRange = document.getElementById('age-range').value;
-    var rConsent = document.getElementById('review-consent').checked;
-    var pConsent = document.getElementById('privacy-consent').checked;
-    
-    if (!height || !weight) { alert("Inserire parametri hardware."); return; }
-    if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
+    const gender = document.getElementById('gender').value;
+    const ageRange = document.getElementById('ageRange').value;
 
-    formulaNaturale = (currentLang === 'en') ? "Premium Integration: High-shield mitochondrial biogenesis (Ubiquinol CoQ10 + PQQ + Alpha-GPC + Lion's Mane). Destroys senile cognitive fog and anchors membrane potential." : "Integrazione Premium: Biogenesi mitocondriale ad altissima schermatura (Ubichinolo CoQ10 + PQQ + Alfa-GPC + Hericium Erinaceus). Elimina la brain fog cognitiva senile e ancora il voltaggio.";
-} else {
-    subProtocollo = (currentLang === 'en') ? "HAZR MAN // Flow State Executive Protocol" : "HAZR MAN // Flow State Executive Protocol";
-    formulaNaturale = (currentLang === 'en') ? "Core Integration: Endothelial Drive and Dopaminergic Reset (L-Citrulline Malate + Arginine AKG + Ashwagandha KSM-66). Maximizes peripheral hydraulic drive and laser focus." : "Integrazione Core: Innesco Endoteliale e Reset Dopaminergico (L-Citrullina Malato + Arginina AKG + Ashwagandha KSM-66® + Zinco). Massimizza la risposta idraulica periferica e il focus laser.";
+    updateStripeButton(gender, ageRange);
+    
+    const resultSection = document.getElementById('result-section');
+    if (resultSection) {
+        resultSection.style.display = 'block';
+    }
+}
+
+// IL REALE MOTORE DI REINDIRIZZAMENTO INTERNAZIONALE STRIPE - COORDINATO
+function getStripeLink(gender, ageRange) {
+    if (ageRange === "0-20") {
+        return "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b"; // TEENS €97
+    }
+    if (gender === 'F') {
+        return "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09"; // LADY €147
+    }
+    if (ageRange === "51-60" || ageRange === "61+") {
+        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a"; // LONGEVITY €197
+    }
+    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08"; // MAN €147
 }
     
 // Forza l'aggiornamento reale del pulsante a schermo usando i dati coordinati
