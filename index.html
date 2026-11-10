@@ -222,17 +222,18 @@
             <div class="form-group">
                 <label>Genere Hardware Somatico:</label>
                 <select id="gender">
-                    <option value="M">[ BIOMASS MASCHILE ]</option>
-                    <option value="F">[ BIOMASS FEMMINILE ]</option>
+                   <option value="M">BIOMASS MALE // Executive Man</option> 
+                   <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Fascia d'Età Biologica:</label>
                 <select id="age-range">
-                    <option value="20-35">[ FASCIA ALPHA ] // Da 20 a 35 anni (HAZR TEENS)</option>
-                    <option value="36-50">[ FASCIA SOVEREIGN ] // Da 36 a 50 anni (HAZR PREMIUM)</option>
-                   <option value="51-60">[ FASCIA MASTER ] // Da 51 a 60 anni (HAZR YOUNG)</option>
-                   <option value="61+">[ FASCIA LONGEVITY ] // Oltre 61 anni (HAZR LONGEVITY)</option>
+                    <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
+<option value="21-35">Ages 21-35 // Executive Young</option>
+<option value="36-50">Ages 36-50 // Executive Senior</option>
+<option value="51-60">Ages 51-60 // Master Tier</option>
+<option value="61+">Ages 61+ // Longevity Tier</option>
                 </select>
             </div>
             <div class="form-group"><label>Altezza Staturale (cm):</label><input type="number" id="height" required placeholder="..."></div>
@@ -315,82 +316,33 @@ function calcolaEcosistemaSomatico() {
     
     if (!height || !weight) { alert("Inserire parametri hardware."); return; }
     if (!rConsent || !pConsent) { alert("Accettare le convalide obbligatorie."); return; }
-    
-  let subProtocollo = "";
-let formulaNaturale = "";
-let stripeUrl = "";
 
-if (ageRange === "0-20") {
-    subProtocollo = (currentLang === 'en') ? "HAZR TEENS // Controlled Flow & Neural Shield" : "HAZR TEENS // Controlled Flow & Neural Shield";
-    formulaNaturale = (currentLang === 'en') ? "Core Integration: Dopaminergic saturation reset. Channels chaotic digital adrenaline into focus and structured creativity. Anchors youth neural networks at -70mV." : "Integrazione Core: Reset da saturazione dopaminergetica digitale. Canalizza la rabbia e l'iperattività ormonale verso il focus lucido e la creatività controllata. Ancora l'hardware a -70mV.";
-} else if (gender === 'female' || gender === 'F') {
-    subProtocollo = (currentLang === 'en') ? "HAZR LADY // Peak Flow & Endocrine Shield" : "HAZR LADY // Peak Flow & Endocrine Shield";
-    formulaNaturale = (currentLang === 'en') ? "Core Integration: HPA-Axis structural barrier (Agnocasto + Dong Quai + Rhodiola Rosea). Erases chronic cortisol burnout and high-stakes decision fatigue." : "Integrazione Core: Schermatura strutturale dell'Asse HPA (Agnocasto + Dong Quai + Rhodiola Rosea + Magnesio Bisglicinato). Azzeramento del burnout cortisolico da sovraccarico decisionale.";
-} else if (ageRange === "51-65" || ageRange === "66+") {
-    subProtocollo = (currentLang === 'en') ? "HAZR LONGEVITY // Master Tier Neuro-Flow" : "HAZR LONGEVITY // Master Tier Neuro-Flow";
     formulaNaturale = (currentLang === 'en') ? "Premium Integration: High-shield mitochondrial biogenesis (Ubiquinol CoQ10 + PQQ + Alpha-GPC + Lion's Mane). Destroys senile cognitive fog and anchors membrane potential." : "Integrazione Premium: Biogenesi mitocondriale ad altissima schermatura (Ubichinolo CoQ10 + PQQ + Alfa-GPC + Hericium Erinaceus). Elimina la brain fog cognitiva senile e ancora il voltaggio.";
 } else {
     subProtocollo = (currentLang === 'en') ? "HAZR MAN // Flow State Executive Protocol" : "HAZR MAN // Flow State Executive Protocol";
     formulaNaturale = (currentLang === 'en') ? "Core Integration: Endothelial Drive and Dopaminergic Reset (L-Citrulline Malate + Arginine AKG + Ashwagandha KSM-66). Maximizes peripheral hydraulic drive and laser focus." : "Integrazione Core: Innesco Endoteliale e Reset Dopaminergico (L-Citrullina Malato + Arginina AKG + Ashwagandha KSM-66® + Zinco). Massimizza la risposta idraulica periferica e il focus laser.";
 }
     
-// INNESTO DIROTTATORI FINANZIARI STRIPE // HAZR INTERNAZIONALE
-function getStripeLink(gender, age) {
-    // 1. FASCIA TEENS (Adolescenti)
-    if (age <= 20) {
-        return "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b";
-    }
-    
-    // 2. FASCIA LADY (Donne - Qualsiasi Età sopra i 20 anni)
-    if (gender === 'female' || gender === 'F') {
-        return "https://buy.stripe.com/aFadRBeAvfgscn75w61gs09";
-    }
-    
-    // 3. FASCIA HAZR LONGEVITY (Over 61 / Somatic Restore)
-    if (age >= 61) {
-        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a";
-    }
-    
-    // 4. FASCIA HAZR MAN (Uomini tra 21 e 60 anni / Sovereign Performance)
-    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
-}
 // Forza l'aggiornamento reale del pulsante a schermo usando i dati coordinati
-function updateStripeButton(gender, age) {
-    const targetLink = getStripeLink(gender, age);
+function updateStripeButton(gender, ageRange) {
+    const targetLink = getStripeLink(gender, ageRange);
     const btnContainer = document.getElementById('stripe-btn-container');
     if (btnContainer) {
-       let btnText = (currentLang === 'en') ? "UNLOCK YOUR FLOW PROTOCOL 🪓" : "SBLOCCA IL TUO PROTOCOLLO FLOW 🪓"
+        let btnText = (currentLang === 'en') ? "UNLOCK YOUR FLOW PROTOCOL 🪓" : "SBLOCCA IL TUO PROTOCOLLO FLOW 🪓";
         btnContainer.innerHTML = `<a href="${targetLink}" target="_blank" style="display: block; width: 100%; max-width: 350px; margin: 20px auto; padding: 15px; background: #FF5500; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,85,0,0.4);">${btnText}</a>`;
+// IL REALE MOTORE DI REINDIRIZZAMENTO INTERNAZIONALE STRIPE
+function getStripeLink(gender, ageRange) {
+    if (ageRange === "0-20") {
+        return "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b"; // TEENS €97
     }
+    if (gender === 'F') {
+        return "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09"; // LADY €147
+    }
+    if (ageRange === "51-60" || ageRange === "61+") {
+        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a"; // LONGEVITY €197
+    }
+    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08"; // MAN €147
 }
-// Funzione di aggiornamento dinamico del pulsante nella schermata dei risultati
-function renderCheckoutButton(gender, age, lang) {
-    const targetLink = getStripeLink(gender, age);
-    const btnContainer = document.getElementById('stripe-btn-container');
-    
-    let btnText = "";
-    if (lang === 'en') {
-        if (age <= 20) btnText = "UNLOCK HAZR TEENS PROTOCOL 🪓";
-        else if (gender === 'female' || gender === 'F') btnText = "UNLOCK HAZR LADY PROTOCOL 🪓";
-        else if (age >= 61) btnText = "UNLOCK HAZR LONGEVITY PROTOCOL 🏛️";
-        else btnText = "UNLOCK HAZR MAN PROTOCOL 🪓";
-    } else {
-        if (age <= 20) btnText = "SBLOCCA IL PROTOCOLLO HAZR TEENS 🪓";
-        else if (gender === 'female' || gender === 'F') btnText = "SBLOCCA IL PROTOCOLLO HAZR LADY 🪓";
-        else if (age >= 61) btnText = "SBLOCCA IL PROTOCOLLO HAZR LONGEVITY 🏛️";
-        else btnText = "SBLOCCA IL PROTOCOLLO HAZR MAN 🪓";
-    }
-    
-    if (btnContainer) {
-        btnContainer.innerHTML = `<a href="${targetLink}" target="_blank" style="display: block; width: 100%; max-width: 350px; margin: 20px auto; padding: 15px; background: #FF5500; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,85,0,0.4);">${btnText}</a>`;
-    }
-}
-        } else {
-            subProtocollo = "HAZR LONGEVITY // Inversione Usura Cellulare & Voltaggio Mitocondriale (67,00 €/mese)";
-            formulaNaturale = "Integrazione Core Natural-Somatic: Coenzima Q10 (Ubiquinolo) + PQQ + Potassio Citrato. Biogenesi profonda via PGC-1α per ancorare stabili le membrane cellulari a -70mV.";
-            stripeUrl = "https://buy.stripe.com/cNi00leAv6JW5YJ2jU1gs05";
-        }
-    }
 let messaggio = "[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
                     "Configurazione Hardware Rilevata!\n" +
                     "-----------------------------------------\n" +
