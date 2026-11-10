@@ -340,7 +340,15 @@ function getStripeLink(gender, age) {
     // 4. FASCIA HAZR MAN (Uomini tra 21 e 60 anni / Sovereign Performance)
     return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
 }
-
+// Forza l'aggiornamento reale del pulsante a schermo usando i dati coordinati
+function updateStripeButton(gender, age) {
+    const targetLink = getStripeLink(gender, age);
+    const btnContainer = document.getElementById('stripe-btn-container');
+    if (btnContainer) {
+       let btnText = (currentLang === 'en') ? "UNLOCK YOUR FLOW PROTOCOL 🪓" : "SBLOCCA IL TUO PROTOCOLLO FLOW 🪓"
+        btnContainer.innerHTML = `<a href="${targetLink}" target="_blank" style="display: block; width: 100%; max-width: 350px; margin: 20px auto; padding: 15px; background: #FF5500; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,85,0,0.4);">${btnText}</a>`;
+    }
+}
 // Funzione di aggiornamento dinamico del pulsante nella schermata dei risultati
 function renderCheckoutButton(gender, age, lang) {
     const targetLink = getStripeLink(gender, age);
