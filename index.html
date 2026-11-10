@@ -330,18 +330,25 @@ function updateStripeButton(gender, ageRange) {
     if (btnContainer) {
         let btnText = (currentLang === 'en') ? "UNLOCK YOUR FLOW PROTOCOL 🪓" : "SBLOCCA IL TUO PROTOCOLLO FLOW 🪓";
         btnContainer.innerHTML = `<a href="${targetLink}" target="_blank" style="display: block; width: 100%; max-width: 350px; margin: 20px auto; padding: 15px; background: #FF5500; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,85,0,0.4);">${btnText}</a>`;
-// IL REALE MOTORE DI REINDIRIZZAMENTO INTERNAZIONALE STRIPE
+// IL REALE MOTORE DI REINDIRIZZAMENTO INTERNAZIONALE STRIPE - COORDINATO
 function getStripeLink(gender, ageRange) {
+    // 1. FASCIA TEENS DOPO L'ULTIMO INTERVENTO
     if (ageRange === "0-20") {
-        return "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b"; // TEENS €97
+        return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
     }
+    
+    // 2. FASCIA LADY (GENERE FEMMINILE 'F')
     if (gender === 'F') {
-        return "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09"; // LADY €147
+        return "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09";
     }
+    
+    // 3. FASCIA HAZR LONGEVITY (OVER 51+)
     if (ageRange === "51-60" || ageRange === "61+") {
-        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a"; // LONGEVITY €197
+        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a";
     }
-    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08"; // MAN €147
+    
+    // 4. FASCIA HAZR MAN (RESTRUPPO STANDARD EXECUTIVES)
+    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
 }
 let messaggio = "[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
                     "Configurazione Hardware Rilevata!\n" +
