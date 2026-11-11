@@ -333,8 +333,8 @@ function getStripeLink(gender, ageRange) {
     return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08"; // MAN €147
 }
     
-// Forza l'aggiornamento reale del pulsante a schermo usando i dati coordinati
-function updateStripeButton(gender, ageRange) {
+
+}function updateStripeButton(gender, ageRange) {
     const targetLink = getStripeLink(gender, ageRange);
     const btnContainer = document.getElementById('stripe-btn-container');
     if (btnContainer) {
