@@ -3,449 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Fenix Method - Official Hub</title>
+    <title>EM-CALC // Joe Fenix Method - Top the World</title>
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Space Mono', 'Courier New', monospace; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
-        .hero-section { max-width: 800px; width: 100%; padding: 60px 20px; text-align: center; box-sizing: border-box; border-bottom: 1px solid #111; }
-        .logo-placeholder { font-size: 2.5rem; font-weight: bold; color: #FF5500; letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase; }
-        .subtitle { font-size: 1.1rem; color: #888; line-height: 1.6; margin-bottom: 40px; text-transform: uppercase; }
-        .triad-container { max-width: 800px; width: 100%; padding: 40px 20px; box-sizing: border-box; }
-        .axis-card { background: #0d0d0d; border-left: 3px solid #FF5500; padding: 25px; margin-bottom: 25px; box-sizing: border-box; }
-        .axis-title { color: #FF5500; font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
-        .axis-text { color: #ccc; font-size: 0.95rem; line-height: 1.5; }
-        .preview-section { max-width: 800px; width: 100%; padding: 20px; box-sizing: border-box; text-align: center; }
-        .preview-box { width: 100%; height: 250px; background: #0d0d0d; border: 1px solid #222; padding: 20px; overflow-y: scroll; text-align: justify; box-sizing: border-box; font-size: 0.9rem; color: #bbb; line-height: 1.6; margin-bottom: 25px; }
-        .container { max-width: 800px; width: 100%; background: #0d0d0d; border: 1px solid #1a1a1a; padding: 30px; box-sizing: border-box; margin-bottom: 60px; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-size: 0.95rem; color: #aaa; }
-        input, select { width: 100%; padding: 12px; background: #111; border: 1px solid #222; color: #fff; font-family: inherit; font-size: 1rem; box-sizing: border-box; }
-        .market-link { display: block; padding: 15px; background: #0d0d0d; border: 1px solid #FF5500; color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: bold; text-align: left; margin-bottom: 12px; transition: background 0.3s; }
-        .market-link:hover { background: #141414; }
-        
-        /* 📱 RESPONSIVE MATRIX TABLE */
-        .table-wrapper { width: 100%; overflow-x: auto; margin: 30px 0 15px 0; background: #0d0d0d; border: 1px solid #222; }
-        .matrix-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; min-width: 600px; }
-        .matrix-table th { background: #111; color: #FF5500; padding: 12px; border-bottom: 2px solid #222; text-transform: uppercase; font-size: 0.9rem; }
-        .matrix-table td { padding: 12px; border-bottom: 1px solid #1a1a1a; vertical-align: top; line-height: 1.4; }
-        .matrix-table tr:hover { background: #141414; }
-        .row-param { font-weight: bold; color: #fff; background: #111; width: 20%; }
-        .row-glp { color: #aaa; width: 40%; border-right: 1px solid #1a1a1a; }
-        .row-hazr { color: #fff; width: 40%; background: #080808; }
+        body {
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #161616;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 32px;
+            max-width: 560px;
+            width: 100%;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.85);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 15px;
+            margin-bottom: 24px;
+        }
+        .brand {
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            color: #FF5500;
+            text-transform: uppercase;
+        }
+        .lang-btn {
+            background: #222;
+            color: #fff;
+            border: 1px solid #444;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .lang-btn:hover {
+            border-color: #FF5500;
+        }
+        .vision-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 23px;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        p.subtitle {
+            font-size: 14px;
+            color: #a0a0a0;
+            margin: 0 0 26px 0;
+            line-height: 1.55;
+        }
+        label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #b0b0b0;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        select {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 20px;
+            background-color: #202020;
+            color: #ffffff;
+            border: 1px solid #333;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+        }
+        select:focus {
+            border-color: #FF5500;
+        }
+        .btn-calc {
+            width: 100%;
+            padding: 16px;
+            background-color: #FF5500;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 6px;
+        }
+        .btn-calc:hover {
+            background-color: #e04b00;
+        }
+        #result-section {
+            display: none;
+            margin-top: 28px;
+            padding-top: 22px;
+            border-top: 1px solid #2a2a2a;
+        }
+        .protocol-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #0d0d0d;
+            background-color: #FF5500;
+            padding: 4px 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .protocol-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .protocol-desc {
+            font-size: 14px;
+            line-height: 1.65;
+            color: #d0d0d0;
+            background: #1c1c1c;
+            padding: 16px;
+            border-radius: 6px;
+            border-left: 3px solid #FF5500;
+        }
+        .stripe-link {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
+            padding: 16px;
+            background: #ffffff;
+            color: #0d0d0d;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .stripe-link:hover {
+            background: #e5e5e5;
+        }
+        .footer-note {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
-    <div class="hero-section">
-        <div class="logo-placeholder">JOE FENIX METHOD</div>
-        <div class="subtitle">SISTEMA DI SOVRANITÀ BIOLOGICA UNIVERSALE RIGENERATIVO, BASATO SUL PROTOCOLLO HAZR A 5 VETTORI BIOLOGICI  MOLECOLARI PURI E NUTRACEUTICI D'AVANGUARDIA,INTERAMENTE APPROVATI E NOTIFICATI DALLE MASSIME AUTORITA' SANITARIE, MA DOSATI CON RIGORE INGEGNERISTICO PER AGIRE DIRETTAMENTE SUI TRE ASSI SEGUENTI:</div>
+
+<div class="container">
+    <div class="header">
+        <div class="brand">JOE FENIX METHOD // -70mV</div>
+        <button class="lang-btn" onclick="toggleLanguage()" id="lang-toggle">EN / IT</button>
     </div>
-    <div class="triad-container">
-        <div class="axis-card"><div class="axis-title">ASSE 1: FISICO IN FORMA SMAGLIANTE: EQUILIBRIO ORMONALE FEMMINILE e VIRILITA'SOVRANA MASCHILE</div><div class="axis-text">Eradicazione dell'infiammazione periferica per i -70mV.</div></div>
-        <div class="axis-card"><div class="axis-title">ASSE 2: MENTE LUCIDA SERENA ASSENZA DI NEBBIA COGNITIVA</div><div class="axis-text">Azzeramento della Brain Fog e focus stabile Alpha/Theta.</div></div>
-        <div class="axis-card"><div class="axis-title">ASSE 3: SPIRITO LIBERO FLOW CREATIVO E CHIAREZZA D'AZIONE</div><div class="axis-text">Disattivazione del Genitore Critico e del Copione infantile.</div></div>
+
+    <div class="vision-tag" id="vision-tag">TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION</div>
+    <h1 id="main-title">EM-CALC // Telemetria Quantum Flow</h1>
+    <p class="subtitle" id="main-sub">Calibrazione bioenergetica per sovranità cognitiva. Seleziona il tuo assetto per isolare la matrice molecolare di controllo del Flow State.</p>
+
+    <label for="gender" id="lbl-gender">Assetto Biologico</label>
+    <select id="gender">
+        <option value="M">BIOMASS MALE // Executive Man</option>
+        <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
+    </select>
+
+    <label for="age-range" id="lbl-age">Fascia di Calibrazione</label>
+    <select id="age-range">
+        <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
+        <option value="21-35">Ages 21-35 // Executive Young</option>
+        <option value="36-50">Ages 36-50 // Executive Senior</option>
+        <option value="51-60">Ages 51-60 // Master Tier</option>
+        <option value="61+">Ages 61+ // Longevity Tier</option>
+    </select>
+
+    <button class="btn-calc" onclick="calcolaEcosistemaSomatico()" id="btn-start">AVVIA TELEMETRIA EM-CALC</button>
+
+    <div id="result-section">
+        <div class="protocol-badge" id="res-badge">COERENZA QUANTICA ATTIVA (-70mV)</div>
+        <div class="protocol-title" id="res-title"></div>
+        <div class="protocol-desc" id="res-desc"></div>
+        <div id="stripe-btn-container"></div>
     </div>
-    <div class="preview-section">
-        <h2 style="color: #FF5500; text-transform: uppercase;">SBLOCCO DELLA TUA BIOGENESI MITOCONDRIALE
-        <div class="preview-box">
-            <p><strong>BIOGENESI MITOCONDRIALE REALE</strong></p>
-            <p>La determinazione non è un costrutto astratto: è una reazione biochimica quantificabile che dipende esclusivamente dal numero, dalla densità e dall'efficienza elettrica dei tuoi mitocondri all'interno della corteccia prefrontale. Quando l'allarme ormonale dell'asse stressogeno HPA rimane costantemente attivato, i mitocondri subiscono un processo di usura acuta, ordinando la riduzione di adenosina trifosfato (ATP) e trascinando la biologia cellulare sotto la soglia critica di -70mV. La soluzione ingegneristica è forzare la Biogenesi Mitocondriale via PGC-1α...</p>
-        </div>
-    </div>
- <!-- SEZIONE I 5 VETTORI MOLECOLARI // FUNZIONI INGEGNERISTICHE -->
-<div style="margin-top: 25px; padding: 20px; background: rgba(255, 85, 0, 0.02); border: 2px solid #FF5500; border-radius: 8px; font-family: sans-serif; color: #fff;">
-    <h3 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px; margin-top: 0; font-size: 1.3rem; text-align: center;">🏛️ I 5 VETTORI MOLECOLARI // LE FUNZIONI SOMATICHE</h3>
-    <p style="font-size: 1rem; line-height: 1.5; color: #e0e0e0; text-align: center; margin-bottom: 20px;">L'ingegnerizzazione biologica cellulare profonda espressa attraverso vettori puri e notificati, senza compromessi commerciali.</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
-        <!-- FUNZIONE 1 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.5); border-top: 4px solid #FF5500; border-radius: 4px;">
-            <strong style="color: #FF5500; font-size: 0.95rem; display: block; margin-bottom: 8px; text-transform: uppercase;">1. Reset Dopaminergico</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Ripristina i recettori neuronali saturi dall'esposizione ai display. Elimina la brain fog pomeridiana, riattivando il focus laser della corteccia prefrontale.</p>
-        </div>
 
-        <!-- FUNZIONE 2 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.5); border-top: 4px solid #FF5500; border-radius: 4px;">
-            <strong style="color: #FF5500; font-size: 0.95rem; display: block; margin-bottom: 8px; text-transform: uppercase;">2. Buffer Cortisolico</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Scherma l'asse dello stress (HPA). Blocca l'ipersecrezione di cortisolo dovuta al sovraccarico decisionale, proteggendo la sintesi ormonale nativa.</p>
-        </div>
-
-        <!-- FUNZIONE 3 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.5); border-top: 4px solid #FF5500; border-radius: 4px;">
-            <strong style="color: #FF5500; font-size: 0.95rem; display: block; margin-bottom: 8px; text-transform: uppercase;">3. Spinta Endoteliale</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Stimola la produzione di ossido nitrico per restituire elasticità ai vasi sanguigni. Garantisce la massima ossigenazione e risposta idraulica profonda.</p>
-        </div>
-
-        <!-- FUNZIONE 4 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.5); border-top: 4px solid #FF5500; border-radius: 4px;">
-            <strong style="color: #FF5500; font-size: 0.95rem; display: block; margin-bottom: 8px; text-transform: uppercase;">4. Carica Mitocondriale</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Innesca la biogenesi cellulare accelerando il passaggio degli elettroni nelle membrane. Satura i serbatoi di ATP per un'energia costante senza crolli.</p>
-        </div>
-
-        <!-- FUNZIONE 5 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.5); border-top: 4px solid #FF5500; border-radius: 4px;">
-            <strong style="color: #FF5500; font-size: 0.95rem; display: block; margin-bottom: 8px; text-transform: uppercase;">5. Sintonia Endocrina</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Fornisce supporto alle ghiandole endocrine per stabilizzare la produzione ormonale, contrastando l'invecchiamento dei tessuti a qualsiasi età.</p>
-        </div>
-    </div>
-</div>   
-<!-- SEZIONE VANTAGGI SFERA SESSUALE & VIRILITÀ SOVRANA -->
-<div style="margin-top: 30px; padding: 20px; background: rgba(255, 85, 0, 0.05); border: 2px solid #FF5500; border-radius: 8px; font-family: sans-serif; color: #fff;">
-    <h3 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px; margin-top: 0; font-size: 1.3rem; text-align: center;">🪓 AUTORITÀ BIOLOGICA RIGENERATIVA // LA SFERA SESSUALE SOVRANA</h3>
-    <p style="font-size: 1rem; line-height: 1.5; color: #e0e0e0; text-align: center; margin-bottom: 20px;">Il ripristino del potenziale elettrico cellulare a <strong>-70mV</strong> e la disattivazione del cortisolo sbloccano l'idraulica endogena e la potenza ormonale senza l'uso di pillole chimiche o fuffa commerciale da scaffale.</p>
-    
-    <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-        <!-- FASCIA 20-35 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-left: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1.1rem;">FASCIA 20-35 ANNI // Reset Dopaminergico & Focus Erettivo</strong>
-            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #ccc; line-height: 1.4;">Eradicazione della disfunzione indotta dal sovraccarico dopaminergico digitale. Sintonizzazione delle onde Alpha/Theta per eliminare l'ansia da prestazione e ripristinare la massima sensibilità recettoriale.</p>
-        </div>
-
-        <!-- FASCIA 36-50 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-left: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1.1rem;">FASCIA 36-50 ANNI // Buffering Anti-Cortisolo & Preservazione Libido</strong>
-            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #ccc; line-height: 1.4;">Disattivazione del sequestro dell'Asse HPA indotto dallo stress competitivo del business. Abbassamento del cortisolo sierico per proteggere il testosterone libero ed evitare il crollo erettivo da stanchezza manageriale.</p>
-        </div>
-
-        <!-- FASCIA 51-65 -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-left: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1.1rem;">FASCIA 51-65 ANNI // Rigenerazione Mitocondriale & Ossido Nitrico</strong>
-            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #ccc; line-height: 1.4;">Inversione dell'usura endoteliale. Riattivazione delle centrali energetiche cellulari per forzare la produzione endogena di ossido nitrico, garantendo turgore, stabilità vascolare e resistenza strutturale prolungata.</p>
-        </div>
-
-        <!-- FASCIA 66-80 e + -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-left: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1.1rem;">FASCIA 66-80 ANNI E OLTRE // Restauro Somatico Totale & Orgoglio Virile</strong>
-            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #ccc; line-height: 1.4;">Ricarica profonda delle membrane sotto la soglia critica dei -70mV. Ripristino dell'autonomia e dell'energia mitocondriale per reclamare la sovranità biologica intima e difendere il vigore fisico dall'invecchiamento farmacologico.</p>
-    <div class="container" style="margin-bottom: 20px; border-bottom: none; padding-bottom: 0;">
-        <h2 style="color: #FF5500; text-transform: uppercase; text-align:center; margin-bottom: 5px;"> CONFRONTO D'ALTO CENSO TRA LE INIEZIONI DIMAGRANTI GLP-1 E  IL PROTOCOLLO RIGENERATIVO MOLECOLARE HAZR </h2>
-        <div class="table-wrapper">
-            <table class="matrix-table">
-                <thead>
-                    <tr>
-                        <th>Parametro Biologico</th>
-                        <th>Iniezioni Esogene GLP-1 (Senza Sovranità)</th>
-                        <th>Protocollo Ingegneristico HAZR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="row-param">Meccanismo d'Azione</td>
-                        <td class="row-glp">Inganno recettoriale centralizzato. Forza il pancreas e spegne chimicamente l'ipotalamo per indurre sazietà artificiale.</td>
-                        <td class="row-hazr">Saturazione mitocondriale endogena. Attiva l'interruttore epigenetico PGC-1α per moltiplicare le centrali energetiche cellulari.</td>
-                    </tr>
-                    <tr>
-                        <td class="row-param">Impatto sul Tessuto Muscolare</td>
-                        <td class="row-glp">Disastro somatico. Fino al 40% del peso perso con i farmaci GLP-1 è massa magra strutturale, riducendo l'organismo a un corpo svuotato.</td>
-                        <td class="row-hazr">Preservazione e conio strutturale. Fornisce i Lipidi d'Élite e les Proteine Strutturali del Capitolo 3 per nutrire la cellula mantenendo il tono muscolare.</td>
-                    </tr>
-                    <tr>
-                        <td class="row-param">Stato dei Lobi Frontali</td>
-                        <td class="row-glp">Nebbia e apatia dopaminergica. Spegnendo i recettori del piacere generale, priva la mente del focus laser e della spinta aggressiva.</td>
-                        <td class="row-hazr">Focus Laser stabile Alpha/Theta. Protegge la corteccia prefrontale dalla neuroinfiammazione, ancorando il potenziale a -70mV.</td>
-                    </tr>
-                    <tr>
-                        <td class="row-param">Dipendenza Finanziaria</td>
-                        <td class="row-glp">Schiavitù a vita. Se interrompi le iniezioni, l'appetito rimbalza e distrugge il metabolismo. Un abbonamento perpetuo esogeno.</td>
-                        <td class="row-hazr">Sovranità Biologica totale. Educa l'hardware attraverso Ancore Circadiane Meccaniche. Il corpo impara a camminare da solo, libero dal mercato.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-<!-- SEZIONE BILANCIAMENTO ORMONALE FEMMINILE - COSTRUTTIVO BLINDATO -->
-<div style="margin-top: 25px; padding: 20px; background: rgba(255, 85, 0, 0.03); border: 2px solid #FF5500; border-radius: 8px; font-family: sans-serif; color: #fff;">
-    <h3 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px; margin-top: 0; font-size: 1.3rem; text-align: center;">🪓 AUTORITÀ BIOLOGICA RIGENERATIVA // L'EQUILIBRIO ORMONALE FEMMINILE</h3>
-    <p style="font-size: 1rem; line-height: 1.5; color: #e0e0e0; text-align: center; margin-bottom: 20px;">La ricarica mitocondriale a <strong>-70mV</strong> protegge la stabilità dell'asse HPA e la biochimica endocrina femminile lungo ogni transizione biologica, contrastando il catabolismo da stress.</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
-        <!-- FASCIA 20-35 ANNI -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">20-35 ANNI<br>Reset Dopaminergico</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Stabilizzazione del ciclo contro l'esaurimento dopaminergico digitale. Reset dei lobi frontali per azzerare la brain fog e proteggere la regolarità ovarica dallo stress da performance.</p>
-        </div>
-
-        <!-- FASCIA 36-50 ANNI -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">36-50 ANNI<br>Scudo Progesterone</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Blocco del cortisolo latente che cannibalizza il progesterone. Preservazione della massa magra e protezione della libido durante i picchi di stress manageriale e pre-menopausale.</p>
-        </div>
-
-        <!-- FASCIA 51-65 ANNI -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">51-65 ANNI<br>Transizione Sovrana</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Mitigazione radicale dei sintomi della menopausa via PGC-1α. Rigenerazione endoteliale profonda per difendere la densità ossea, la protezione cardiaca e la vitalità tessutale intima.</p>
-        </div>
-
-        <!-- FASCIA 66-80 ANNI E OLTRE -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">66-80+ ANNI<br>Longevità Attiva</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Ricarica elettrica oltre la soglia critica cellulare. Protezione delle funzioni cognitive superiori e ripristino dell'autonomia energetica per una maturità fiera, lucida e libera da farmaci.</p>
-        </div>
-    </div>
-</div>
-            <!-- SEZIONE PROTEZIONE ADOLESCENZIALE & RESET DOPAMINERGICO -->
-<div style="margin-top: 25px; padding: 20px; background: rgba(255, 85, 0, 0.03); border: 2px solid #FF5500; border-radius: 8px; font-family: sans-serif; color: #fff;">
-    <h3 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px; margin-top: 0; font-size: 1.3rem; text-align: center;">🪓 PROTEZIONE NEURO-BIOLOGICA // LA SINCRONIZZAZIONE ADOLESCENZIALE</h3>
-    <p style="font-size: 1rem; line-height: 1.5; color: #e0e0e0; text-align: center; margin-bottom: 20px;">Il ripristino del basale a <strong>-70mV</strong> protegge la corteccia prefrontale in crescita dal sequestro dopaminergico e dalle tempeste adrenaliniche artificiali dei display.</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
-        <!-- COMPORTAMENTO NEUROLOGICO -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">RESET DOPAMINERGICO<br>Saturazione Recettoriale</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Disintossicazione profonda dai picchi di dopamina artificiale indotti da social e gaming. Ripristino dei recettori neuronali per eradicare l'apatia e la noia cronica.</p>
-        </div>
-
-        <!-- ASSE DELLO STRESS -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">BUFFER ADRENALINICO<br>Stabilità Asse HPA</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Schermatura biochimica contro il sovraccarico di adrenalina e cortisolo. Stabilizzazione del sistema nervoso per azzerare l'ansia da performance scolastica e sociale.</p>
-        </div>
-
-        <!-- COGNIZIONE SUPERIORE -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">FOCUS DECISIONALE<br>Sviluppo Prefrontale</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Ossigenazione e nutrizione mitocondriale dei lobi frontali. Eliminazione della brain fog pomeridiana per sbloccare la memoria, lo studio laser e la lucidità mentale.</p>
-        </div>
-
-        <!-- EQUILIBRIO ORMONALE -->
-        <div style="padding: 15px; background: rgba(0,0,0,0.4); border-top: 4px solid #FF5500;">
-            <strong style="color: #FF5500; font-size: 1rem; display: block; margin-bottom: 5px;">SINTONIA ENDOCRINA<br>Sviluppo Somatico</strong>
-            <p style="margin: 0; font-size: 0.85rem; color: #ccc; line-height: 1.4;">Supporto alle ghiandole endocrine durante lo sviluppo somatico. Regolazione dei ritmi circadiani e della melatonina per garantire un riposo notturno profondo e rigenerativo.</p>
-        </div>
-    </div>
-</div>
-    <!-- CONTENITORE CALCOLATORE EM-CALC - CENTRATURA MOBILE BLINDATA -->
-<div class="container" style="width: 100%; max-width: 600px; margin: 40px auto; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-    
-    <h2 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; font-size: 1.4rem;">TELEMETRIA EM-CALC: INSERISCI I TUOI DATI RICEVI IL TUO PIANO DI SBLOCCO PERSONALE</h2>
-    
-    <form id="matrix-form" style="width: 100%; max-width: 500px; margin: 0 auto; display: block; text-align: left; background: rgba(0, 0, 0, 0.6); padding: 25px; border-radius: 8px; border: 1px solid rgba(255, 85, 0, 0.2); box-sizing: border-box;">
-            <div class="form-group">
-                <label>Genere Hardware Somatico:</label>
-                <select id="gender">
-                   <option value="M">BIOMASS MALE // Executive Man</option> 
-                   <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Fascia d'Età Biologica:</label>
-                <select id="age-range">
-                    <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
-<option value="21-35">Ages 21-35 // Executive Young</option>
-<option value="36-50">Ages 36-50 // Executive Senior</option>
-<option value="51-60">Ages 51-60 // Master Tier</option>
-<option value="61+">Ages 61+ // Longevity Tier</option>
-                </select>
-            </div>
-            <div class="form-group"><label>Altezza Staturale (cm):</label><input type="number" id="height" required placeholder="..."></div>
-            <div class="form-group"><label>Massa Corporea (kg):</label><input type="number" id="weight" required placeholder="..."></div>
-            <div class="form-group">
-                <label>Orientamento Alimentare:</label>
-                <select id="diet">
-                    <option value="onnivora">[ ONNIVORA ]</option>
-                    <option value="vegetariana">[ VEGETARIANA ]</option>
-                    <option value="vegana">[ VEGANA ]</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Attività Fisica Core:</label>
-                <select id="activity-type">
-                    <option value="sedentario">[ SEDENTARIO ]</option>
-                    <option value="camminata">[ WALKING ]</option>
-                    <option value="palestra">[ RESISTANCE ]</option>
-                    <option value="cardio">[ CARDIO HIGH ]</option>
-                    <option value="rapporto">[ SEX HIGH ]</option>
-                </select>
-            </div>
-            <div class="form-group"><label>Durata (Minuti al giorno):</label><input type="number" id="activity-duration" value="0"></div>
-            <div class="form-group">
-                <label>Marker Sequestro Endocrino (Asse HPA):</label>
-                <select id="hpa-marker">
-                    <option value="safe">[ CODE SAFE ]</option>
-                    <option value="warning">[ CODE WARNING ]</option>
-                    <option value="critical">[ CRITICAL OVERLOAD ]</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Obiettivo Configurazione:</label>
-                <select id="goal">
-                    <option value="recon-energy">[ RECON-ENERGY ]</option>
-                    <option value="body-recomp">[ BODY-RECOMP ]</option>
-                    <option value="brain-shield">[ BRAIN-SHIELD ]</option>
-                </select>
-            </div>
-      <div class="form-group" style="border-top: 1px solid #333; padding-top: 20px; margin-top: 25px;">
-            <h3 style="color: #FF5500; font-size: 1rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px;">⚙️ TRASPARENZA PIANO DI SBLOCCO CICLICO (HAZR ON/OFF)</h3>
-            <p style="font-size: 0.85rem; color: #ccc; text-align: justify; line-height: 1.5; margin-bottom: 15px;">
-                Il Protocollo HAZR rispetta la tua Sovranità Biologica e rifiuta ogni forma di dipendenza chimica artificiale. Il percorso è strutturato su un <strong>Ciclo Stagionale Chiuso di 90 giorni</strong> (3 somministrazioni da 30 giorni ciascuna) seguito da una <strong>Finestra di Autonomia Somatica a canone azzerato</strong>:
-            </p>
-            <ul style="font-size: 0.8rem; color: #aaa; padding-left: 20px; line-height: 1.6; margin-bottom: 20px;">
-                <li><strong style="color: #fff;">Mesi 1, 2 e 3 (Fase ON):</strong> Prelievo automatico della quota mensile assegnata (Teens: 47€/mese | Young e Longevità: 67€/mese | Premium: 197€/mese). Il laboratorio certificato produce a marchio e spedisce a casa il tuo flacone da 60 capsule prima del termine del ciclo.</li>
-                <li><strong style="color: #fff;">Mese 4 (Fase OFF - La Coccola):</strong> Nessun addebito e nessuna spedizione. Applichi le routine dei testi per sperimentare la reale indipendenza elettrica delle tue cellule a -70mV.</li>
-                <li><strong style="color: #fff;">Mese 5 e successivi:</strong> Il canone si disattiva da solo alla 3° rata per le linee di massa. Per la linea Premium si attiva il mantenimento facoltativo delle ricariche pure a 97€/mese.</li>
-            </ul>
-
-            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #FF5500; cursor: pointer; margin-bottom: 15px;">
-                <input type="checkbox" id="review-consent" required>
-                <span>[CONVALIDA OBBLIGATORIA] Confermo di aver compreso la struttura ciclica dei 90 giorni (Fase ON/OFF), i relativi costi della mia fascia e la logica di spedizione Drop-Shipping dal produttore.</span>
-            </label>
-            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: #fff; cursor: pointer; margin-top: 15px;">
-                <input type="checkbox" id="privacy-consent" required>
-                <span>Consenso obbligatorio ai termini esecutivi e al trattamento dati anagrafici per la spedizione del lotto.</span>
-            </label>
-            <button type="button" onclick="calcolaEcosistemaSomatico()" style="margin-top: 25px; width: 100%; padding: 15px; background-color: #FF5500; color: #fff; border: none; font-size: 1.1rem; font-weight: bold; cursor: pointer; text-transform: uppercase;">[ AVVIA TELEMETRIA EM-CALC ]</button>
-        </form>
-    </div>
-    <!-- 📚 VETRINA COMMERCIALE FLOTTA LIBRARIA AMAZON (NAZIONALIZZATA E SICURA) -->
-    <div class="preview-section" style="max-width: 800px; width: 100%; margin-bottom: 60px; border-top: 1px solid #222; padding-top: 30px;">
-        <h2 style="color: #FF5500; text-transform: uppercase; letter-spacing: 1px;">ACQUISTA I SINGOLI VOLUMI COMMERCIALI SU AMAZON</h2>
-        <p style="color: #888; font-size: 0.9rem; margin-bottom: 25px;">Se non sei pronto per il Protocollo HAZR Fisico e Autografato, ordina i singoli testi d'anagrafica standard.</p>
-        <div style="display: flex; flex-direction: column; gap: 5px; max-width: 600px; margin: 0 auto;">
-            <a href="https://amazon.com/dp/B0HP2233HJ" target="_blank" class="market-link">[ USA ] JOE FENIX METHOD: NEVER BETTER ➔</a>
-            <a href="https://amazon.com/dp/B0HKFF979L" target="_blank" class="market-link">[ USA ] HIGH SOMATIC MASTERY: ZERO CORTISOL ➔</a>
-            <a href="https://amazon.com/dp/B0HFD2BTGK" target="_blank" class="market-link">[ USA ] JOE FENIX METHOD: 10 PRINCIPLES. ONE GOAL ➔</a>
-            <a href="https://amazon.com/dp/B0H98F9V8D" target="_blank" class="market-link">[ USA ] ANTI-INFLAMMATORY MEAL PREP (OVER 60) ➔</a>
-             <a href="https://amazon.it/dp/B0HNTW96R" target="_blank" class="market-link">[ ITA ] JOE FENIX METHOD: MAI STATO MEGLIO ➔</a>
-        </div>
-    <script>
-function calcolaEcosistemaSomatico() {
-    const gender = document.getElementById('gender').value;
-  const ageRange = document.getElementById('age-range').value;
-
-    updateStripeButton(gender, ageRange);
-    
-    const resultSection = document.getElementById('result-section');
-    if (resultSection) {
-        resultSection.style.display = 'block';
-    }
-}
-
-// IL REALE MOTORE DI REINDIRIZZAMENTO INTERNAZIONALE STRIPE - COORDINATO
-function getStripeLink(gender, ageRange) {
-    if (ageRange === "0-20") {
-        return "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b"; // TEENS €97
-    }
-    if (gender === 'F') {
-        return "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09"; // LADY €147
-    }
-    if (ageRange === "51-60" || ageRange === "61+") {
-        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a"; // LONGEVITY €197
-    }
-    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08"; // MAN €147
-}
-    
-
-}function updateStripeButton(gender, ageRange) {
-    const targetLink = getStripeLink(gender, ageRange);
-    const btnContainer = document.getElementById('stripe-btn-container');
-    if (btnContainer) {
-        let btnText = (currentLang === 'en') ? "UNLOCK YOUR FLOW PROTOCOL 🪓" : "SBLOCCA IL TUO PROTOCOLLO FLOW 🪓";
-        btnContainer.innerHTML = `<a href="${targetLink}" target="_blank" style="display: block; width: 100%; max-width: 350px; margin: 20px auto; padding: 15px; background: #FF5500; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255,85,0,0.4);">${btnText}</a>`;
-// IL REALE MOTORE DI REINDIRIZZAMENTO INTERNAZIONALE STRIPE - COORDINATO
-function getStripeLink(gender, ageRange) {
-    // 1. FASCIA TEENS DOPO L'ULTIMO INTERVENTO
-    if (ageRange === "0-20") {
-        return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
-    }
-    
-    // 2. FASCIA LADY (GENERE FEMMINILE 'F')
-    if (gender === 'F') {
-        return "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09";
-    }
-    
-    // 3. FASCIA HAZR LONGEVITY (OVER 51+)
-    if (ageRange === "51-60" || ageRange === "61+") {
-        return "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a";
-    }
-    
-    // 4. FASCIA HAZR MAN (RESTRUPPO STANDARD EXECUTIVES)
-    return "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
-}
-let messaggio = "[ EM-CALC TELEMETRY SUCCESSFUL ]\n\n" +
-                    "Configurazione Hardware Rilevata!\n" +
-                    "-----------------------------------------\n" +
-                    "--> SUB-PROTOCOLLO ASSEGNATO:\n" + subProtocollo + "\n\n" +
-                    "--> FORMULA STRUTTURALE VETTORIALE:\n" + formulaNaturale + "\n" +
-                    "-----------------------------------------\n" +
-                    "[ANGELO TUTELARE ATTIVO]: Il tuo piano prevede un ciclo stagna di 90 giorni (Fase ON) seguito dal mese di autonomia somatica a canone azzerato (Fase OFF - La Coccola).\n\n" +
-                    "Fai clic su OK per accedere al modulo sicuro Stripe, inserire i dati di spedizione e sbloccare istantaneamente il PDF del protocollo completo.";
-    
-    alert(messaggio);
-    
-    setTimeout(function() {
-        window.location.href = stripeUrl;
-    }, 100);
-}
-}
-</script>
-       <!-- SELETTORE BILINGUE AUTOMATICO + PULSANTE IT / EN -->
-<div id="lang-switcher" style="position: fixed; top: 15px; right: 15px; z-index: 9999; background: rgba(0, 0, 0, 0.85); border: 1px solid #FF5500; border-radius: 6px; padding: 6px 12px; font-family: sans-serif; font-size: 0.85rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
-    <span id="btn-it" onclick="setLanguage('it')" style="cursor: pointer; color: #FF5500; padding-right: 6px;">IT</span>
-    <span style="color: #555;">|</span>
-    <span id="btn-en" onclick="setLanguage('en')" style="cursor: pointer; color: #888; padding-left: 6px;">EN</span>
+    <div class="footer-note">JOE FENIX METHOD • BIOENERGETIC SOVEREIGNTY SYSTEM</div>
 </div>
 
 <script>
-const translations = {
-    en: {
-        // 5 Vettori Molecolari
-        "🏛️ I 5 VETTORI MOLECOLARI // LE FUNZIONI SOMATICHE": "🏛️ THE 5 MOLECULAR VECTORS // SOMATIC FUNCTIONS",
-        "L'ingegnerizzazione biologica cellulare profonda espressa attraverso vettori puri e notificati, senza compromessi commerciali.": "Deep cellular biological engineering expressed through pure, notified vectors, with zero commercial compromises.",
-        "1. Reset Dopaminergico": "1. Dopaminergic Reset",
-        "Ripristina i recettori neuronali saturi dall'esposizione ai display. Elimina la brain fog pomeridiana, riattivando il focus laser della corteccia prefrontale.": "Restores neuronal receptors saturated by screen exposure. Eliminates afternoon brain fog, reactivating prefrontal cortex laser focus.",
-        "2. Buffer Cortisolico": "2. Cortisol Buffer",
-        "Scherma l'asse dello stress (HPA). Blocca l'ipersecrezione di cortisolo dovuta al sovraccarico decisionale, proteggendo la sintesi ormonale nativa.": "Shields the stress axis (HPA). Blocks cortisol hypersecretion caused by decision overload, protecting native hormonal synthesis.",
-        "3. Spinta Endoteliale": "3. Endothelial Drive",
-        "Stimola la produzione di ossido nitrico per restituire elasticità ai vasi sanguigni. Garantisce la massima ossigenazione e risposta idraulica profonda.": "Stimulates nitric oxide production to restore blood vessel elasticity. Ensures maximum oxygenation and deep hydraulic response.",
-        "4. Carica Mitocondriale": "4. Mitochondrial Charge",
-        "Innesca la biogenesi cellulare accelerando il passaggio degli elettroni nelle membrane. Satura i serbatoi di ATP per un'energia costante senza crolli.": "Triggers cellular biogenesis by accelerating electron transport across membranes. Saturates ATP reservoirs for steady energy without crashes.",
-        "5. Sintonia Endocrina": "5. Endocrine Tuning",
-        "Fornisce supporto alle ghiandole endocrine per stabilizzare la produzione ormonale, contrastando l'invecchiamento dei tessuti a qualsiasi età.": "Supports endocrine glands to stabilize hormone production, counteracting tissue aging at any stage of life.",
+    let currentLang = 'it';
+
+    function toggleLanguage() {
+        currentLang = (currentLang === 'it') ? 'en' : 'it';
+        document.getElementById('vision-tag').innerText = (currentLang === 'en') 
+            ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" 
+            : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
+        document.getElementById('main-title').innerText = (currentLang === 'en') 
+            ? "EM-CALC // Quantum Flow Telemetry" 
+            : "EM-CALC // Telemetria Quantum Flow";
+        document.getElementById('main-sub').innerText = (currentLang === 'en') 
+            ? "Bioenergetic calibration for cognitive sovereignty. Select your profile to isolate your molecular Flow State matrix." 
+            : "Calibrazione bioenergetica per sovranità cognitiva. Seleziona il tuo assetto per isolare la matrice molecolare di controllo del Flow State.";
+        document.getElementById('lbl-gender').innerText = (currentLang === 'en') ? "Biological Profile" : "Assetto Biologico";
+        document.getElementById('lbl-age').innerText = (currentLang === 'en') ? "Calibration Tier" : "Fascia di Calibrazione";
+        document.getElementById('btn-start').innerText = (currentLang === 'en') ? "RUN EM-CALC TELEMETRY" : "AVVIA TELEMETRIA EM-CALC";
+        document.getElementById('res-badge').innerText = (currentLang === 'en') ? "QUANTUM COHERENCE ACTIVE (-70mV)" : "COERENZA QUANTICA ATTIVA (-70mV)";
         
-        // Calcolatore EM-CALC
-        "TELEMETRIA EM-CALC: INSERISCI I TUOI DATI": "EM-CALC TELEMETRY: ENTER YOUR DATA",
-        "[ FASCIA MASTER ] // Da 51 a 60 anni (HAZR YOUNG)": "[ MASTER TIER ] // Ages 51 to 60 (HAZR YOUNG)",
-        "[ FASCIA LONGEVITY ] // Oltre 61 anni (HAZR LONGEVITY)": "[ LONGEVITY TIER ] // Over 61 years (HAZR LONGEVITY)"
-    }
-};
-
-const originalTexts = new Map();
-
-function saveOriginalTexts(node) {
-    if (node.nodeType === 3) {
-        const text = node.nodeValue.trim();
-        if (text.length > 0 && !originalTexts.has(node)) {
-            originalTexts.set(node, node.nodeValue);
-        }
-    } else {
-        for (let child of node.childNodes) {
-            saveOriginalTexts(child);
+        if (document.getElementById('result-section').style.display === 'block') {
+            calcolaEcosistemaSomatico();
         }
     }
+
+    function calcolaEcosistemaSomatico() {
+        const gender = document.getElementById('gender').value;
+        const ageRange = document.getElementById('age-range').value;
+
+        let title = "";
+        let desc = "";
+        let stripeUrl = "";
+
+        if (ageRange === "0-20") {
+            title = "HAZR TEENS // Controlled Flow & Neural Shield";
+            desc = (currentLang === 'en') 
+                ? "Molecular Matrix: High-Bioavailability Zinc Bisglycinate + Neuro-Protective Cofactors. Repairs dopaminergic receptors saturated by screens and channels chaotic adrenaline into structured creativity at -70mV."
+                : "Matrice Molecolare: Zinco Bisglicinato ad Alta Biodisponibilità + Cofattori Neuro-Protettivi. Ripara i recettori dopaminergici saturi dagli schermi e canalizza l'adrenalina in creatività strutturata a -70mV.";
+            stripeUrl = "https://stripe.com";
+        } else if (gender === "F") {
+            title = "HAZR LADY // Peak Flow & Endocrine Shield";
+            desc = (currentLang === 'en') 
+                ? "Molecular Matrix: Chasteberry + Dong Quai + Rhodiola Rosea + Magnesium Bisglycinate. Builds a selective HPA-axis barrier that neutralizes cortisol entropy and unlocks multipotential cognitive power.": "Matrice Molecolare: Agnocasto + Dong Quai + Rhodiola Rosea + Magnesio Bisglicinato. Erige una barriera selettiva sull'asse HPA che neutralizza l'entropia cortisolica e sblocca la potenza multipotenziale.";
+stripeUrl = "stripe.com";
+} else if (ageRange === "51-60" || ageRange === "61+") {
+title = "HAZR LONGEVITY // Master Tier Neuro-Flow";
+desc = (currentLang === 'en')
+? "Molecular Matrix: Ubiquinol CoQ10 + PQQ + Alpha-GPC + Hericium Erinaceus (Lion's Mane). Reverses mitochondrial decline and anchors cellular voltage at -70mV for sustained strategic speed."
+: "Matrice Molecolare: Ubichinolo CoQ10 + PQQ + Alfa-GPC + Hericium Erinaceus (Lion's Mane). Inverte l'entropia mitocondriale e ancora il voltaggio cellulare a -70mV per una velocità strategica costante.";
+stripeUrl = "stripe.com";
+} else {
+title = "HAZR MAN // Quantum Flow Executive Protocol";
+desc = (currentLang === 'en')
+? "Molecular Matrix: L-Citrulline Malate + Arginine AKG + Ashwagandha KSM-66® + Zinc Bisglycinate. Optimizes endothelial drive, eliminates decision fatigue, and triggers the Quantum Effect at -70mV."
+: "Matrice Molecolare: L-Citrullina Malato + Arginina AKG + Ashwagandha KSM-66® + Zinco Bisglicinato. Ottimizza la spinta endoteliale, azzera l'affaticamento decisionale e attiva l'Effetto Quantico a -70mV.";
+stripeUrl = "stripe.com";
 }
-
-function setLanguage(lang) {
-    saveOriginalTexts(document.body);
-    
-    document.getElementById('btn-it').style.color = (lang === 'it') ? '#FF5500' : '#888';
-    document.getElementById('btn-en').style.color = (lang === 'en') ? '#FF5500' : '#888';
-
-    originalTexts.forEach((origValue, node) => {
-        const trimmed = origValue.trim();
-        if (lang === 'en' && translations.en[trimmed]) {
-            node.nodeValue = origValue.replace(trimmed, translations.en[trimmed]);
-        } else if (lang === 'it') {
-            node.nodeValue = origValue;
-        }
-    });
-    updateStripeButton(gender, age);
+document.getElementById('res-title').innerText = title;
+document.getElementById('res-desc').innerText = desc;
+const btnText = (currentLang === 'en') ? "UNLOCK YOUR QUANTUM PROTOCOL →" : "SBLOCCA IL TUO PROTOCOLLO QUANTICO →";
+document.getElementById('stripe-btn-container').innerHTML = <a href="${stripeUrl}" target="_blank" class="stripe-link">${btnText}</a>;
+document.getElementById('result-section').style.display = 'block';
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-    saveOriginalTexts(document.body);
-    const userLang = navigator.language || navigator.userLanguage;
-    if (!userLang.toLowerCase().startsWith('it')) {
-        setLanguage('en');
-    }
-}); 
-</body>
-</html>
