@@ -331,10 +331,8 @@ document.getElementById('lib-desc').innerText = (lang === 'en')
 document.getElementById('btn-lib').innerText = (lang === 'en') ? "EXPLORE THE BOOK FLEET →" : "ESPLORA LA FLOTTA LIBRARIA →";
 if (document.getElementById('result-section').style.display === 'block') { runCalc(); }
 }
-document.addEventListener("DOMContentLoaded", function() {
-document.getElementById('btn-start').addEventListener('click', runCalc);
-document.getElementById('lang-toggle').addEventListener('click', setLang);
-});
+document.getElementById('btn-start').onclick = runCalc;
+    document.getElementById('lang-toggle').onclick = setLang;
     </script>
 
 </body>
