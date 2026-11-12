@@ -10,27 +10,28 @@
             color: #e5e5e5;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 24px 16px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
         }
         .container {
             background-color: #161616;
             border: 1px solid #2a2a2a;
             border-radius: 8px;
-            padding: 32px;
-            max-width: 560px;
+            padding: 36px 32px;
+            max-width: 620px;
             width: 100%;
             box-shadow: 0 12px 35px rgba(0,0,0,0.85);
+            box-sizing: border-box;
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 15px;
+            padding-bottom: 16px;
             margin-bottom: 24px;
         }
         .brand {
@@ -63,16 +64,31 @@
             font-weight: 700;
         }
         h1 {
-            font-size: 23px;
-            margin: 0 0 10px 0;
+            font-size: 24px;
+            margin: 0 0 14px 0;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
-        p.subtitle {
+        .intro-box {
+            background: #1b1b1b;
+            border: 1px solid #2c2c2c;
+            border-left: 3px solid #FF5500;
+            padding: 18px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+        }
+        .intro-box p {
             font-size: 14px;
-            color: #a0a0a0;
-            margin: 0 0 26px 0;
-            line-height: 1.55;
+            color: #cccccc;
+            margin: 0 0 12px 0;
+            line-height: 1.6;
+        }
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+        .intro-highlight {
+            color: #ffffff;
+            font-weight: 700;
         }
         label {
             display: block;
@@ -85,7 +101,7 @@
         }
         select {
             width: 100%;
-            padding: 13px;
+            padding: 14px;
             margin-bottom: 20px;
             background-color: #202020;
             color: #ffffff;
@@ -93,6 +109,7 @@
             border-radius: 6px;
             font-size: 14px;
             outline: none;
+            box-sizing: border-box;
         }
         select:focus {
             border-color: #FF5500;
@@ -110,7 +127,7 @@
             letter-spacing: 1.2px;
             cursor: pointer;
             transition: background 0.2s;
-            margin-top: 6px;
+            margin-top: 4px;
         }
         .btn-calc:hover {
             background-color: #e04b00;
@@ -118,7 +135,7 @@
         #result-section {
             display: none;
             margin-top: 28px;
-            padding-top: 22px;
+            padding-top: 24px;
             border-top: 1px solid #2a2a2a;
         }
         .protocol-badge {
@@ -134,7 +151,7 @@
             margin-bottom: 10px;
         }
         .protocol-title {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 800;
             color: #ffffff;
             margin-bottom: 12px;
@@ -170,8 +187,54 @@
         .stripe-link:hover {
             background: #e5e5e5;
         }
+        .library-section {
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 1px solid #2a2a2a;
+        }
+        .library-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #FF5500;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .library-title {
+            font-size: 19px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 12px 0;
+        }
+        .library-desc {
+            font-size: 14px;
+            color: #b8b8b8;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+        .btn-library {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #FF5500;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: all 0.2s;
+        }
+        .btn-library:hover {
+            background-color: #FF5500;
+            color: #ffffff;
+        }
         .footer-note {
-            margin-top: 24px;
+            margin-top: 32px;
             text-align: center;
             font-size: 11px;
             color: #666;
@@ -189,15 +252,19 @@
 
     <div class="vision-tag" id="vision-tag">TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION</div>
     <h1 id="main-title">EM-CALC // Telemetria Quantum Flow</h1>
-    <p class="subtitle" id="main-sub">Calibrazione bioenergetica per sovranità cognitiva. Seleziona il tuo assetto per isolare la matrice molecolare di controllo del Flow State.</p>
 
-    <label for="gender" id="lbl-gender">Assetto Biologico</label>
+    <div class="intro-box">
+        <p id="intro-p1"><span class="intro-highlight">Perché calibrare il sistema:</span> La lucidità decisionale e l'accesso volontario al <strong>Flow State</strong> non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a <strong>-70mV</strong>. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.</p>
+        <p id="intro-p2"><span class="intro-highlight">Cosa elabora EM-CALC:</span> Non servono lunghi questionari soggettivi. Incrociando unicamente il tuo <strong>Assetto Biologico</strong> (profilo endocrino) e la tua <strong>Fascia di Calibrazione</strong> (stadio mitocondriale e recettoriale), l'algoritmo isola istantaneamente la matrice molecolare mirata per ripristinare il tuo voltaggio operativo.</p>
+    </div>
+
+    <label for="gender" id="lbl-gender">1. Assetto Biologico</label>
     <select id="gender">
         <option value="M">BIOMASS MALE // Executive Man</option>
         <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
     </select>
 
-    <label for="age-range" id="lbl-age">Fascia di Calibrazione</label>
+    <label for="age-range" id="lbl-age">2. Fascia di Calibrazione</label>
     <select id="age-range">
         <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
         <option value="21-35">Ages 21-35 // Executive Young</option>
@@ -215,51 +282,63 @@
         <div id="stripe-btn-container"></div>
     </div>
 
+    <div class="library-section">
+        <div class="library-tag" id="lib-tag">ARCHITETTURA TEORICA & OPERATIVA</div>
+        <h2 class="library-title" id="lib-title">La Flotta Libraria Joe Fenix</h2>
+        <p class="library-desc" id="lib-desc">L'integrazione molecolare stabilizza l'hardware biologico, ma è la padronanza concettuale a guidare il sistema. I volumi della Flotta Libraria codificano i fondamenti biofisici dell'ancoraggio a -70mV, l'architettura del Flow State e la gestione strategica dell'energia cognitiva: un ausilio scientifico indispensabile per consolidare i risultati del protocollo.</p>
+       <a href="https://linktr.ee/joefenixmethod" target="_blank" class="btn-library" id="btn-lib">ESPLORA LA FLOTTA LIBRARIA →</a>
+    </div>
+
     <div class="footer-note">JOE FENIX METHOD • BIOENERGETIC SOVEREIGNTY SYSTEM</div>
 </div>
 
 <script>
     let currentLang = 'it';
-
-    function toggleLanguage() {
-        currentLang = (currentLang === 'it') ? 'en' : 'it';
-        document.getElementById('vision-tag').innerText = (currentLang === 'en') 
-            ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" 
-            : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
-        document.getElementById('main-title').innerText = (currentLang === 'en') 
-            ? "EM-CALC // Quantum Flow Telemetry" 
-            : "EM-CALC // Telemetria Quantum Flow";
-        document.getElementById('main-sub').innerText = (currentLang === 'en') 
-            ? "Bioenergetic calibration for cognitive sovereignty. Select your profile to isolate your molecular Flow State matrix." 
-            : "Calibrazione bioenergetica per sovranità cognitiva. Seleziona il tuo assetto per isolare la matrice molecolare di controllo del Flow State.";
-        document.getElementById('lbl-gender').innerText = (currentLang === 'en') ? "Biological Profile" : "Assetto Biologico";
-        document.getElementById('lbl-age').innerText = (currentLang === 'en') ? "Calibration Tier" : "Fascia di Calibrazione";
-        document.getElementById('btn-start').innerText = (currentLang === 'en') ? "RUN EM-CALC TELEMETRY" : "AVVIA TELEMETRIA EM-CALC";
-        document.getElementById('res-badge').innerText = (currentLang === 'en') ? "QUANTUM COHERENCE ACTIVE (-70mV)" : "COERENZA QUANTICA ATTIVA (-70mV)";
-        
-        if (document.getElementById('result-section').style.display === 'block') {
-            calcolaEcosistemaSomatico();
-        }
-    }
-
-    function calcolaEcosistemaSomatico() {
-        const gender = document.getElementById('gender').value;
-        const ageRange = document.getElementById('age-range').value;
-
-        let title = "";
-        let desc = "";
-        let stripeUrl = "";
-
-        if (ageRange === "0-20") {
-            title = "HAZR TEENS // Controlled Flow & Neural Shield";
-            desc = (currentLang === 'en') 
-                ? "Molecular Matrix: High-Bioavailability Zinc Bisglycinate + Neuro-Protective Cofactors. Repairs dopaminergic receptors saturated by screens and channels chaotic adrenaline into structured creativity at -70mV."
-                : "Matrice Molecolare: Zinco Bisglicinato ad Alta Biodisponibilità + Cofattori Neuro-Protettivi. Ripara i recettori dopaminergici saturi dagli schermi e canalizza l'adrenalina in creatività strutturata a -70mV.";
-            stripeUrl = "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b";
-        } else if (gender === "F") {
-            title = "HAZR LADY // Peak Flow & Endocrine Shield";
-            desc = (currentLang === 'en') 
-                ? "Molecular Matrix: Chasteberry + Dong Quai + Rhodiola Rosea + Magnesium Bisglycinate. Builds a selective HPA-axis barrier that neutralizes cortisol entropy and unlocks multipotential cognitive power.": "Matrice Molecolare: Agnocasto + Dong Quai + Rhodiola Rosea + Magnesio Bisglicinato. Erige una barriera selettiva sull'asse HPA che neutralizza l'entropia cortisolica e sblocca la potenza multipotenziale.";
+function toggleLanguage() {
+currentLang = (currentLang === 'it') ? 'en' : 'it';
+document.getElementById('vision-tag').innerText = (currentLang === 'en')
+? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION"
+: "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
+document.getElementById('main-title').innerText = (currentLang === 'en')
+? "EM-CALC // Quantum Flow Telemetry"
+: "EM-CALC // Telemetria Quantum Flow";
+document.getElementById('intro-p1').innerHTML = (currentLang === 'en')
+? 'Why calibrate the system: Decision-making clarity and voluntary access to the Flow State do not rely on willpower, but on maintaining cellular membrane potential at -70mV. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
+: 'Perché calibrare il sistema: La lucidità decisionale e l'accesso volontario al Flow State non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a -70mV. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
+document.getElementById('intro-p2').innerHTML = (currentLang === 'en')
+? 'What EM-CALC processes: No lengthy subjective questionnaires are needed. By cross-referencing only your Biological Profile (endocrine baseline) and your Calibration Tier (mitochondrial and receptor stage), the algorithm instantly isolates the targeted molecular matrix to restore your operational voltage.'
+: 'Cosa elabora EM-CALC: Non servono lunghi questionari soggettivi. Incrociando unicamente il tuo Assetto Biologico (profilo endocrino) e la tua Fascia di Calibrazione (stadio mitocondriale e recettoriale), l'algoritmo isola istantaneamente la matrice molecolare mirata per ripristinare il tuo voltaggio operativo.';
+document.getElementById('lbl-gender').innerText = (currentLang === 'en') ? "1. Biological Profile" : "1. Assetto Biologico";
+document.getElementById('lbl-age').innerText = (currentLang === 'en') ? "2. Calibration Tier" : "2. Fascia di Calibrazione";
+document.getElementById('btn-start').innerText = (currentLang === 'en') ? "RUN EM-CALC TELEMETRY" : "AVVIA TELEMETRIA EM-CALC";
+document.getElementById('res-badge').innerText = (currentLang === 'en') ? "QUANTUM COHERENCE ACTIVE (-70mV)" : "COERENZA QUANTICA ATTIVA (-70mV)";
+document.getElementById('lib-tag').innerText = (currentLang === 'en') ? "THEORETICAL & OPERATIONAL ARCHITECTURE" : "ARCHITETTURA TEORICA & OPERATIVA";
+document.getElementById('lib-title').innerText = (currentLang === 'en') ? "The Joe Fenix Book Fleet" : "La Flotta Libraria Joe Fenix";
+document.getElementById('lib-desc').innerText = (currentLang === 'en')
+? "Molecular supplementation stabilizes your biological hardware, while conceptual mastery directs the system. The volumes of the Book Fleet codify the biophysical foundations of -70mV anchoring, Flow State architecture, and strategic cognitive energy management: an essential scientific companion to consolidate your biological protocol."
+: "L'integrazione molecolare stabilizza l'hardware biologico, ma è la padronanza concettuale a guidare il sistema. I volumi della Flotta Libraria codificano i fondamenti biofisici dell'ancoraggio a -70mV, l'architettura del Flow State e la gestione strategica dell'energia cognitiva: un ausilio scientifico indispensabile per consolidare i risultati del protocollo.";
+document.getElementById('btn-lib').innerText = (currentLang === 'en') ? "EXPLORE THE BOOK FLEET →" : "ESPLORA LA FLOTTA LIBRARIA →";
+if (document.getElementById('result-section').style.display === 'block') {
+calcolaEcosistemaSomatico();
+}
+}
+function calcolaEcosistemaSomatico() {
+const gender = document.getElementById('gender').value;
+const ageRange = document.getElementById('age-range').value;
+let title = "";
+let desc = "";
+let stripeUrl = "";
+if (ageRange === "0-20") {
+title = "HAZR TEENS // Controlled Flow & Neural Shield";
+desc = (currentLang === 'en')
+? "Molecular Matrix: High-Bioavailability Zinc Bisglycinate + Neuro-Protective Cofactors. Repairs dopaminergic receptors saturated by screens and channels chaotic adrenaline into structured creativity at -70mV."
+: "Matrice Molecolare: Zinco Bisglicinato ad Alta Biodisponibilità + Cofattori Neuro-Protettivi. Ripara i recettori dopaminergici saturi dagli schermi e canalizza l'adrenalina in creatività strutturata a -70mV.";
+stripeUrl = "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b";
+} else if (gender === "F") {
+title = "HAZR LADY // Peak Flow & Endocrine Shield";
+desc = (currentLang === 'en')
+? "Molecular Matrix: Chasteberry + Dong Quai + Rhodiola Rosea + Magnesium Bisglycinate. Builds a selective HPA-axis barrier that neutralizes cortisol entropy and unlocks multipotential cognitive power."
+: "Matrice Molecolare: Agnocasto + Dong Quai + Rhodiola Rosea + Magnesio Bisglicinato. Erige una barriera selettiva sull'asse HPA che neutralizza l'entropia cortisolica e sblocca la potenza multipotenziale.";
 stripeUrl = "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09";
 } else if (ageRange === "51-60" || ageRange === "61+") {
 title = "HAZR LONGEVITY // Master Tier Neuro-Flow";
