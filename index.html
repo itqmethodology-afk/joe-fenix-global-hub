@@ -306,7 +306,7 @@ u = "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
 document.getElementById('res-title').innerText = t;
 document.getElementById('res-desc').innerText = d;
 const bText = (lang === 'en') ? "UNLOCK YOUR QUANTUM PROTOCOL →" : "SBLOCCA IL TUO PROTOCOLLO QUANTICO →";
-document.getElementById('stripe-btn-container').innerHTML = '' + bText + '';
+document.getElementById('stripe-btn-container').innerHTML = '<a href="' + u + '" target="_blank" class="stripe-link">' + bText + '</a>'
 document.getElementById('result-section').style.display = 'block';
 }
 function setLang() {
