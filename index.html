@@ -21,7 +21,7 @@
             border: 1px solid #2a2a2a;
             border-radius: 8px;
             padding: 36px 32px;
-            max-width: 620px;
+            max-width: 640px;
             width: 100%;
             box-shadow: 0 12px 35px rgba(0,0,0,0.85);
             box-sizing: border-box;
@@ -71,7 +71,7 @@
             border-left: 3px solid #FF5500;
             padding: 18px;
             border-radius: 6px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
         .intro-box p {
             font-size: 14px;
@@ -81,6 +81,41 @@
         }
         .intro-box p:last-child { margin-bottom: 0; }
         .intro-highlight { color: #ffffff; font-weight: 700; }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        @media (max-width: 540px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+        }
+        .pillar-card {
+            background: #1a1a1a;
+            border: 1px solid #282828;
+            border-radius: 6px;
+            padding: 14px;
+        }
+        .pillar-card-full {
+            grid-column: 1 / -1;
+            background: #1d1a18;
+            border: 1px solid #33261f;
+            border-left: 3px solid #FF5500;
+        }
+        .pillar-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: #FF5500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .pillar-text {
+            font-size: 13px;
+            color: #cccccc;
+            line-height: 1.5;
+            margin: 0;
+        }
         label {
             display: block;
             font-size: 11px;
@@ -232,34 +267,44 @@
 
     <div class="intro-box">
         <p id="intro-p1"><span class="intro-highlight">Perché calibrare il sistema:</span> La lucidità decisionale e l'accesso volontario al <strong>Flow State</strong> non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a <strong>-70mV</strong>. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.</p>
-        <p id="intro-p2"><span class="intro-highlight">Cosa elabora EM-CALC:</span> Non servono lunghi questionari soggettivi. Incrociando unicamente il tuo <strong>Assetto Biologico</strong> (profilo endocrino) e la tua <strong>Fascia di Calibrazione</strong> (stadio mitocondriale e recettoriale), l'algoritmo isola istantaneamente la matrice molecolare mirata per ripristinare il tuo voltaggio operativo.</p>
+        <p id="intro-p2"><span class="intro-highlight">I 5 Vettori di Intervento:</span> Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto <em>Never Better</em>:</p>
     </div>
 
-    <label for="gender" id="lbl-gender">1. Assetto Biologico</label>
-    <select id="gender">
-        <option value="M">BIOMASS MALE // Executive Man</option>
-        <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
-    </select>
+    <div class="pillars-grid">
+        <div class="pillar-card">
+            <div class="pillar-title" id="p1-t">01. Spinta Ossido Nitrico (NO+)</div>
+            <p class="pillar-text" id="p1-d">Contrasta il fisiologico calo vascolare dai 35-40 anni, massimizzando ossigenazione cerebrale e resistenza fisica.</p>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-title" id="p2-t">02. Innesco Onde Alfa</div>
+            <p class="pillar-text" id="p2-d">Sposta l'attività cerebrale dallo stress Beta alla calma vigile del Flow State senza calo di reattività.</p>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-title" id="p3-t">03. Scudo Endocrino</div>
+            <p class="pillar-text" id="p3-d">Zinco e Magnesio Bisglicinato blindano l'equilibrio ormonale, la funzionalità prostatica e il voltaggio a -70mV.</p>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-title" id="p4-t">04. Barriera Cortisolica</div>
+            <p class="pillar-text" id="p4-d">Adattogeni titolati e cofattori energetici sostengono la sintesi di ATP eliminando l'affaticamento decisionale.</p>
+        </div>
+        <div class="pillar-card pillar-card-full">
+            <div class="pillar-title" id="p5-t">05. Biogenesi Mitocondriale & Anti-Aging</div>
+            Attiva la rigenerazione di nuovi mitocondri tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare e l'invecchiamento biologico.
 
-    <label for="age-range" id="lbl-age">2. Fascia di Calibrazione</label>
-    <select id="age-range">
-        <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
-        <option value="21-35">Ages 21-35 // Executive Young</option>
-        <option value="36-50">Ages 36-50 // Executive Senior (NO+ Boost)</option>
-        <option value="51-60">Ages 51-60 // Master Tier</option>
-        <option value="61+">Ages 61+ // Longevity Tier</option>
-    </select>
+1. Assetto Biologico
+BIOMASS MALE // Executive Man
+BIOMASS FEMALE // Peak Flow Lady
+1. Fascia di Calibrazione
+Ages 0-20 // Controlled Flow Teens
+Ages 21-35 // Executive Young
+Ages 36-50 // Executive Senior (NO+ Boost)
+Ages 51-60 // Master Tier
+Ages 61+ // Longevity Tier
+AVVIA TELEMETRIA EM-CALC
+COERENZA QUANTICA ATTIVA (-70mV)
 
-    <button type="button" class="btn-calc" id="btn-start">AVVIA TELEMETRIA EM-CALC</button>
 
-    <div id="result-section">
-        <div class="protocol-badge" id="res-badge">COERENZA QUANTICA ATTIVA (-70mV)</div>
-        <div class="protocol-title" id="res-title"></div>
-        <div class="protocol-desc" id="res-desc"></div>
-        <div id="stripe-btn-container"></div>
-    </div>
-
-    <div class="library-section">
+<div class="library-section">
         <div class="library-tag" id="lib-tag">ARCHITETTURA TEORICA & OPERATIVA</div>
         <h2 class="library-title" id="lib-title">La Flotta Libraria Joe Fenix</h2>
         <p class="library-desc" id="lib-desc">L'integrazione molecolare stabilizza l'hardware biologico, ma è la padronanza concettuale a guidare il sistema. I volumi della Flotta Libraria codificano i fondamenti biofisici dell'ancoraggio a -70mV, l'architettura del Flow State e la gestione strategica dell'energia cognitiva: un ausilio scientifico indispensabile per consolidare i risultati del protocollo.</p>
@@ -271,15 +316,14 @@
 
 <script>
     let lang = 'it';
-
-    function runCalc() {
-        const g = document.getElementById('gender').value;
-        const a = document.getElementById('age-range').value;
-        let t = "";
-        let d = "";
-        let u = "";
-
-        if (a === "0-20") {t = "HAZR TEENS // Controlled Flow & Neural Shield";
+function runCalc() {
+const g = document.getElementById('gender').value;
+const a = document.getElementById('age-range').value;
+let t = "";
+let d = "";
+let u = "";
+if (a === "0-20") {
+t = "HAZR TEENS // Controlled Flow & Neural Shield";
 d = (lang === 'en')
 ? "Full-Spectrum Matrix: Zinc Bisglycinate + Magnesium Bisglycinate + L-Theanine + Citicoline + Neuro-Protective Cofactors. Protects endocrine maturation, induces Alpha-wave calm focus, and repairs dopaminergic receptors saturated by screens at -70mV."
 : "Matrice Full-Spectrum: Zinco Bisglicinato + Magnesio Bisglicinato + L-Teanina + Citicolina + Cofattori Neuro-Protettivi. Protegge la maturazione endocrina, induce il focus calmo in onde Alfa per il Flow State e ripara i recettori dopaminergici saturi dagli schermi a -70mV.";
@@ -287,26 +331,26 @@ u = "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b";
 } else if (g === "F") {
 t = "HAZR LADY // Peak Flow & Endocrine Shield";
 d = (lang === 'en')
-? "Full-Spectrum Matrix: Chasteberry + Dong Quai + Rhodiola Rosea + L-Theanine + N-Acetyl-L-Tyrosine + Zinc & Magnesium Bisglycinate. Builds a selective HPA-axis barrier, fuels mitochondrial ATP, and triggers deep Flow State coherence."
-: "Matrice Full-Spectrum: Agnocasto + Dong Quai + Rhodiola Rosea + L-Teanina + N-Acetil-L-Tirosina + Zinco e Magnesio Bisglicinato. Erige una barriera selettiva sull'asse HPA, alimenta l'ATP mitocondriale e innesca una profonda coerenza da Flow State.";
+? "Full-Spectrum Matrix: Chasteberry + Dong Quai + Rhodiola Rosea + L-Theanine + N-Acetyl-L-Tyrosine + PQQ + Zinc & Magnesium Bisglycinate. Builds a selective HPA-axis barrier, triggers mitochondrial biogenesis, and unlocks deep Flow State coherence."
+: "Matrice Full-Spectrum: Agnocasto + Dong Quai + Rhodiola Rosea + L-Teanina + N-Acetil-L-Tirosina + PQQ + Zinco e Magnesio Bisglicinato. Erige una barriera selettiva sull'asse HPA, attiva la biogenesi mitocondriale anti-aging e innesca una profonda coerenza da Flow State.";
 u = "https://buy.stripe.com/aFadRbeAvfgscn75w61gs09";
 } else if (a === "51-60" || a === "61+") {
 t = "HAZR LONGEVITY // Master Tier Neuro-Flow & NO+";
 d = (lang === 'en')
-? "Full-Spectrum Matrix: Ubiquinol CoQ10 + PQQ + Acetyl-L-Carnitine + Alpha-GPC + Lion's Mane + L-Citrulline Malate + Zinc & Magnesium Bisglycinate. Maximizes Nitric Oxide perfusion, supports prostate/endocrine balance, and sustains peak ATP output at -70mV."
-: "Matrice Full-Spectrum: Ubichinolo CoQ10 + PQQ + Acetil-L-Carnitina + Alfa-GPC + Hericium Erinaceus + L-Citrullina Malato + Zinco e Magnesio Bisglicinato. Massimizza la perfusione di Ossido Nitrico, protegge l'equilibrio endocrino/prostatico e sostiene la massima resa energetica a -70mV.";
+? "Full-Spectrum Matrix: Ubiquinol CoQ10 + PQQ + Acetyl-L-Carnitine + Alpha-GPC + Lion's Mane + L-Citrulline Malate + Zinc & Magnesium Bisglycinate. Triggers mitochondrial biogenesis, maximizes Nitric Oxide perfusion, and supports prostate/endocrine balance at -70mV."
+: "Matrice Full-Spectrum: Ubichinolo CoQ10 + PQQ + Acetil-L-Carnitina + Alfa-GPC + Hericium Erinaceus + L-Citrullina Malato + Zinco e Magnesio Bisglicinato. Scatena la biogenesi mitocondriale anti-aging, massimizza l'Ossido Nitrico e protegge l'equilibrio endocrino/prostatico a -70mV.";
 u = "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a";
 } else {
 t = "HAZR MAN // Quantum Flow Executive & NO+ Boost";
 d = (lang === 'en')
-? "Full-Spectrum Matrix: High-Dose L-Citrulline Malate + Arginine AKG + Beetroot Polyphenols + Ashwagandha KSM-66 + L-Theanine + L-Tyrosine + Zinc & Magnesium Bisglycinate. Surges Nitric Oxide from age 35+, locks in Alpha-wave Flow State, and fortifies endocrine power."
-: "Matrice Full-Spectrum: L-Citrullina Malato ad alto dosaggio + Arginina AKG + Polifenoli di Barbabietola + Ashwagandha KSM-66 + L-Teanina + L-Tirosina + Zinco e Magnesio Bisglicinato. Potenzia l'Ossido Nitrico dai 35-40 anni, aggancia il Flow State in onde Alfa e blinda la spinta endocrina.";
+? "Full-Spectrum Matrix: High-Dose L-Citrulline Malate + Arginine AKG + Beetroot Polyphenols + PQQ + Ashwagandha KSM-66 + L-Theanine + L-Tyrosine + Zinc & Magnesium Bisglycinate. Surges Nitric Oxide from age 35+, drives mitochondrial biogenesis, and locks in Alpha-wave Flow State."
+: "Matrice Full-Spectrum: L-Citrullina Malato ad alto dosaggio + Arginina AKG + Polifenoli di Barbabietola + PQQ + Ashwagandha KSM-66 + L-Teanina + L-Tirosina + Zinco e Magnesio Bisglicinato. Potenzia l'Ossido Nitrico dai 35-40 anni, attiva la biogenesi mitocondriale e aggancia il Flow State.";
 u = "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
 }
 document.getElementById('res-title').innerText = t;
 document.getElementById('res-desc').innerText = d;
 const bText = (lang === 'en') ? "UNLOCK YOUR QUANTUM PROTOCOL →" : "SBLOCCA IL TUO PROTOCOLLO QUANTICO →";
-document.getElementById('stripe-btn-container').innerHTML = '<a href="' + u + '" target="_blank" class="stripe-link">' + bText + '</a>'
+document.getElementById('stripe-btn-container').innerHTML = '' + bText + '';
 document.getElementById('result-section').style.display = 'block';
 }
 function setLang() {
@@ -314,11 +358,21 @@ lang = (lang === 'it') ? 'en' : 'it';
 document.getElementById('vision-tag').innerText = (lang === 'en') ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
 document.getElementById('main-title').innerText = (lang === 'en') ? "EM-CALC // Quantum Flow Telemetry" : "EM-CALC // Telemetria Quantum Flow";
 document.getElementById('intro-p1').innerHTML = (lang === 'en')
-? '<span class="intro-highlight">Why calibrate the system:</span> Decision-making clarity and voluntary access to the <strong>Flow State</strong> do not rely on willpower, but on maintaining cellular membrane potential at <strong>-70mV</strong>. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
-            : '<span class="intro-highlight">Perché calibrare il sistema:</span> La lucidità decisionale e l\'accesso volontario al <strong>Flow State</strong> non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a <strong>-70mV</strong>. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
-        document.getElementById('intro-p2').innerHTML = (lang === 'en')
-            ? '<span class="intro-highlight">What EM-CALC processes:</span> No lengthy subjective questionnaires are needed. By cross-referencing only your <strong>Biological Profile</strong> and your <strong>Calibration Tier</strong>, the algorithm instantly isolates the targeted molecular matrix to restore your operational voltage.'
-            : '<span class="intro-highlight">Cosa elabora EM-CALC:</span> Non servono lunghi questionari soggettivi. Incrociando unicamente il tuo <strong>Assetto Biologico</strong> (profilo endocrino) e la tua <strong>Fascia di Calibrazione</strong> (stadio mitocondriale e recettoriale), l\'algoritmo isola istantaneamente la matrice molecolare mirata per ripristinare il tuo voltaggio operativo.';
+? 'Why calibrate the system: Decision-making clarity and voluntary access to the Flow State do not rely on willpower, but on maintaining cellular membrane potential at -70mV. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
+: 'Perché calibrare il sistema: La lucidità decisionale e l'accesso volontario al Flow State non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a -70mV. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
+document.getElementById('intro-p2').innerHTML = (lang === 'en')
+? 'The 5 Action Vectors: Every protocol isolated by EM-CALC acts simultaneously on five biophysical and regenerative axes to lock you into Never Better mode:'
+: 'I 5 Vettori di Intervento: Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto Never Better:';
+document.getElementById('p1-t').innerText = (lang === 'en') ? "01. Nitric Oxide (NO+) Surge" : "01. Spinta Ossido Nitrico (NO+)";
+document.getElementById('p1-d').innerText = (lang === 'en') ? "Counteracts the natural vascular drop starting at age 35+, maximizing cerebral oxygenation and physical stamina." : "Contrasta il fisiologico calo vascolare dai 35-40 anni, massimizzando ossigenazione cerebrale e resistenza fisica.";
+document.getElementById('p2-t').innerText = (lang === 'en') ? "02. Alpha-Wave Trigger" : "02. Innesco Onde Alfa";
+document.getElementById('p2-d').innerText = (lang === 'en') ? "Shifts brainwaves from high-beta cortisol stress into the alert calm of Flow State without sedation." : "Sposta l'attività cerebrale dallo stress Beta alla calma vigile del Flow State senza calo di reattività.";
+document.getElementById('p3-t').innerText = (lang === 'en') ? "03. Endocrine Shield" : "03. Scudo Endocrino";
+document.getElementById('p3-d').innerText = (lang === 'en') ? "Zinc and Magnesium Bisglycinate fortify hormonal balance, prostate function, and -70mV voltage stability." : "Zinco e Magnesio Bisglicinato blindano l'equilibrio ormonale, la funzionalità prostatica e il voltaggio a -70mV.";
+document.getElementById('p4-t').innerText = (lang === 'en') ? "04. Cortisol Barrier" : "04. Barriera Cortisolica";
+document.getElementById('p4-d').innerText = (lang === 'en') ? "Standardized adaptogens and energetic cofactors sustain ATP output and eliminate decision fatigue." : "Adattogeni titolati e cofattori energetici sostengono la sintesi di ATP eliminando l'affaticamento decisionale.";
+document.getElementById('p5-t').innerText = (lang === 'en') ? "05. Mitochondrial Biogenesis & Anti-Aging" : "05. Biogenesi Mitocondriale & Anti-Aging";
+document.getElementById('p5-d').innerText = (lang === 'en') ? "Triggers the creation of new mitochondria via PQQ, Ubiquinol CoQ10, and targeted polyphenols, reversing cellular entropy and biological aging." : "Attiva la rigenerazione di nuovi mitocondri tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare e l'invecchiamento biologico.";
 document.getElementById('lbl-gender').innerText = (lang === 'en') ? "1. Biological Profile" : "1. Assetto Biologico";
 document.getElementById('lbl-age').innerText = (lang === 'en') ? "2. Calibration Tier" : "2. Fascia di Calibrazione";
 document.getElementById('btn-start').innerText = (lang === 'en') ? "RUN EM-CALC TELEMETRY" : "AVVIA TELEMETRIA EM-CALC";
@@ -332,9 +386,5 @@ document.getElementById('btn-lib').innerText = (lang === 'en') ? "EXPLORE THE BO
 if (document.getElementById('result-section').style.display === 'block') { runCalc(); }
 }
 document.getElementById('btn-start').onclick = runCalc;
-    document.getElementById('lang-toggle').onclick = setLang;
-    </script>
-
-</body>
-</html>
+document.getElementById('lang-toggle').onclick = setLang;
 
