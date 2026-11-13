@@ -365,19 +365,20 @@ u = "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
 document.getElementById('res-title').innerText = t;
 document.getElementById('res-desc').innerText = d;
 const bText = (lang === 'en') ? "UNLOCK YOUR QUANTUM PROTOCOL →" : "SBLOCCA IL TUO PROTOCOLLO QUANTICO →";
-document.getElementById('stripe-btn-container').innerHTML = '' + bText + '';
-document.getElementById('result-section').style.display = 'block';
-}
-function setLang() {
-lang = (lang === 'it') ? 'en' : 'it';
-document.getElementById('vision-tag').innerText = (lang === 'en') ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
-document.getElementById('main-title').innerText = (lang === 'en') ? "EM-CALC // Quantum Flow Telemetry" : "EM-CALC // Telemetria Quantum Flow";
-document.getElementById('intro-p1').innerHTML = (lang === 'en')
-? 'Why calibrate the system: Decision-making clarity and voluntary access to the Flow State do not rely on willpower, but on maintaining cellular membrane potential at -70mV. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
-: 'Perché calibrare il sistema: La lucidità decisionale e l'accesso volontario al Flow State non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a -70mV. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
-document.getElementById('intro-p2').innerHTML = (lang === 'en')
-? 'The 5 Action Vectors: Every protocol isolated by EM-CALC acts simultaneously on five biophysical and regenerative axes to lock you into Never Better mode:'
-: 'I 5 Vettori di Intervento: Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto Never Better:';
+ document.getElementById('stripe-btn-container').innerHTML = '<a href="' + u + '" target="_blank" class="stripe-link">' + bText + '</a>';
+        document.getElementById('result-section').style.display = 'block';
+    }
+
+    function setLang() {
+        lang = (lang === 'it') ? 'en' : 'it';
+        document.getElementById('vision-tag').innerText = (lang === 'en') ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
+        document.getElementById('main-title').innerText = (lang === 'en') ? "EM-CALC // Quantum Flow Telemetry" : "EM-CALC // Telemetria Quantum Flow";
+        document.getElementById('intro-p1').innerHTML = (lang === 'en')
+            ? '<span class="intro-highlight">Why calibrate the system:</span> Decision-making clarity and voluntary access to the <strong>Flow State</strong> do not rely on willpower, but on maintaining cellular membrane potential at <strong>-70mV</strong>. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
+            : '<span class="intro-highlight">Perché calibrare il sistema:</span> La lucidità decisionale e l\'accesso volontario al <strong>Flow State</strong> non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a <strong>-70mV</strong>. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
+        document.getElementById('intro-p2').innerHTML = (lang === 'en')
+            ? '<span class="intro-highlight">The 5 Action Vectors:</span> Every protocol isolated by EM-CALC acts simultaneously on five biophysical and regenerative axes to lock you into <em>Never Better</em> mode:'
+            : '<span class="intro-highlight">I 5 Vettori di Intervento:</span> Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto <em>Never Better</em>:';
 document.getElementById('p1-t').innerText = (lang === 'en') ? "01. Nitric Oxide (NO+) Surge" : "01. Spinta Ossido Nitrico (NO+)";
 document.getElementById('p1-d').innerText = (lang === 'en') ? "Counteracts the natural vascular drop starting at age 35+, maximizing cerebral oxygenation and physical stamina." : "Contrasta il fisiologico calo vascolare dai 35-40 anni, massimizzando ossigenazione cerebrale e resistenza fisica.";
 document.getElementById('p2-t').innerText = (lang === 'en') ? "02. Alpha-Wave Trigger" : "02. Innesco Onde Alfa";
