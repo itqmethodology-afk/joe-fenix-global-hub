@@ -289,19 +289,35 @@
         </div>
         <div class="pillar-card pillar-card-full">
             <div class="pillar-title" id="p5-t">05. Biogenesi Mitocondriale & Anti-Aging</div>
-            Attiva la rigenerazione di nuovi mitocondri tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare e l'invecchiamento biologico.
+           <div class="pillar-card pillar-card-full">
+            <div class="pillar-title" id="p5-t">05. Biogenesi Mitocondriale & Anti-Aging</div>
+            <p class="pillar-text" id="p5-d">Attiva la rigenerazione di nuovi mitocondri tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare e l'invecchiamento biologico.</p>
+        </div>
+    </div>
 
-1. Assetto Biologico
-BIOMASS MALE // Executive Man
-BIOMASS FEMALE // Peak Flow Lady
-1. Fascia di Calibrazione
-Ages 0-20 // Controlled Flow Teens
-Ages 21-35 // Executive Young
-Ages 36-50 // Executive Senior (NO+ Boost)
-Ages 51-60 // Master Tier
-Ages 61+ // Longevity Tier
-AVVIA TELEMETRIA EM-CALC
-COERENZA QUANTICA ATTIVA (-70mV)
+    <label for="gender" id="lbl-gender">1. Assetto Biologico</label>
+    <select id="gender">
+        <option value="M">BIOMASS MALE // Executive Man</option>
+        <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
+    </select>
+
+    <label for="age-range" id="lbl-age">2. Fascia di Calibrazione</label>
+    <select id="age-range">
+        <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
+        <option value="21-35">Ages 21-35 // Executive Young</option>
+        <option value="36-50">Ages 36-50 // Executive Senior (NO+ Boost)</option>
+        <option value="51-60">Ages 51-60 // Master Tier</option>
+        <option value="61+">Ages 61+ // Longevity Tier</option>
+    </select>
+
+    <button type="button" class="btn-calc" id="btn-start">AVVIA TELEMETRIA EM-CALC</button>
+
+    <div id="result-section">
+        <div class="protocol-badge" id="res-badge">COERENZA QUANTICA ATTIVA (-70mV)</div>
+        <div class="protocol-title" id="res-title"></div>
+        <div class="protocol-desc" id="res-desc"></div>
+        <div id="stripe-btn-container"></div>
+    </div>
 
 
 <div class="library-section">
