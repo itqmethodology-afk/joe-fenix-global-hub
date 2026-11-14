@@ -287,57 +287,44 @@
             <div class="pillar-title" id="p4-t">04. Barriera Cortisolica</div>
             <p class="pillar-text" id="p4-d">Adattogeni titolati e cofattori energetici sostengono la sintesi di ATP eliminando l'affaticamento decisionale.</p>
         </div>
-       
-           <div class="pillar-card pillar-card-full">
-            <div class="pillar-title" id="p5-t">05. Biogenesi Mitocondriale & Anti-Aging</div>
-            <p class="pillar-text" id="p5-d">Attiva la rigenerazione di nuovi mitocondri tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare e l'invecchiamento biologico.</p>
-        </div>
-    </div>
+        <div class="pillar-card pillar-card-full">
+            Attiva la rigenerazione di nuovi mitocondri dal primo minuto di vita tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare.
 
-    <label for="gender" id="lbl-gender">1. Assetto Biologico</label>
-    <select id="gender">
-        <option value="M">BIOMASS MALE // Executive Man</option>
-        <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
-    </select>
-
-    <label for="age-range" id="lbl-age">2. Fascia di Calibrazione</label>
-    <select id="age-range">
-        <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
-        <option value="21-35">Ages 21-35 // Executive Young</option>
-        <option value="36-50">Ages 36-50 // Executive Senior (NO+ Boost)</option>
-        <option value="51-60">Ages 51-60 // Master Tier</option>
-        <option value="61+">Ages 61+ // Longevity Tier</option>
-    </select>
-
-    <button type="button" class="btn-calc" id="btn-start">AVVIA TELEMETRIA EM-CALC</button>
-
-    <div id="result-section">
-        <div class="protocol-badge" id="res-badge">COERENZA QUANTICA ATTIVA (-70mV)</div>
-        <div class="protocol-title" id="res-title"></div>
-        <div class="protocol-desc" id="res-desc"></div>
-        <div id="stripe-btn-container"></div>
-    </div>
+1. Assetto Biologico
+BIOMASS MALE // Executive Man
+BIOMASS FEMALE // Peak Flow Lady
+PRO ATHLETE // Elite Performance & Neuro-Kinetics
+1. Fascia di Calibrazione
+Ages 0-20 // Controlled Flow Teens
+Ages 21-35 // Executive Young
+Ages 36-50 // Executive Senior (NO+ Boost)
+<option value="PRO">PRO ATHLETE // Elite Performance & Neuro-Kinetics</option>
+Ages 51-60 // Master Tier
+Ages 61+ // Longevity Tier
+AVVIA TELEMETRIA EM-CALC
+COERENZA QUANTICA ATTIVA (-70mV)
 
 
-<div class="library-section">
-        <div class="library-tag" id="lib-tag">ARCHITETTURA TEORICA & OPERATIVA</div>
-        <h2 class="library-title" id="lib-title">La Flotta Libraria Joe Fenix</h2>
-        <p class="library-desc" id="lib-desc">L'integrazione molecolare stabilizza l'hardware biologico, ma è la padronanza concettuale a guidare il sistema. I volumi della Flotta Libraria codificano i fondamenti biofisici dell'ancoraggio a -70mV, l'architettura del Flow State e la gestione strategica dell'energia cognitiva: un ausilio scientifico indispensabile per consolidare i risultati del protocollo.</p>
-        <a href="https://linktr.ee/joefenixmethod" target="_blank" class="btn-library" id="btn-lib">ESPLORA LA FLOTTA LIBRARIA →</a>
-    </div>
 
-    <div class="footer-note">JOE FENIX METHOD • NEVER BETTER • TOP THE WORLD</div>
-</div>
-
-<script>
-    let lang = 'it';
+ARCHITETTURA TEORICA & OPERATIVA
+La Flotta Libraria Joe Fenix
+L'integrazione molecolare stabilizza l'hardware biologico, ma è la padronanza concettuale a guidare il sistema. I volumi della Flotta Libraria codificano i fondamenti biofisici dell'ancoraggio a -70mV, l'architettura del Flow State e la gestione strategica dell'energia cognitiva: un ausilio scientifico indispensabile per consolidare i risultati del protocollo.
+<a href="https://amazon.com/dp/B0H4L111N6" target="_blank" class="btn-library" id="btn-lib">ESPLORA LA FLOTTA LIBRARIA →</a>
+JOE FENIX METHOD • NEVER BETTER • TOP THE WORLD
+let lang = 'it';
 function runCalc() {
 const g = document.getElementById('gender').value;
 const a = document.getElementById('age-range').value;
 let t = "";
 let d = "";
 let u = "";
-if (a === "0-20") {
+if (g === "PRO") {
+t = "HAZR APEX // Elite Athletic & Neuro-Kinetic Engine";
+d = (lang === 'en')
+? "Zero-Stimulant Pro-Athlete Matrix: PQQ + Ubiquinol CoQ10 + Acetyl-L-Carnitine + Ultrapure Creatine Monohydrate + Buffered Beta-Alanine + Alpha-GPC + High-Dose L-Citrulline Malate + L-Theanine + Zinc & Magnesium Bisglycinate. Multiplies Type-II fiber mitochondria, drives myofibrillar explosiveness, and enables voluntary Flow State entry and exit at -70mV."
+: "Matrice Pro-Athlete Zero-Stimolanti: PQQ + Ubichinolo CoQ10 + Acetil-L-Carnitina + Creatina Monoidrato Ultrapura + Beta-Alanina Tamponata + Alfa-GPC + L-Citrullina Malato + L-Teanina + Zinco e Magnesio Bisglicinato. Moltiplica i mitocondri nelle fibre muscolari veloci, scatena esplosività miofibrillare e permette di entrare e uscire dal Flow State a comando a -70mV.";
+u = "https://buy.stripe.com/aFa8wR2RN3xK0Ep0bM1gs0c";
+} else if (a === "0-20") {
 t = "HAZR TEENS // Controlled Flow & Neural Shield";
 d = (lang === 'en')
 ? "Full-Spectrum Matrix: Zinc Bisglycinate + Magnesium Bisglycinate + L-Theanine + Citicoline + Neuro-Protective Cofactors. Protects endocrine maturation, induces Alpha-wave calm focus, and repairs dopaminergic receptors saturated by screens at -70mV."
@@ -365,20 +352,19 @@ u = "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
 document.getElementById('res-title').innerText = t;
 document.getElementById('res-desc').innerText = d;
 const bText = (lang === 'en') ? "UNLOCK YOUR QUANTUM PROTOCOL →" : "SBLOCCA IL TUO PROTOCOLLO QUANTICO →";
- document.getElementById('stripe-btn-container').innerHTML = '<a href="' + u + '" target="_blank" class="stripe-link">' + bText + '</a>';
-        document.getElementById('result-section').style.display = 'block';
-    }
-
-    function setLang() {
-        lang = (lang === 'it') ? 'en' : 'it';
-        document.getElementById('vision-tag').innerText = (lang === 'en') ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
-        document.getElementById('main-title').innerText = (lang === 'en') ? "EM-CALC // Quantum Flow Telemetry" : "EM-CALC // Telemetria Quantum Flow";
-        document.getElementById('intro-p1').innerHTML = (lang === 'en')
-            ? '<span class="intro-highlight">Why calibrate the system:</span> Decision-making clarity and voluntary access to the <strong>Flow State</strong> do not rely on willpower, but on maintaining cellular membrane potential at <strong>-70mV</strong>. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
-            : '<span class="intro-highlight">Perché calibrare il sistema:</span> La lucidità decisionale e l\'accesso volontario al <strong>Flow State</strong> non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a <strong>-70mV</strong>. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
-        document.getElementById('intro-p2').innerHTML = (lang === 'en')
-            ? '<span class="intro-highlight">The 5 Action Vectors:</span> Every protocol isolated by EM-CALC acts simultaneously on five biophysical and regenerative axes to lock you into <em>Never Better</em> mode:'
-            : '<span class="intro-highlight">I 5 Vettori di Intervento:</span> Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto <em>Never Better</em>:';
+document.getElementById('stripe-btn-container').innerHTML = '' + bText + '';
+document.getElementById('result-section').style.display = 'block';
+}
+function setLang() {
+lang = (lang === 'it') ? 'en' : 'it';
+document.getElementById('vision-tag').innerText = (lang === 'en') ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
+document.getElementById('main-title').innerText = (lang === 'en') ? "EM-CALC // Quantum Flow Telemetry" : "EM-CALC // Telemetria Quantum Flow";
+document.getElementById('intro-p1').innerHTML = (lang === 'en')
+? 'Why calibrate the system: Decision-making clarity and voluntary access to the Flow State do not rely on willpower, but on maintaining cellular membrane potential at -70mV. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
+: 'Perché calibrare il sistema: La lucidità decisionale e l'accesso volontario al Flow State non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a -70mV. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
+document.getElementById('intro-p2').innerHTML = (lang === 'en')
+? 'The 5 Action Vectors: Every protocol isolated by EM-CALC acts simultaneously on five biophysical and regenerative axes to lock you into Never Better mode:'
+: 'I 5 Vettori di Intervento: Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto Never Better:';
 document.getElementById('p1-t').innerText = (lang === 'en') ? "01. Nitric Oxide (NO+) Surge" : "01. Spinta Ossido Nitrico (NO+)";
 document.getElementById('p1-d').innerText = (lang === 'en') ? "Counteracts the natural vascular drop starting at age 35+, maximizing cerebral oxygenation and physical stamina." : "Contrasta il fisiologico calo vascolare dai 35-40 anni, massimizzando ossigenazione cerebrale e resistenza fisica.";
 document.getElementById('p2-t').innerText = (lang === 'en') ? "02. Alpha-Wave Trigger" : "02. Innesco Onde Alfa";
@@ -388,7 +374,7 @@ document.getElementById('p3-d').innerText = (lang === 'en') ? "Zinc and Magnesiu
 document.getElementById('p4-t').innerText = (lang === 'en') ? "04. Cortisol Barrier" : "04. Barriera Cortisolica";
 document.getElementById('p4-d').innerText = (lang === 'en') ? "Standardized adaptogens and energetic cofactors sustain ATP output and eliminate decision fatigue." : "Adattogeni titolati e cofattori energetici sostengono la sintesi di ATP eliminando l'affaticamento decisionale.";
 document.getElementById('p5-t').innerText = (lang === 'en') ? "05. Mitochondrial Biogenesis & Anti-Aging" : "05. Biogenesi Mitocondriale & Anti-Aging";
-document.getElementById('p5-d').innerText = (lang === 'en') ? "Triggers the creation of new mitochondria via PQQ, Ubiquinol CoQ10, and targeted polyphenols, reversing cellular entropy and biological aging." : "Attiva la rigenerazione di nuovi mitocondri tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare e l'invecchiamento biologico.";
+document.getElementById('p5-d').innerText = (lang === 'en') ? "Triggers continuous mitochondrial regeneration from minute one via PQQ, Ubiquinol CoQ10, and targeted polyphenols, reversing cellular entropy." : "Attiva la rigenerazione di nuovi mitocondri dal primo minuto di vita tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare.";
 document.getElementById('lbl-gender').innerText = (lang === 'en') ? "1. Biological Profile" : "1. Assetto Biologico";
 document.getElementById('lbl-age').innerText = (lang === 'en') ? "2. Calibration Tier" : "2. Fascia di Calibrazione";
 document.getElementById('btn-start').innerText = (lang === 'en') ? "RUN EM-CALC TELEMETRY" : "AVVIA TELEMETRIA EM-CALC";
@@ -403,7 +389,9 @@ if (document.getElementById('result-section').style.display === 'block') { runCa
 }
 document.getElementById('btn-start').onclick = runCalc;
 document.getElementById('lang-toggle').onclick = setLang;
-</script>
+            </script>
 
 </body>
 </html>
+
+            <div class="pillar-title" id="p5-t">05. Biogenesi Mitocondriale & Anti-Aging</div>
