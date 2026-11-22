@@ -1,450 +1,302 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EM-CALC // Joe Fenix Method - Never Better</title>
-    <style>
-        body {
-            background-color: #0d0d0d;
-            color: #e5e5e5;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 24px 16px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
-        .container {
-            background-color: #161616;
-            border: 1px solid #2a2a2a;
-            border-radius: 8px;
-            padding: 36px 32px;
-            max-width: 640px;
-            width: 100%;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.85);
-            box-sizing: border-box;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 16px;
-            margin-bottom: 24px;
-        }
-        .brand {
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            font-size: 13px;
-            color: #FF5500;
-            text-transform: uppercase;
-        }
-        .lang-btn {
-            background: #222;
-            color: #fff;
-            border: 1px solid #444;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 700;
-        }
-        .lang-btn:hover { border-color: #FF5500; }
-        .vision-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #888;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 24px;
-            margin: 0 0 14px 0;
-            color: #ffffff;
-        }
-        .intro-box {
-            background: #1b1b1b;
-            border: 1px solid #2c2c2c;
-            border-left: 3px solid #FF5500;
-            padding: 18px;
-            border-radius: 6px;
-            margin-bottom: 24px;
-        }
-        .intro-box p {
-            font-size: 14px;
-            color: #cccccc;
-            margin: 0 0 12px 0;
-            line-height: 1.6;
-        }
-        .intro-box p:last-child { margin-bottom: 0; }
-        .intro-highlight { color: #ffffff; font-weight: 700; }
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 28px;
-        }
-        @media (max-width: 540px) {
-            .pillars-grid { grid-template-columns: 1fr; }
-        }
-        .pillar-card {
-            background: #1a1a1a;
-            border: 1px solid #282828;
-            border-radius: 6px;
-            padding: 14px;
-        }
-        .pillar-card-full {
-            grid-column: 1 / -1;
-            background: #1d1a18;
-            border: 1px solid #33261f;
-            border-left: 3px solid #FF5500;
-        }
-        .pillar-title {
-            font-size: 11px;
-            font-weight: 800;
-            color: #FF5500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-        .pillar-text {
-            font-size: 13px;
-            color: #cccccc;
-            line-height: 1.5;
-            margin: 0;
-        }
-        label {
-            display: block;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: #b0b0b0;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-        select {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 20px;
-            background-color: #202020;
-            color: #ffffff;
-            border: 1px solid #333;
-            border-radius: 6px;
-            font-size: 14px;
-            outline: none;
-            box-sizing: border-box;
-        }
-        select:focus { border-color: #FF5500; }
-        .btn-calc {
-            width: 100%;
-            padding: 16px;
-            background-color: #FF5500;
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            cursor: pointer;
-            margin-top: 4px;
-        }
-        .btn-calc:hover { background-color: #e04b00; }
-        #result-section {
-            display: none;
-            margin-top: 28px;
-            padding-top: 24px;
-            border-top: 1px solid #2a2a2a;
-        }
-        .protocol-badge {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            color: #0d0d0d;
-            background-color: #FF5500;
-            padding: 4px 8px;
-            border-radius: 3px;
-            margin-bottom: 10px;
-        }
-        .protocol-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-        .protocol-desc {
-            font-size: 14px;
-            line-height: 1.65;
-            color: #d0d0d0;
-            background: #1c1c1c;
-            padding: 16px;
-            border-radius: 6px;
-            border-left: 3px solid #FF5500;
-        }
-        .stripe-link {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 20px;
-            padding: 16px;
-            background: #ffffff;
-            color: #0d0d0d;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 14px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .stripe-link:hover { background: #e5e5e5; }
-        .library-section {
-            margin-top: 36px;
-            padding-top: 28px;
-            border-top: 1px solid #2a2a2a;
-        }
-        .library-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #FF5500;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .library-title {
-            font-size: 19px;
-            font-weight: 800;
-            color: #ffffff;
-            margin: 0 0 12px 0;
-        }
-        .library-desc {
-            font-size: 14px;
-            color: #b8b8b8;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
-        }
-        .books-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-        @media (max-width: 540px) {
-            .books-grid { grid-template-columns: 1fr; }
-        }
-        .btn-book {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 13px 12px;
-            background-color: #1f1f1f;
-            color: #ffffff;
-            border: 1px solid #3a3a3a;
-            border-radius: 6px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-        .btn-book:hover { border-color: #FF5500; color: #FF5500; }
-        .btn-library {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 15px;
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #FF5500;
-            border-radius: 6px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-        }
-        .btn-library:hover { background-color: #FF5500; }
-        .footer-note {
-            margin-top: 32px;
-            text-align: center;
-            font-size: 11px;
-            color: #666;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOE FENIX METHOD // Protocolli Molecolari HAZR</title>
+<style>
+  :root { --bg:#0b0b0c; --card:#141417; --card2:#1b1b20; --border:#2b2b33; --accent:#ff5500; --gold:#e6b85c; --text:#ececec; --muted:#a5a5b0; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:24px 14px 48px; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; display:flex; justify-content:center; }
+  .wrap { width:100%; max-width:760px; }
+  .topbar { display:flex; justify-content:space-between; align-items:center; padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:22px; }
+  .brand { font-size:12px; font-weight:800; letter-spacing:1.6px; color:var(--accent); text-transform:uppercase; }
+  .lang-btn { background:#1f1f24; color:#fff; border:1px solid #3c3c46; padding:6px 12px; border-radius:5px; font-size:12px; font-weight:700; cursor:pointer; }
+  .lang-btn:hover { border-color:var(--accent); }
+  .badge-lot { display:inline-block; background:rgba(255,85,0,0.14); color:var(--accent); border:1px solid rgba(255,85,0,0.4); font-size:11px; font-weight:800; letter-spacing:1px; padding:5px 10px; border-radius:4px; text-transform:uppercase; margin-bottom:12px; }
+  h1 { font-size:25px; line-height:1.28; margin:0 0 14px; color:#fff; font-weight:800; }
+  .sub { font-size:15px; line-height:1.6; color:var(--muted); margin:0 0 22px; }
+  .rule-box { background:var(--card); border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:8px; padding:16px 18px; margin-bottom:26px; font-size:14px; line-height:1.6; }
+  .rule-box strong { color:#fff; }
+  .sec-label { font-size:11px; font-weight:800; letter-spacing:1.4px; color:var(--accent); text-transform:uppercase; margin-bottom:12px; }
+  .tabs { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-bottom:20px; }
+  @media(max-width:640px){ .tabs { grid-template-columns:1fr 1fr; } }
+  .tab { background:var(--card); border:1px solid var(--border); color:#ddd; padding:12px 8px; border-radius:7px; font-size:12px; font-weight:800; text-align:center; cursor:pointer; text-transform:uppercase; transition:0.15s; }
+  .tab:hover { border-color:var(--accent); color:#fff; }
+  .tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .prod-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:24px; margin-bottom:28px; }
+  .prod-top { display:grid; grid-template-columns:190px 1fr; gap:22px; align-items:center; margin-bottom:20px; }
+  @media(max-width:600px){ .prod-top { grid-template-columns:1fr; text-align:center; } }
+  .bottle-box { background:radial-gradient(circle at center,#26221c 0%,#101013 100%); border:1px solid #353028; border-radius:8px; padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .prod-tag { font-size:11px; font-weight:800; color:var(--gold); letter-spacing:1.2px; text-transform:uppercase; margin-bottom:6px; }
+  .prod-name { font-size:22px; font-weight:800; color:#fff; margin:0 0 10px; }
+  .prod-pain { font-size:14px; line-height:1.6; color:#d2d2dc; margin:0 0 12px; }
+  .prod-spec { font-size:12px; color:var(--muted); background:var(--card2); padding:10px 12px; border-radius:6px; border:1px solid var(--border); line-height:1.5; }
+  .btn-dossier { display:block; width:100%; background:#1f1f26; color:#fff; border:1px solid #444452; padding:13px; border-radius:7px; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; cursor:pointer; margin-bottom:20px; text-align:center; }
+  .btn-dossier:hover { border-color:var(--gold); color:var(--gold); }
+  .dossier-panel { display:none; background:#101014; border:1px solid #3a352a; border-radius:8px; padding:18px; margin-bottom:20px; font-size:13px; line-height:1.65; color:#d8d8e0; }
+  .dossier-panel h4 { margin:0 0 8px; color:var(--gold); font-size:13px; text-transform:uppercase; letter-spacing:0.8px; }
+  .btn-print { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:8px 14px; border-radius:5px; font-size:12px; font-weight:700; cursor:pointer; margin-top:10px; }
+  .buy-grid { display:grid; grid-template-columns:1fr 1.15fr; gap:14px; }
+  @media(max-width:600px){ .buy-grid { grid-template-columns:1fr; } }
+  .buy-opt { background:var(--card2); border:1px solid var(--border); border-radius:8px; padding:18px; display:flex; flex-direction:column; justify-content:space-between; }
+  .buy-opt.best { border:2px solid var(--accent); background:linear-gradient(180deg,#1f1814 0%,#18181d 100%); position:relative; }
+  .best-pill { display:inline-block; background:var(--accent); color:#fff; font-size:10px; font-weight:800; padding:4px 8px; border-radius:4px; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+  .opt-title { font-size:14px; font-weight:800; color:#fff; margin:0 0 6px; text-transform:uppercase; }
+  .opt-price { font-size:26px; font-weight:900; color:#fff; margin:4px 0; }
+  .opt-save { font-size:12px; color:#5ce68a; font-weight:700; margin-bottom:10px; }
+  .opt-desc { font-size:13px; color:var(--muted); line-height:1.5; margin-bottom:16px; }
+  .btn-buy { display:block; width:100%; padding:14px 12px; border-radius:6px; text-align:center; text-decoration:none; font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:0.8px; }
+  .btn-buy.std { background:#2a2a33; color:#fff; border:1px solid #454554; }
+  .btn-buy.std:hover { background:#383844; }
+  .btn-buy.prm { background:var(--accent); color:#fff; }
+  .btn-buy.prm:hover { background:#e04b00; }
+  .lib-box { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:24px; margin-bottom:24px; }
+  .books { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:16px 0 12px; }
+  @media(max-width:540px){ .books { grid-template-columns:1fr; } }
+  .btn-amz { display:block; padding:13px; background:#1f1f25; color:#fff; border:1px solid #3a3a45; border-radius:6px; text-align:center; text-decoration:none; font-size:12px; font-weight:800; text-transform:uppercase; }
+  .btn-amz:hover { border-color:var(--accent); color:var(--accent); }
+  .btn-amz-all { display:block; padding:14px; border:1px solid var(--accent); color:#fff; border-radius:6px; text-align:center; text-decoration:none; font-size:13px; font-weight:800; text-transform:uppercase; }
+  .btn-amz-all:hover { background:var(--accent); }
+  .footer { text-align:center; font-size:11px; color:#666; margin-top:24px; }
+</style>
 </head>
 <body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">JOE FENIX METHOD // NEVER BETTER</div>
+    <button type="button" class="lang-btn" id="langBtn" onclick="toggleLang()">EN / IT</button>
+  </div>
 
-<div class="container">
-    <div class="header">
-        <div class="brand">JOE FENIX METHOD // NEVER BETTER</div>
-        <button type="button" class="lang-btn" id="lang-toggle">EN / IT</button>
+  <div class="badge-lot" id="t-badge">ASSEGNAZIONE RISERVATA • LOTTI NUMERATI DI LABORATORIO</div>
+  <h1 id="t-h1">Rigenerazione e Ricarica Energetica Mitocondriale Autonoma, a Zero Dipendenze: Il Protocollo Molecolare Ottimizzato sul Tuo Sistema Nervoso.</h1>
+  <p class="sub" id="t-sub">Nessuno stimolante artificiale. Nessun abbonamento infinito. Scegli il tuo profilo, consulta prima l'immagine completa e la scheda tecnica dei principi attivi, e decidi in piena libertà.</p>
+
+  <div class="rule-box" id="t-rule">
+    <strong>LA REGOLA D'ORO 90 + 4 (ZERO DIPENDENZE):</strong> Il protocollo lavora per <strong>90 giorni</strong> sulla rigenerazione cellulare (-70mV) e prevede un <strong>4° mese completamente OFF (zero flaconi, zero addebiti)</strong> per farti verificare sul campo che il tuo organismo e la tua mente camminano da soli.
+  </div>
+
+  <div class="sec-label" id="t-sel">1. SCEGLI IL TUO PROFILO PER VISUALIZZARE IL PROTOCOLLO COMPLETO</div>
+  <div class="tabs">
+    <div class="tab active" id="tab-man" onclick="selectProd('man')">MAN // Executive</div>
+    <div class="tab" id="tab-lady" onclick="selectProd('lady')">LADY // Leader</div>
+    <div class="tab" id="tab-apex" onclick="selectProd('apex')">APEX // Atleti</div>
+    <div class="tab" id="tab-long" onclick="selectProd('long')">LONGEVITY // 55+</div>
+    <div class="tab" id="tab-teens" onclick="selectProd('teens')">TEENS // Genitori</div>
+  </div>
+
+  <div class="prod-card" id="prodCard"></div>
+
+  <div class="lib-box">
+    <div class="sec-label" id="t-lib-tag">ARCHITETTURA SCIENTIFICA & FLOTTA LIBRARIA</div>
+    <h2 style="margin:0 0 10px;font-size:20px;color:#fff;" id="t-lib-h2">I Manuali Ufficiali Joe Fenix Method su Amazon</h2>
+    <p style="margin:0;font-size:14px;line-height:1.6;color:var(--muted);" id="t-lib-p">Vuoi prima approfondire i fondamenti biofisici del voltaggio cellulare a -70mV, la biogenesi mitocondriale e la padronanza del Flow State? Esplora i volumi cartacei e Kindle spediti da Amazon in Italia, Europa, USA e Australia.</p>
+    <div class="books">
+      <a href="https://amazon.it/dp/B0HNT7W96R" target="_blank" class="btn-amz" id="t-b-it">LIBRO MAI STATO MEGLIO (IT) →</a>
+      <a href="https://amazon.com/dp/B0HP2233HJ" target="_blank" class="btn-amz" id="t-b-en">BOOK NEVER BETTER (EN / GLOBAL) →</a>
     </div>
+    <a href="https://amazon.com/dp/B0H4L111N6" target="_blank" class="btn-amz-all" id="t-b-all">ESPLORA L'INTERA COLLANA & BIOGRAFIA SU AMAZON →</a>
+  </div>
 
-    <div class="vision-tag" id="vision-tag">TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION</div>
-    <h1 id="main-title">EM-CALC // Telemetria Quantum Flow</h1>
-
-    <div class="intro-box">
-        <p id="intro-p1"><span class="intro-highlight">Perché calibrare il sistema:</span> La lucidità decisionale e l'accesso volontario al <strong>Flow State</strong> non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a <strong>-70mV</strong>. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.</p>
-        <p id="intro-p2"><span class="intro-highlight">I 5 Vettori di Intervento:</span> Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto <em>Never Better</em>:</p>
-    </div>
-
-    <div class="pillars-grid">
-        <div class="pillar-card">
-            <div class="pillar-title" id="p1-t">01. Spinta Ossido Nitrico (NO+)</div>
-            <p class="pillar-text" id="p1-d">Contrasta il fisiologico calo vascolare dai 35-40 anni, massimizzando ossigenazione cerebrale e resistenza fisica.</p>
-        </div>
-        <div class="pillar-card">
-            <div class="pillar-title" id="p2-t">02. Innesco Onde Alfa</div>
-            <p class="pillar-text" id="p2-d">Sposta l'attività cerebrale dallo stress Beta alla calma vigile del Flow State senza calo di reattività.</p>
-        </div>
-        <div class="pillar-card">
-            <div class="pillar-title" id="p3-t">03. Scudo Endocrino</div>
-            <p class="pillar-text" id="p3-d">Zinco e Magnesio Bisglicinato blindano l'equilibrio ormonale, la funzionalità prostatica e il voltaggio a -70mV.</p>
-        </div>
-        <div class="pillar-card">
-            <div class="pillar-title" id="p4-t">04. Barriera Cortisolica</div>
-            <p class="pillar-text" id="p4-d">Adattogeni titolati e cofattori energetici sostengono la sintesi di ATP eliminando l'affaticamento decisionale.</p>
-        </div>
-        <div class="pillar-card pillar-card-full">
-            <div class="pillar-title" id="p5-t">05. Biogenesi Mitocondriale & Anti-Aging</div>
-            <p class="pillar-text" id="p5-d">Attiva la rigenerazione di nuovi mitocondri dal primo minuto di vita tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare.</p>
-        </div>
-    </div>
-
-    <label for="gender" id="lbl-gender">1. Assetto Biologico</label>
-    <select id="gender">
-        <option value="M">BIOMASS MALE // Executive Man</option>
-        <option value="F">BIOMASS FEMALE // Peak Flow Lady</option>
-        <option value="PRO">PRO ATHLETE // Elite Performance & Neuro-Kinetics</option>
-    </select>
-
-    <label for="age-range" id="lbl-age">2. Fascia di Calibrazione</label>
-    <select id="age-range">
-        <option value="0-20">Ages 0-20 // Controlled Flow Teens</option>
-        <option value="21-35">Ages 21-35 // Executive Young</option>
-        <option value="36-50">Ages 36-50 // Executive Senior (NO+ Boost)</option>
-        <option value="51-60">Ages 51-60 // Master Tier</option>
-        <option value="61+">Ages 61+ // Longevity Tier</option>
-    </select>
-
-    <button type="button" class="btn-calc" id="btn-start">AVVIA TELEMETRIA EM-CALC</button>
-
-    <div id="result-section">
-        <div class="protocol-badge" id="res-badge">COERENZA QUANTICA ATTIVA (-70mV)</div>
-        <div class="protocol-title" id="res-title"></div>
-        <div class="protocol-desc" id="res-desc"></div>
-        <div id="stripe-btn-container"></div>
-    </div>
-
-    <div class="library-section">
-        <div class="library-tag" id="lib-tag">ARCHITETTURA TEORICA & OPERATIVA</div>
-        <h2 class="library-title" id="lib-title">La Flotta Libraria Joe Fenix</h2>
-        <p class="library-desc" id="lib-desc">L'integrazione molecolare stabilizza l'hardware biologico, ma è la padronanza concettuale a guidare il sistema. Abbina il tuo protocollo HAZR al manuale operativo <strong>Never Better</strong>: i volumi della Flotta Libraria codificano i fondamenti biofisici dell'ancoraggio a -70mV, la biogenesi mitocondriale e l'architettura del Flow State.</p>
-        <div class="books-grid">
-            <a href="https://www.amazon.it/dp/B0HNT7W96R"s?k=Joe+Fenix+Method+Mai+Stato+Meglio" target="_blank" class="btn-book" id="btn-book-it">LIBRO MAI STATO MEGLIO (IT) →</a>
-            <a href="https://www.amazon.com/dp/B0HP2233HJ" target="_blank" class="btn-book" id="btn-book-en">BOOK NEVER BETTER (EN) →</a>
-        </div>
-        <a href="https://www.amazon.com/dp/B0H4L111N6"s?k=Joe+Fenix+Method" target="_blank" class="btn-library" id="btn-lib">ESPLORA LA COLLANA & BIOGRAFIA AUTORE SU AMAZON →</a>
-    </div>
-
-    <div class="footer-note">JOE FENIX METHOD • NEVER BETTER • TOP THE WORLD</div>
+  <div class="footer">JOE FENIX METHOD • NEVER BETTER • TOP THE WORLD</div>
 </div>
 
 <script>
-    let lang = 'it';
+let lang = 'it';
+let currentKey = 'man';
 
-    function runCalc() {
-        const g = document.getElementById('gender').value;
-        const a = document.getElementById('age-range').value;
-        let t = "";
-        let d = "";
-        let u = "";
+const DATA = {
+  man: {
+    code: 'HAZR MAN',
+    formatIt: 'Box 30 Stick-Pack Solubili (Gusto Neutro/Agrumi) • 1 dose/giorno',
+    formatEn: 'Box of 30 Soluble Stick-Packs • 1 serving/day',
+    tagIt: 'LINEA EXECUTIVE & NO+ BOOST (UOMO 25–55 ANNI)',
+    tagEn: 'EXECUTIVE & NO+ BOOST LINE (MEN 25–55)',
+    nameIt: 'HAZR MAN // Reset Cortisolo & Spinta Decisionale',
+    nameEn: 'HAZR MAN // Cortisol Reset & Decision Drive',
+    painIt: 'Per l\'uomo di comando che non può mostrarsi stanco in ufficio, ma sente in silenzio che il cortisolo alto sta svuotando tono muscolare, lucidità pomeridiana e spinta vascolare.',
+    painEn: 'For men in command who cannot afford fatigue, silently facing high cortisol draining muscle tone, afternoon clarity, and vascular drive.',
+    specIt: 'Matrice Attiva: L-Citrullina Malato + Arginina AKG + Polifenoli di Barbabietola + PQQ + Ashwagandha KSM-66 + L-Teanina + L-Tirosina + Zinco e Magnesio Bisglicinato.',
+    specEn: 'Active Matrix: L-Citrulline Malate + Arginine AKG + Beetroot Polyphenols + PQQ + Ashwagandha KSM-66 + L-Theanine + L-Tyrosine + Zinc & Magnesium Bisglycinate.',
+    dossierIt: '<h4>Dossier Tecnico HAZR MAN — Meccanismo & Uso</h4><p><strong>1. Perfusione Vascolare (NO+):</strong> Citrullina Malato, Arginina AKG e Polifenoli di Barbabietola contrastano il fisiologico calo di ossido nitrico dai 35 anni, migliorando ossigenazione cerebrale e resistenza.<br><strong>2. Barriera Cortisolica:</strong> Ashwagandha KSM-66 e L-Teanina abbassano l\'allarme dell\'asse HPA senza sedazione.<br><strong>3. Modalità d\'uso:</strong> 1 stick-pack sciolto in 250 ml d\'acqua al mattino o 30 minuti prima della fascia di massima richiesta cognitiva/fisica.<br><strong>4. Protocollo 90+4:</strong> 3 mesi consecutivi di ricarica (90 giorni) seguiti dal 4° mese completamente OFF.</p>',
+    dossierEn: '<h4>Technical Dossier HAZR MAN — Mechanism & Protocol</h4><p><strong>1. Vascular Perfusion (NO+):</strong> Citrulline Malate, Arginine AKG & Beetroot Polyphenols restore nitric oxide levels.<br><strong>2. Cortisol Barrier:</strong> Ashwagandha KSM-66 & L-Theanine calm HPA-axis overload without sedation.<br><strong>3. Usage:</strong> 1 stick-pack in 250 ml water daily.<br><strong>4. 90+4 Rule:</strong> 90 days ON followed by Month 4 completely OFF at zero cost.</p>',
+    p30: '67,00 €',
+    u30: 'https://stripe.com/cNieVffEzfgscn70bM1gs07',
+    p90: '147,00 €',
+    saveIt: 'Risparmi 54,00 € rispetto ai 3 singoli (201 €) + 4° Mese OFF Gratuito',
+    saveEn: 'Save €54.00 vs 3 single boxes (€201) + Free Month 4 OFF',
+    u90: 'https://stripe.com/00wfZj1NJfgsgDncYy1gs08'
+  },
+  lady: {
+    code: 'HAZR LADY',
+    formatIt: 'Flacone Vetro Ambrato da 60 Capsule Vegetali HPMC • 2 capsule/giorno',
+    formatEn: 'Amber Glass Bottle • 60 Vegan HPMC Capsules • 2 caps/day',
+    tagIt: 'LINEA PEAK FLOW & SCUDO ENDOCRINO FEMMINILE',
+    tagEn: 'PEAK FLOW & FEMALE ENDOCRINE SHIELD LINE',
+    nameIt: 'HAZR LADY // Equilibrio Neuro-Endocrino & Sonno Profondo',
+    nameEn: 'HAZR LADY // Neuro-Endocrine Balance & Deep Sleep',
+    painIt: 'Per la donna leader che regge insieme responsabilità professionali e personali senza cedere mai, ma la sera si ritrova con il sistema nervoso ancora acceso, sonno leggero e riserve bruciate.',
+    painEn: 'For women leaders carrying high professional and personal loads who experience wired nerves at night, light sleep, and depleted energy reserves.',
+    specIt: 'Matrice Attiva: Agnocasto tit. + Dong Quai tit. + Rodiola Rosea + L-Teanina + N-Acetil-L-Tirosina + PQQ + Zinco e Magnesio Bisglicinato (Zero Stimolanti).',
+    specEn: 'Active Matrix: Chasteberry + Dong Quai + Rhodiola Rosea + L-Theanine + N-Acetyl-L-Tyrosine + PQQ + Zinc & Magnesium Bisglycinate (Zero Stimulants).',
+    dossierIt: '<h4>Dossier Tecnico HAZR LADY — Meccanismo & Uso</h4><p><strong>1. Scudo Neuro-Endocrino:</strong> Agnocasto, Dong Quai e Rodiola modulano la risposta allo stress sull\'asse HPA proteggendo l\'equilibrio ormonale femminile.<br><strong>2. Onde Alfa & Sonno Riparatore:</strong> L-Teanina e Magnesio Bisglicinato favoriscono calma vigile di giorno e recupero profondo di notte.<br><strong>3. Modalità d\'uso:</strong> 2 capsule al mattino con acqua.<br><strong>4. Protocollo 90+4:</strong> 3 flaconi per 90 giorni di calibratura + 4° mese OFF a costo zero.</p>',
+    dossierEn: '<h4>Technical Dossier HAZR LADY — Mechanism & Protocol</h4><p><strong>1. Neuro-Endocrine Shield:</strong> Chasteberry, Dong Quai & Rhodiola stabilize HPA-axis stress response.<br><strong>2. Alpha Waves & Deep Recovery:</strong> L-Theanine & Magnesium Bisglycinate support alert calm and restorative sleep.<br><strong>3. Usage:</strong> 2 capsules every morning.<br><strong>4. 90+4 Rule:</strong> 3 bottles for 90 days ON + Month 4 completely OFF.</p>',
+    p30: '67,00 €',
+    u30: 'https://stripe.com/cNieVffEzfgscn70bM1gs07',
+    p90: '147,00 €',
+    saveIt: 'Risparmi 54,00 € rispetto ai 3 singoli (201 €) + 4° Mese OFF Gratuito',
+    saveEn: 'Save €54.00 vs 3 single bottles (€201) + Free Month 4 OFF',
+    u90: 'https://stripe.com/dRm4gB3VR8S42Mx4s21gs0d'
+  },
+  apex: {
+    code: 'HAZR APEX',
+    formatIt: 'Barattolo / Box 30 Dosi ad Alta Concentrazione • 1 dose/giorno',
+    formatEn: 'High-Potency Tub / 30 Servings • 1 serving/day',
+    tagIt: 'LINEA PRO ATHLETE, FOUNDER & ALTA INTENSITÀ',
+    tagEn: 'PRO ATHLETE, FOUNDER & HIGH-INTENSITY LINE',
+    nameIt: 'HAZR APEX // Potenza Miofibrillare & Stop al Crollo delle 15:00',
+    nameEn: 'HAZR APEX // Myofibrillar Power & Zero 3 PM Crash',
+    painIt: 'Per imprenditori giovani e sportivi agonisti che spingono al massimo ma subiscono il crollo di lucidità pomeridiano, la saturazione dopaminergica e tempi di recupero sempre più lunghi.',
+    painEn: 'For high-drive founders and competitive athletes facing afternoon brain fog, dopaminergic saturation, and slower nervous recovery.',
+    specIt: 'Matrice Attiva: Creatina Monoidrato Ultrapura + Beta-Alanina Tamponata + L-Citrullina Malato + Acetil-L-Carnitina + Alfa-GPC + PQQ + Ubichinolo CoQ10 + L-Teanina + Zinco e Magnesio Bisglicinato.',
+    specEn: 'Active Matrix: Ultrapure Creatine Monohydrate + Buffered Beta-Alanine + L-Citrulline Malate + Acetyl-L-Carnitine + Alpha-GPC + PQQ + Ubiquinol CoQ10 + L-Theanine + Zinc & Magnesium Bisglycinate.',
+    dossierIt: '<h4>Dossier Tecnico HAZR APEX — Meccanismo & Uso</h4><p><strong>1. Esplosività & ATP Cellulare:</strong> Creatina ultrapura, Beta-Alanina, Ubichinolo CoQ10 e PQQ moltiplicano l\'efficienza mitocondriale nelle fibre muscolari e nei neuroni prefrontali.<br><strong>2. Focus Laser Senza Caffeina:</strong> Alfa-GPC, ALCAR e L-Teanina sostengono acetilcolina e onde Alfa senza picchi né crolli.<br><strong>3. Modalità d\'uso:</strong> 1 dose in 250–300 ml d\'acqua al mattino o pre-allenamento.<br><strong>4. Protocollo 90+4:</strong> 90 giorni ON + 4° mese OFF a costo zero.</p>',dossierEn: 'Technical Dossier HAZR APEX — Mechanism & Protocol1. Cellular ATP & Explosiveness: Ultrapure Creatine, Beta-Alanine, Ubiquinol CoQ10 & PQQ maximize mitochondrial output.
+2. Caffeine-Free Laser Focus: Alpha-GPC, ALCAR & L-Theanine drive prefrontal clarity.
+3. Usage: 1 serving daily in 250–300 ml water.
+4. 90+4 Rule: 90 days ON + Month 4 completely OFF.',
+p30: '67,00 €',
+u30: 'https://buy.stripe.com/cNieVffEzfgscn70bM1gs07',
+p90: '147,00 €',
+saveIt: 'Risparmi 54,00 € rispetto ai 3 singoli (201 €) + 4° Mese OFF Gratuito',
+saveEn: 'Save €54.00 vs 3 single tubs (€201) + Free Month 4 OFF',
+u90: 'https://buy.stripe.com/aFa8wR2RN3xK0Ep0bM1gs0c'
+},
+long: {
+code: 'HAZR LONGEVITY',
+formatIt: 'Flacone Vetro Ambrato da 60 Capsule Vegetali HPMC • 2 capsule/giorno',
+formatEn: 'Amber Glass Bottle • 60 Vegan HPMC Capsules • 2 caps/day',
+tagIt: 'LINEA MASTER TIER & LONGEVITY (OVER 55)',
+tagEn: 'MASTER TIER & LONGEVITY LINE (AGE 55+)',
+nameIt: 'HAZR LONGEVITY // Biogenesi Mitocondriale & Voltaggio -70mV',
+nameEn: 'HAZR LONGEVITY // Mitochondrial Biogenesis & -70mV Voltage',
+painIt: 'Per chi ha costruito molto e non accetta di rassegnarsi al calo di brillantezza mnemonica, vigore mattutino e resistenza fisica, cercando autonomia biologica vera senza dipendere da palliativi.',
+painEn: 'For seasoned leaders who refuse cognitive or physical decline and seek true cellular vitality without synthetic crutches.',
+specIt: 'Matrice Attiva Master: Ubichinolo CoQ10 Ridotto + PQQ (Pirrolochinolina Chinone) + Acetil-L-Carnitina + Alfa-GPC + Hericium Erinaceus (Lion's Mane) + Zinco e Magnesio Bisglicinato.',
+specEn: 'Master Active Matrix: Reduced Ubiquinol CoQ10 + PQQ + Acetyl-L-Carnitine + Alpha-GPC + Lion's Mane + Zinc & Magnesium Bisglycinate.',
+dossierIt: 'Dossier Tecnico HAZR LONGEVITY — Meccanismo & Uso1. Biogenesi Mitocondriale (PGC-1α): La sinergia tra PQQ e Ubichinolo ridotto stimola la nascita di nuovi mitocondri e stabilizza il potenziale elettrico di membrana a -70mV.
+2. Neuro-Rigenerazione & Memoria: Lion's Mane, Alfa-GPC e ALCAR proteggono la velocità sinaptica e la lucidità.
+3. Modalità d'uso: 2 capsule al mattino a colazione.
+4. Protocollo 90+4: Ciclo Master completo di 90 giorni + 4° mese OFF a costo zero.',
+dossierEn: 'Technical Dossier HAZR LONGEVITY — Mechanism & Protocol1. Mitochondrial Biogenesis: PQQ + Reduced Ubiquinol CoQ10 stimulate new mitochondria and anchor -70mV membrane voltage.
+2. Neuro-Protection & Memory: Lion's Mane, Alpha-GPC & ALCAR support synaptic sharpness.
+3. Usage: 2 capsules every morning.
+4. 90+4 Rule: 90 days ON + Month 4 completely OFF.',
+p30: '67,00 €',
+u30: 'https://buy.stripe.com/cNi00leAv6JW5YJ2jU1gs05',
+p90: '197,00 €',
+saveIt: 'Include Matrice Master Completa + 4° Mese OFF Gratuito (Valore 261 €)',
+saveEn: 'Includes Full Master Matrix + Free Month 4 OFF (€261 Value)',
+u90: 'https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a'
+},
+teens: {
+code: 'HAZR TEENS',
+formatIt: 'Flacone da 60 Capsule Vegetali HPMC • 2 capsule/giorno al mattino',
+formatEn: 'Bottle of 60 Vegan HPMC Capsules • 2 caps every morning',
+tagIt: 'RISERVATO AI GENITORI • RAGAZZI E STUDENTI (14–22 ANNI)',
+tagEn: 'FOR PARENTS • TEENS & STUDENTS (AGES 14–22)',
+nameIt: 'HAZR TEENS // Reset Dopaminergico & Focus Scolastico/Sportivo',
+nameEn: 'HAZR TEENS // Dopaminergic Reset & Academic/Sports Focus',
+painIt: 'La soluzione naturale e sicura per i genitori che vedono il proprio figlio sempre stanco, irritabile, assorbito dagli schermi e incapace di mantenere l'attenzione nello studio o nello sport.',
+painEn: 'The clean, stimulant-free solution for parents seeing their teen drained by screens, irritable, and struggling to focus in school or sports.',
+specIt: 'Matrice Attiva Protettiva: Mio-Inositolo + L-Teanina + Citicolina + Magnesio Bisglicinato + Zinco Bisglicinato (100% Senza Caffeina né Eccitanti).',
+specEn: 'Protective Active Matrix: Myo-Inositol + L-Theanine + Citicoline + Magnesium Bisglycinate + Zinc Bisglycinate (100% Caffeine & Stimulant Free).',
+dossierIt: 'Dossier Tecnico HAZR TEENS — Meccanismo & Uso1. Riparazione Recettori Dopaminergici: Mio-Inositolo e Citicolina aiutano a riequilibrare i circuiti dell'attenzione saturati da smartphone e videogiochi.
+2. Calma Vigile in Onde Alfa: L-Teanina e Magnesio Bisglicinato riducono l'irritabilità e favoriscono concentrazione serena durante lo studio.
+3. Modalità d'uso: 2 capsule al mattino prima di scuola/allenamento.
+4. Protocollo 90+4: 90 giorni di riequilibrio + 4° mese OFF a costo zero.',
+dossierEn: 'Technical Dossier HAZR TEENS — Mechanism & Protocol1. Dopaminergic Balance: Myo-Inositol & Citicoline support attention pathways overloaded by digital screens.
+2. Alpha-Wave Calm Focus: L-Theanine & Magnesium Bisglycinate ease irritability and sharpen study focus.
+3. Usage: 2 capsules every morning.
+4. 90+4 Rule: 90 days ON + Month 4 completely OFF.',
+p30: '47,00 €',
+u30: 'https://buy.stripe.com/8x228t2RNeco5YJ5w61gs06',
+p90: '97,00 €',
+saveIt: 'Risparmi 44,00 € rispetto ai 3 singoli (141 €) + 4° Mese OFF Gratuito',
+saveEn: 'Save €44.00 vs 3 single bottles (€141) + Free Month 4 OFF',
+u90: 'https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b'
+}
+};
+function bottleSVG(code) {
+  return '<svg width="130" height="175" viewBox="0 0 130 175" xmlns="http://w3.org"><defs><linearGradient id="gBody" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0d0d0f"/><stop offset="35%" stop-color="#26262c"/><stop offset="100%" stop-color="#09090b"/></linearGradient><linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f3d078"/><stop offset="100%" stop-color="#b8892d"/></linearGradient></defs><rect x="34" y="8" width="62" height="22" rx="4" fill="#1c1c21" stroke="#444" stroke-width="1"/><rect x="34" y="26" width="62" height="4" fill="url(#gGold)"/><rect x="20" y="32" width="90" height="134" rx="12" fill="url(#gBody)" stroke="#383842" stroke-width="1.5"/><rect x="23" y="54" width="84" height="86" fill="#111114" stroke="url(#gGold)" stroke-width="1"/><text x="65" y="72" fill="#e6b85c" font-size="8" font-weight="800" text-anchor="middle" letter-spacing="1.5">JOE FENIX METHOD</text><text x="65" y="93" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle" letter-spacing="0.8">' + code + '</text><text x="65" y="115" fill="#cccccc" font-size="7.5" font-weight="700" text-anchor="middle">90 DAYS ON • MONTH 4 OFF</text><text x="65" y="129" fill="#888888" font-size="7" text-anchor="middle">-70mV CELLULAR VOLTAGE</text></svg>';
+}
 
-        if (g === "PRO") {
-            t = "HAZR APEX // Elite Athletic & Neuro-Kinetic Engine";
-            d = (lang === 'en')
-                ? "Zero-Stimulant Pro-Athlete Matrix: PQQ + Ubiquinol CoQ10 + Acetyl-L-Carnitine + Ultrapure Creatine Monohydrate + Buffered Beta-Alanine + Alpha-GPC + High-Dose L-Citrulline Malate + L-Theanine + Zinc & Magnesium Bisglycinate. Multiplies Type-II fiber mitochondria, drives myofibrillar explosiveness, and enables voluntary Flow State entry and exit at -70mV."
-                : "Matrice Pro-Athlete Zero-Stimolanti: PQQ + Ubichinolo CoQ10 + Acetil-L-Carnitina + Creatina Monoidrato Ultrapura + Beta-Alanina Tamponata + Alfa-GPC + L-Citrullina Malato + L-Teanina + Zinco e Magnesio Bisglicinato. Moltiplica i mitocondri nelle fibre muscolari veloci, scatena esplosività miofibrillare e permette di entrare e uscire dal Flow State a comando a -70mV.";
-            u = "https://buy.stripe.com/aFa8wR2RN3xK0Ep0bM1gs0c";
-        } else if (a === "0-20") {
-            t = "HAZR TEENS // Controlled Flow & Neural Shield";
-            d = (lang === 'en') 
-                ? "Full-Spectrum Matrix: Zinc Bisglycinate + Magnesium Bisglycinate + L-Theanine + Citicoline + Neuro-Protective Cofactors. Protects endocrine maturation, induces Alpha-wave calm focus, and repairs dopaminergic receptors saturated by screens at -70mV."
-                : "Matrice Full-Spectrum: Zinco Bisglicinato + Magnesio Bisglicinato + L-Teanina + Citicolina + Cofattori Neuro-Protettivi. Protegge la maturazione endocrina, induce il focus calmo in onde Alfa per il Flow State e ripara i recettori dopaminergici saturi dagli schermi a -70mV.";
-            u = "https://buy.stripe.com/8x2cN79gbfgsevf6Aa1gs0b";
-        } else if (a === "51-60" || a === "61+") {
-            t = "HAZR LONGEVITY // Master Tier Neuro-Flow & NO+";
-            d = (lang === 'en') 
-                ? "Full-Spectrum Matrix: Ubiquinol CoQ10 + PQQ + Acetyl-L-Carnitine + Alpha-GPC + Lion's Mane + L-Citrulline Malate + Zinc & Magnesium Bisglycinate. Triggers mitochondrial biogenesis, maximizes Nitric Oxide perfusion, and supports endocrine balance at -70mV."
-                : "Matrice Full-Spectrum: Ubichinolo CoQ10 + PQQ + Acetil-L-Carnitina + Alfa-GPC + Hericium Erinaceus + L-Citrullina Malato + Zinco e Magnesio Bisglicinato. Scatena la biogenesi mitocondriale anti-aging, massimizza l'Ossido Nitrico e protegge l'equilibrio endocrino a -70mV.";
-            u = "https://buy.stripe.com/aFa4gB0JF5FS9aVgaK1gs0a";
-        } else if (g === "F") {
-            t = "HAZR LADY // Peak Flow & Endocrine Shield";
-            d = (lang === 'en') 
-                ? "Full-Spectrum Matrix: Chasteberry + Dong Quai + Rhodiola Rosea + L-Theanine + N-Acetyl-L-Tyrosine + PQQ + Zinc & Magnesium Bisglycinate. Builds a selective HPA-axis barrier, triggers mitochondrial biogenesis, and unlocks deep Flow State coherence."
-                : "Matrice Full-Spectrum: Agnocasto + Dong Quai + Rhodiola Rosea + L-Teanina + N-Acetil-L-Tirosina + PQQ + Zinco e Magnesio Bisglicinato. Erige una barriera selettiva sull'asse HPA, attiva la biogenesi mitocondriale anti-aging e innesca una profonda coerenza da Flow State.";
-            u = "https://buy.stripe.com/dRm4gB3VR8S42Mx4s21gs0d";
-        } else {
-            t = "HAZR MAN // Quantum Flow Executive & NO+ Boost";
-            d = (lang === 'en') 
-                ? "Full-Spectrum Matrix: High-Dose L-Citrulline Malate + Arginine AKG + Beetroot Polyphenols + PQQ + Ashwagandha KSM-66 + L-Theanine + L-Tyrosine + Zinc & Magnesium Bisglycinate. Surges Nitric Oxide from age 35+, drives mitochondrial biogenesis, and locks in Alpha-wave Flow State."
-                : "Matrice Full-Spectrum: L-Citrullina Malato ad alto dosaggio + Arginina AKG + Polifenoli di Barbabietola + PQQ + Ashwagandha KSM-66 + L-Teanina + L-Tirosina + Zinco e Magnesio Bisglicinato. Potenzia l'Ossido Nitrico dai 35-40 anni, attiva la biogenesi mitocondriale e aggancia il Flow State.";
-            u = "https://buy.stripe.com/00wfZj1NJfgsgDncYy1gs08";
-        }
+function selectProd(key) {
+  currentKey = key;
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + key).classList.add('active');
+  renderProd();
+}
 
-        document.getElementById('res-title').innerText = t;
-        document.getElementById('res-desc').innerText = d;
-        const bText = (lang === 'en') ? "UNLOCK YOUR QUANTUM PROTOCOL →" : "SBLOCCA IL TUO PROTOCOLLO QUANTICO →";
-        document.getElementById('stripe-btn-container').innerHTML = '<a href="' + u + '" target="_blank" class="stripe-link">' + bText + '</a>';
-        document.getElementById('result-section').style.display = 'block';
-    }
+function toggleDossier() {
+  const p = document.getElementById('dossierPanel');
+  p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+}
 
-    function setLang() {
-        lang = (lang === 'it') ? 'en' : 'it';
-        document.getElementById('vision-tag').innerText = (lang === 'en') ? "TOP THE WORLD • QUANTUM EFFECT • MULTIPOTENTIAL VISION" : "TOP THE WORLD • EFFETTO QUANTICO • MULTIPOTENTIAL VISION";
-        document.getElementById('main-title').innerText = (lang === 'en') ? "EM-CALC // Quantum Flow Telemetry" : "EM-CALC // Telemetria Quantum Flow";
-        document.getElementById('intro-p1').innerHTML = (lang === 'en')
-            ? '<span class="intro-highlight">Why calibrate the system:</span> Decision-making clarity and voluntary access to the <strong>Flow State</strong> do not rely on willpower, but on maintaining cellular membrane potential at <strong>-70mV</strong>. When chronic stress, dopaminergic saturation, or mitochondrial decline disrupt this voltage, cognitive entropy takes over.'
-            : '<span class="intro-highlight">Perché calibrare il sistema:</span> La lucidità decisionale e l\'accesso volontario al <strong>Flow State</strong> non dipendono dalla forza di volontà, ma dalla stabilità del potenziale elettrico di membrana cellulare a <strong>-70mV</strong>. Quando stress cronico, saturazione dopaminergica o calo mitocondriale alterano questo voltaggio, la mente entra in entropia.';
-        document.getElementById('intro-p2').innerHTML = (lang === 'en')
-            ? '<span class="intro-highlight">The 5 Action Vectors:</span> Every protocol isolated by EM-CALC acts simultaneously on five biophysical and regenerative axes to lock you into <em>Never Better</em> mode:'
-            : '<span class="intro-highlight">I 5 Vettori di Intervento:</span> Ogni protocollo elaborato da EM-CALC agisce simultaneamente su cinque assi biofisici e rigenerativi per portarti in assetto <em>Never Better</em>:';
-        document.getElementById('p1-t').innerText = (lang === 'en') ? "01. Nitric Oxide (NO+) Surge" : "01. Spinta Ossido Nitrico (NO+)";
-        document.getElementById('p1-d').innerText = (lang === 'en') ? "Counteracts the natural vascular drop starting at age 35+, maximizing cerebral oxygenation and physical stamina." : "Contrasta il fisiologico calo vascolare dai 35-40 anni, massimizzando ossigenazione cerebrale e resistenza fisica.";
-        document.getElementById('p2-t').innerText = (lang === 'en') ? "02. Alpha-Wave Trigger" : "02. Innesco Onde Alfa";
-        document.getElementById('p2-d').innerText = (lang === 'en') ? "Shifts brainwaves from high-beta cortisol stress into the alert calm of Flow State without sedation." : "Sposta l'attività cerebrale dallo stress Beta alla calma vigile del Flow State senza calo di reattività.";
-        document.getElementById('p3-t').innerText = (lang === 'en') ? "03. Endocrine Shield" : "03. Scudo Endocrino";
-        document.getElementById('p3-d').innerText = (lang === 'en') ? "Zinc and Magnesium Bisglycinate fortify hormonal balance, prostate function, and -70mV voltage stability." : "Zinco e Magnesio Bisglicinato blindano l'equilibrio ormonale, la funzionalità prostatica e il voltaggio a -70mV.";
-        document.getElementById('p4-t').innerText = (lang === 'en') ? "04. Cortisol Barrier" : "04. Barriera Cortisolica";
-        document.getElementById('p4-d').innerText = (lang === 'en') ? "Standardized adaptogens and energetic cofactors sustain ATP output and eliminate decision fatigue." : "Adattogeni titolati e cofattori energetici sostengono la sintesi di ATP eliminando l'affaticamento decisionale.";
-        document.getElementById('p5-t').innerText = (lang === 'en') ? "05. Mitochondrial Biogenesis & Anti-Aging" : "05. Biogenesi Mitocondriale & Anti-Aging";
-        document.getElementById('p5-d').innerText = (lang === 'en') ? "Triggers continuous mitochondrial regeneration from minute one via PQQ, Ubiquinol CoQ10, and targeted polyphenols, reversing cellular entropy." : "Attiva la rigenerazione di nuovi mitocondri dal primo minuto di vita tramite PQQ, Ubichinolo CoQ10 e polifenoli mirati, invertendo l'entropia cellulare.";
-        document.getElementById('lbl-gender').innerText = (lang === 'en') ? "1. Biological Profile" : "1. Assetto Biologico";
-        document.getElementById('lbl-age').innerText = (lang === 'en') ? "2. Calibration Tier" : "2. Fascia di Calibrazione";
-        document.getElementById('btn-start').innerText = (lang === 'en') ? "RUN EM-CALC TELEMETRY" : "AVVIA TELEMETRIA EM-CALC";
-        document.getElementById('res-badge').innerText = (lang === 'en') ? "QUANTUM COHERENCE ACTIVE (-70mV)" : "COERENZA QUANTICA ATTIVA (-70mV)";
-        document.getElementById('lib-tag').innerText = (lang === 'en') ? "THEORETICAL & OPERATIONAL ARCHITECTURE" : "ARCHITETTURA TEORICA & OPERATIVA";
-        document.getElementById('lib-title').innerText = (lang === 'en') ? "The Joe Fenix Book Fleet" : "La Flotta Libraria Joe Fenix";
-        document.getElementById('lib-desc').innerHTML = (lang === 'en')
-            ? "Molecular supplementation stabilizes your biological hardware, while conceptual mastery directs the system. Pair your HAZR protocol with the <strong>Never Better</strong> operational manual: the volumes of the Book Fleet codify the biophysical foundations of -70mV anchoring, mitochondrial biogenesis, and Flow State architecture."
-            : "L'integrazione molecolare stabilizza l'hardware biologico, ma è la padronanza concettuale a guidare il sistema. Abbina il tuo protocollo HAZR al manuale operativo <strong>Never Better</strong>: i volumi della Flotta Libraria codificano i fondamenti biofisici dell'ancoraggio a -70mV, la biogenesi mitocondriale e l'architettura del Flow State.";
-        document.getElementById('btn-book-it').innerText = (lang === 'en') ? "BOOK MAI STATO MEGLIO (IT) →" : "LIBRO MAI STATO MEGLIO (IT) →";
-        document.getElementById('btn-book-en').innerText = (lang === 'en') ? "BOOK NEVER BETTER (EN) →" : "BOOK NEVER BETTER (EN) →";
-        document.getElementById('btn-lib').innerText = (lang === 'en') ? "EXPLORE SERIES & AUTHOR BIO ON AMAZON →" : "ESPLORA LA COLLANA & BIOGRAFIA AUTORE SU AMAZON →";
-        if (document.getElementById('result-section').style.display === 'block') { runCalc(); }
-    }
+function renderProd() {
+  const item = DATA[currentKey];
+  const isEn = (lang === 'en');
+  document.getElementById('prodCard').innerHTML =
+    '<div class="prod-top">' +
+      '<div class="bottle-box">' + bottleSVG(item.code) + '<div style="font-size:10px;color:#e6b85c;font-weight:800;margin-top:8px;letter-spacing:0.8px;">LOTTO NUMERATO • IT/UE</div></div>' +
+      '<div>' +
+        '<div class="prod-tag">' + (isEn ? item.tagEn : item.tagIt) + '</div>' +
+        '<h2 class="prod-name">' + (isEn ? item.nameEn : item.nameIt) + '</h2>' +
+        '<p class="prod-pain">' + (isEn ? item.painEn : item.painIt) + '</p>' +
+        '<div class="prod-spec"><strong>' + (isEn ? 'Format:' : 'Formato:') + '</strong> ' + (isEn ? item.formatEn : item.formatIt) + '<br><br>' + (isEn ? item.specEn : item.specIt) + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<button type="button" class="btn-dossier" onclick="toggleDossier()">' + (isEn ? '📄 VIEW FULL TECHNICAL DOSSIER & INGREDIENTS BEFORE ORDERING ▼' : '📄 CONSULTA SCHEDA TECNICA, ATTIVI E DOSAGGI PRIMA DI ORDINARE ▼') + '</button>' +
+    '<div class="dossier-panel" id="dossierPanel">' + (isEn ? item.dossierEn : item.dossierIt) + '<button type="button" class="btn-print" onclick="window.print()">' + (isEn ? '🖨️ Print / Save Dossier as PDF' : '🖨️ Stampa / Salva Scheda in PDF') + '</button></div>' +
+    '<div class="buy-grid">' +
+      '<div class="buy-opt">' +
+        '<div>' +
+          '<div class="opt-title">' + (isEn ? 'Option A • Single 30-Day Supply' : 'Opzione A • Singolo 30 Giorni') + '</div>' +
+          '<div class="opt-price">' + item.p30 + '</div>' +
+          '<div class="opt-desc">' + (isEn ? '1 unit (30 days). Full freedom to start and test your first month of cellular calibration.' : '1 flacone/box (30 giorni). Massima libertà per iniziare e testare il primo mese di calibratura.') + '</div>' +
+        '</div>' +
+        '<a href="' + item.u30 + '" target="_blank" class="btn-buy std">' + (isEn ? 'ORDER 30 DAYS →' : 'ORDINA SINGOLO 30 GG →') + '</a>' +
+      '</div>' +
+      '<div class="buy-opt best">' +
+        '<div>' +
+          '<span class="best-pill">' + (isEn ? '★ RECOMMENDED BY PROTOCOL (90 + 4)' : '★ CONSIGLIATO DAL PROTOCOLLO (90 + 4)') + '</span>' +
+          '<div class="opt-title">' + (isEn ? 'Option B • Full 90-Day Cycle + Month 4 OFF' : 'Opzione B • Ciclo Completo 90 Giorni + 4° Mese OFF') + '</div>' +
+          '<div class="opt-price">' + item.p90 + '</div>' +
+          '<div class="opt-save">' + (isEn ? item.saveEn : item.saveIt) + '</div>' +
+          '<div class="opt-desc">' + (isEn ? 'Complete 3-month supply (90 days ON) + Month 4 completely OFF at zero cost to verify autonomous energy.' : 'Fornitura completa per 3 mesi (90 giorni ON) + 4° mese completamente OFF a costo zero per verificare l\'autonomia reale.') + '</div>' +
+        '</div>' +
+        '<a href="' + item.u90 + '" target="_blank" class="btn-buy prm">' + (isEn ? 'ACTIVATE 90+4 PROTOCOL →' : 'ATTIVA FORMULA 90+4 →') + '</a>' +
+      '</div>' +
+    '</div>';
+}
 
-    document.getElementById('btn-start').onclick = runCalc;
-    document.getElementById('lang-toggle').onclick = setLang;
+function toggleLang() {
+  lang = (lang === 'it') ? 'en' : 'it';
+  const isEn = (lang === 'en');
+  document.getElementById('t-badge').innerText = isEn ? 'RESERVED ALLOCATION • NUMBERED LAB BATCHES' : 'ASSEGNAZIONE RISERVATA • LOTTI NUMERATI DI LABORATORIO';
+  document.getElementById('t-h1').innerText = isEn ? 'Autonomous Mitochondrial Energy Regeneration & Recharge, Zero Dependencies: The Molecular Protocol Optimized for Your Nervous System.' : 'Rigenerazione e Ricarica Energetica Mitocondriale Autonoma, a Zero Dipendenze: Il Protocollo Molecolare Ottimizzato sul Tuo Sistema Nervoso.';
+  document.getElementById('t-sub').innerText = isEn ? 'Zero synthetic stimulants. Zero endless subscriptions. Select your profile, inspect the full product visual and technical dossier first, and decide freely.' : 'Nessuno stimolante artificiale. Nessun abbonamento infinito. Scegli il tuo profilo, consulta prima l\'immagine completa e la scheda tecnica dei principi attivi, e decidi in piena libertà.';
+  document.getElementById('t-rule').innerHTML = isEn ? '<strong>THE 90 + 4 GOLDEN RULE (ZERO DEPENDENCIES):</strong> The protocol works for <strong>90 days</strong> on cellular regeneration (-70mV) followed by <strong>Month 4 completely OFF (zero bottles, zero charges)</strong> so you can verify in the field that your body and mind run autonomously.' : '<strong>LA REGOLA D\'ORO 90 + 4 (ZERO DIPENDENZE):</strong> Il protocollo lavora per <strong>90 giorni</strong> sulla rigenerazione cellulare (-70mV) e prevede un <strong>4° mese completamente OFF (zero flaconi, zero addebiti)</strong> per farti verificare sul campo che il tuo organismo e la tua mente camminano da soli.';
+  document.getElementById('t-sel').innerText = isEn ? '1. SELECT YOUR PROFILE TO VIEW FULL PROTOCOL & DOSSIER' : '1. SCEGLI IL TUO PROFILO PER VISUALIZZARE IL PROTOCOLLO COMPLETO';
+  document.getElementById('t-lib-tag').innerText = isEn ? 'SCIENTIFIC ARCHITECTURE & BOOK FLEET' : 'ARCHITETTURA SCIENTIFICA & FLOTTA LIBRARIA';
+  document.getElementById('t-lib-h2').innerText = isEn ? 'Official Joe Fenix Method Books on Amazon' : 'I Manuali Ufficiali Joe Fenix Method su Amazon';
+  document.getElementById('t-lib-p').innerText = isEn ? 'Want to master the biophysics of -70mV cellular voltage, mitochondrial biogenesis, and Flow State first? Explore paperback, hardcover, and Kindle editions shipped by Amazon across Europe, USA, UK, and Australia.' : 'Vuoi prima approfondire i fondamenti biofisici del voltaggio cellulare a -70mV, la biogenesi mitocondriale e la padronanza del Flow State? Esplora i volumi cartacei e Kindle spediti da Amazon in Italia, Europa, USA e Australia.';
+  document.getElementById('t-b-it').innerText = isEn ? 'BOOK MAI STATO MEGLIO (ITALIAN) →' : 'LIBRO MAI STATO MEGLIO (IT) →';
+  document.getElementById('t-b-en').innerText = isEn ? 'BOOK NEVER BETTER (ENGLISH / GLOBAL) →' : 'BOOK NEVER BETTER (EN / GLOBAL) →';
+  document.getElementById('t-b-all').innerText = isEn ? 'EXPLORE FULL BOOK SERIES & AUTHOR BIO ON AMAZON →' : 'ESPLORA L\'INTERA COLLANA & BIOGRAFIA SU AMAZON →';
+  renderProd();
+}
+
+renderProd();
 </script>
-
 </body>
 </html>
