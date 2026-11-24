@@ -95,42 +95,63 @@
     <button type="button" class="lang-btn" id="langBtn" onclick="toggleLang()">EN / IT</button>
   </div>
 
-  <!-- BANNER DINAMICO PER UTENTI PROVENIENTI DAL CALCOLATORE EPIGENETICO -->
+ <!-- BANNER DINAMICO PER UTENTI PROVENIENTI DAL CALCOLATORE EPIGENETICO -->
   <div class="calc-banner" id="calcBanner">
     <div class="calc-banner-title" id="cb-title">⚡ CALIBRAZIONE EPIGENETICA RILEVATA DAL CALCOLATORE JOE FENIX METHOD</div>
     <div style="font-size:13px;color:#e5e5ef;line-height:1.5;" id="cb-desc">Il tuo profilo molecolare è stato pre-selezionato automaticamente in base ai tuoi parametri bio-elettrici:</div>
-Mentre l'analisi transazionale smantella i limiti psicologici dei copioni arcaici, il Protocollo HAZR opera sulla matrice cellulare attraverso 5 Vettori Molecolari calibrati sul tuo profilo neuro-endocrino.
-LA REGOLA D'ORO 90 + 4 (ZERO DIPENDENZE): Ogni protocollo lavora per 90 giorni ON sulla rigenerazione mitocondriale (-70mV) e prevede un 4° mese completamente OFF (zero flaconi, zero addebiti) per verificare sul campo che l'Adulto Biologico cammini in totale autonomia.
-ARCHITETTURA MOLECOLARE • MOTORE BIOCHIMICO FUNZIONALE
-I 5 Vettori Molecolari del Protocollo HAZR
-Senza il ripristino del potenziale elettrochimico a -70mV, l'asse stressogeno HPA resta sovrastimolato e costringe la mente a retrocedere nel Bambino difensivo o nel Genitore rigido. Esplora i 5 Vettori che alimentano i nostri protocolli:
-1. [HAZR-MVP]
--70mV Voltage
-2. [HAZR-COB]
-Cortisol Block
-3. [HAZR-EMR]
-Epigenetic Matrix
-4. [HAZR-SAS]
-38 Nodes Sync
-5. [HAZR-HPA]
-Systemic Seal
+    <div class="calc-metrics" id="cb-metrics"></div>
+  </div>
 
+  <div class="badge-lot" id="t-badge">INGEGNERIA EPIGENETICA APPLICATA • LOTTI NUMERATI DI LABORATORIO</div>
+  <h1 id="t-h1">HAZR è il processo bio-rigenerativo preciso che ti rende Never Better: ripolarizzazione cellulare a -70mV, zero stimolanti, zero dipendenze.</h1>
+  <p class="sub" id="t-sub">Mentre l'analisi transazionale smantella i limiti psicologici dei copioni arcaici, il Protocollo HAZR opera sulla matrice cellulare attraverso 5 Vettori Molecolari calibrati sul tuo profilo neuro-endocrino.</p>
 
-2. SCEGLI IL TUO COMPILATORE OPERATIVO (MATRICE POLIVETTORIALE CALIBRATA)
+  <div class="rule-box" id="t-rule">
+    <strong>LA REGOLA D'ORO 90 + 4 (ZERO DIPENDENZE):</strong> Ogni protocollo lavora per <strong>90 giorni ON</strong> sulla rigenerazione mitocondriale (-70mV) e prevede un <strong>4° mese completamente OFF (zero flaconi, zero addebiti)</strong> per verificare sul campo che l'Adulto Biologico cammini in totale autonomia.
+  </div>
 
-MAN // Executive
-LADY // Leader
-APEX // Atleti
-LONGEVITY // 55+
-TEENS // Genitori
-ARCHITETTURA SCIENTIFICA & COLLANA UFFICIALE AMAZON
-The Joe Fenix Method: Build · Protect · Fuel
-Vuoi approfondire la biofisica del voltaggio cellulare a -70mV, la biogenesi mitocondriale via PGC-1α e l'attivazione endogena GLP-1 / NAD+? Accedi alla pagina ufficiale della collana e ai singoli manuali su Amazon.
-LIBRO MAI STATO MEGLIO (IT) →
-BOOK NEVER BETTER (EN / GLOBAL) →
+  <div class="engine-box" id="t-engine-box">
+    <div class="sec-label" id="t-eng-lbl">ARCHITETTURA MOLECOLARE • MOTORE BIOCHIMICO FUNZIONALE</div>
+    <h2 class="engine-title" id="t-eng-h2">I 5 Vettori Molecolari del Protocollo HAZR</h2>
+    <p class="engine-intro" id="t-eng-intro">Senza il ripristino del potenziale elettrochimico a <strong>-70mV</strong>, l'asse stressogeno HPA resta sovrastimolato e costringe la mente a retrocedere nel Bambino difensivo o nel Genitore rigido. Esplora i 5 Vettori che alimentano i nostri protocolli:</p>
+    <div class="vec-tabs">
+      <div class="vec-btn active" id="vbtn-mvp" onclick="selectVec('mvp')">1. [HAZR-MVP]<br>-70mV Voltage</div>
+      <div class="vec-btn" id="vbtn-cob" onclick="selectVec('cob')">2. [HAZR-COB]<br>Cortisol Block</div>
+      <div class="vec-btn" id="vbtn-emr" onclick="selectVec('emr')">3. [HAZR-EMR]<br>Epigenetic Matrix</div>
+      <div class="vec-btn" id="vbtn-sas" onclick="selectVec('sas')">4. [HAZR-SAS]<br>38 Nodes Sync</div>
+      <div class="vec-btn" id="vbtn-hpa" onclick="selectVec('hpa')">5. [HAZR-HPA]<br>Systemic Seal</div>
+    </div>
+    <div class="vec-detail" id="vecDetail"></div>
+  </div>
 
-ESPLORA LA COLLANA UFFICIALE & BIOGRAFIA SU AMAZON →
-JOE FENIX METHOD • NEVER BETTER • BUILD · PROTECT · FUEL
+  <div id="hazr-protocol-section">
+    <div class="sec-label" id="t-sel">2. SCEGLI IL TUO COMPILATORE OPERATIVO (MATRICE POLIVETTORIALE CALIBRATA)</div>
+    <div class="tabs">
+      <div class="tab active" id="tab-man" onclick="selectProd('man')">MAN // Executive</div>
+      <div class="tab" id="tab-lady" onclick="selectProd('lady')">LADY // Leader</div>
+      <div class="tab" id="tab-apex" onclick="selectProd('apex')">APEX // Atleti</div>
+      <div class="tab" id="tab-long" onclick="selectProd('long')">LONGEVITY // 55+</div>
+      <div class="tab" id="tab-teens" onclick="selectProd('teens')">TEENS // Genitori</div>
+    </div>
+
+    <div class="prod-card" id="prodCard"></div>
+  </div>
+
+  <div class="lib-box" id="never-better-book-section">
+    <div class="sec-label" id="t-lib-tag">ARCHITETTURA SCIENTIFICA & COLLANA UFFICIALE AMAZON</div>
+    <h2 style="margin:0 0 10px;font-size:20px;color:#fff;" id="t-lib-h2">The Joe Fenix Method: Build · Protect · Fuel</h2>
+    <p style="margin:0;font-size:14px;line-height:1.6;color:var(--muted);" id="t-lib-p">Vuoi approfondire la biofisica del voltaggio cellulare a -70mV, la biogenesi mitocondriale via PGC-1α e l'attivazione endogena GLP-1 / NAD+? Accedi alla pagina ufficiale della collana e ai singoli manuali su Amazon.</p>
+    <div class="books">
+      <a href="https://amazon.it" target="_blank" class="btn-amz" id="t-b-it">LIBRO MAI STATO MEGLIO (IT) →</a>
+      <a href="https://amazon.com" target="_blank" class="btn-amz" id="t-b-en">BOOK NEVER BETTER (EN / GLOBAL) →</a>
+    </div>
+    <a href="https://amazon.com" target="_blank" class="btn-amz-all" id="t-b-all">ESPLORA LA COLLANA UFFICIALE & BIOGRAFIA SU AMAZON →</a>
+  </div>
+
+  <div class="footer">JOE FENIX METHOD • NEVER BETTER • BUILD · PROTECT · FUEL</div>
+</div>
+
+<script>
 let lang = 'it';
 let currentKey = 'man';
 let currentVec = 'mvp';
