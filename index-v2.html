@@ -316,7 +316,7 @@ long: {
     u90: u('8x2cN79gbfgsevf6Aa1gs0b')
   }
 };
-};
+
 function bottleSVG(code) {
 return 'JOE FENIX METHOD' + code + '90 DAYS ON • MONTH 4 OFF-70mV CELLULAR VOLTAGE';
 }
@@ -328,119 +328,116 @@ document.getElementById('vbtn-' + vKey).classList.add('active');
 renderVec();
 }
 function renderVec() {
-const v = VECTORS[currentVec];
-const isEn = (lang === 'en');
-document.getElementById('vecDetail').innerHTML =
-'' + (isEn ? v.tagEn : v.tagIt) + '' +
-'' + (isEn ? v.titleEn : v.titleIt) + '' +
-'' + (isEn ? v.bodyEn : v.bodyIt) + '';
+  const v = VECTORS[currentVec];
+  const isEn = (lang === 'en');
+  document.getElementById('vecDetail').innerHTML =
+    '<div class="vec-tag">' + (isEn ? v.tagEn : v.tagIt) + '</div>' +
+    '<h4>' + (isEn ? v.titleEn : v.titleIt) + '</h4>' +
+    '<div>' + (isEn ? v.bodyEn : v.bodyIt) + '</div>';
 }
-function selectProd(key) {
-if (!DATA[key]) return;
-currentKey = key;
-document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-document.getElementById('tab-' + key).classList.add('active');
-renderProd();
-}
-function toggleDossier() {
-const p = document.getElementById('dossierPanel');
-p.style.display = (p.style.display === 'block') ? 'none' : 'block';
-}
-function renderProd() {
-const item = DATA[currentKey];
-const isEn = (lang === 'en');
-document.getElementById('prodCard').innerHTML =
-'' +
-'' + bottleSVG(item.code) + 'LOTTO NUMERATO • IT/UE' +
-'' +
-'' + (isEn ? item.tagEn : item.tagIt) + '' +
-'' + (isEn ? item.vecMatrixEn : item.vecMatrixIt) + '' +
-'' + (isEn ? item.nameEn : item.nameIt) + '' +
-'' + (isEn ? item.painEn : item.painIt) + '' +
-'' + (isEn ? 'Format:' : 'Formato:') + ' ' + (isEn ? item.formatEn : item.formatIt) + '
 
-' + (isEn ? item.specEn : item.specIt) + '' +
-'' +
-'' +
-'' + (isEn ? '📄 VIEW FULL TECHNICAL DOSSIER & VECTOR SYNERGY BEFORE ORDERING ▼' : '📄 CONSULTA SCHEDA TECNICA, SINERGIA VETTORIALE E DOSAGGI ▼') + '' +
-'' + (isEn ? item.dossierEn : item.dossierIt) + '' + (isEn ? '🖨️ Print / Save Dossier as PDF' : '🖨️ Stampa / Salva Scheda in PDF') + '' +
-'' +
-'' +
-'' +
-'' + (isEn ? 'Option A • Single 30-Day Supply' : 'Opzione A • Singolo 30 Giorni') + '' +
-'' + item.p30 + '' +
-'' + (isEn ? '1 unit (30 days). Full freedom to start and test your first month of cellular calibration.' : '1 flacone/box (30 giorni). Massima libertà per iniziare e testare il primo mese di calibratura.') + '' +
-'' +
-'' + (isEn ? 'ORDER 30 DAYS →' : 'ORDINA SINGOLO 30 GG →') + '' +
-'' +
-'' +
-'' +
-'' + (isEn ? '★ RECOMMENDED BY PROTOCOL (90 + 4)' : '★ CONSIGLIATO DAL PROTOCOLLO (90 + 4)') + '' +
-'' + (isEn ? 'Option B • Full 90-Day Cycle + Month 4 OFF' : 'Opzione B • Ciclo Completo 90 Giorni + 4° Mese OFF') + '' +
-'' + item.p90 + '' +
-'' + (isEn ? item.saveEn : item.saveIt) + '' +
-'' + (isEn ? 'Complete 3-month supply (90 days ON) + Month 4 completely OFF at zero cost to verify autonomous energy.' : 'Fornitura completa per 3 mesi (90 giorni ON) + 4° mese completamente OFF a costo zero per verificare autonomia reale.') + '' +
-'' +
-'' + (isEn ? 'ACTIVATE 90+4 PROTOCOL →' : 'ATTIVA FORMULA 90+4 →') + '' +
-'' +
-'';
+function selectProd(key) {
+  if (!DATA[key]) return;
+  currentKey = key;
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + key).classList.add('active');
+  renderProd();
 }
+
+function toggleDossier() {
+  const p = document.getElementById('dossierPanel');
+  p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+}
+
+function renderProd() {
+  const item = DATA[currentKey];
+  const isEn = (lang === 'en');
+  document.getElementById('prodCard').innerHTML =
+    '<div class="prod-top">' +
+      '<div class="bottle-box">' + bottleSVG(item.code) + '<div style="font-size:10px;color:#e6b85c;font-weight:800;margin-top:8px;letter-spacing:0.8px;">LOTTO NUMERATO • IT/UE</div></div>' +
+      '<div>' +
+        '<div class="prod-tag">' + (isEn ? item.tagEn : item.tagIt) + '</div>' +
+        '<div class="vec-matrix-pill">' + (isEn ? item.vecMatrixEn : item.vecMatrixIt) + '</div>' +
+        '<h2 class="prod-name">' + (isEn ? item.nameEn : item.nameIt) + '</h2>' +
+        '<p class="prod-pain">' + (isEn ? item.painEn : item.painIt) + '</p>' +
+        '<div class="prod-spec"><strong>' + (isEn ? 'Format:' : 'Formato:') + '</strong> ' + (isEn ? item.formatEn : item.formatIt) + '<br><br>' + (isEn ? item.specEn : item.specIt) + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<button type="button" class="btn-dossier" onclick="toggleDossier()">' + (isEn ? '📄 VIEW FULL TECHNICAL DOSSIER & VECTOR SYNERGY BEFORE ORDERING ▼' : '📄 CONSULTA SCHEDA TECNICA, SINERGIA VETTORIALE E DOSAGGI ▼') + '</button>' +
+    '<div class="dossier-panel" id="dossierPanel">' + (isEn ? item.dossierEn : item.dossierIt) + '<button type="button" class="btn-print" onclick="window.print()">' + (isEn ? '🖨️ Print / Save Dossier as PDF' : '🖨️ Stampa / Salva Scheda in PDF') + '</button></div>' +
+    '<div class="buy-grid">' +
+      '<div class="buy-opt">' +
+        '<div>' +
+          '<div class="opt-title">' + (isEn ? 'Option A • Single 30-Day Supply' : 'Opzione A • Singolo 30 Giorni') + '</div>' +
+          '<div class="opt-price">' + item.p30 + '</div>' +
+          '<div class="opt-desc">' + (isEn ? '1 unit (30 days). Full freedom to start and test your first month of cellular calibration.' : '1 flacone/box (30 giorni). Massima liberta per iniziare e testare il primo mese di calibratura.') + '</div>' +
+        '</div>' +
+        '<a href="' + item.u30 + '" target="_blank" class="btn-buy std">' + (isEn ? 'ORDER 30 DAYS →' : 'ORDINA SINGOLO 30 GG →') + '</a>' +
+      '</div>' +
+      '<div class="buy-opt best">' +
+        '<div>' +
+          '<span class="best-pill">' + (isEn ? '★ RECOMMENDED BY PROTOCOL (90 + 4)' : '★ CONSIGLIATO DAL PROTOCOLLO (90 + 4)') + '</span>' +
+          '<div class="opt-title">' + (isEn ? 'Option B • Full 90-Day Cycle + Month 4 OFF' : 'Opzione B • Ciclo Completo 90 Giorni + 4° Mese OFF') + '</div>' +
+          '<div class="opt-price">' + item.p90 + '</div>' +
+          '<div class="opt-save">' + (isEn ? item.saveEn : item.saveIt) + '</div>' +
+          '<div class="opt-desc">' + (isEn ? 'Complete 3-month supply (90 days ON) + Month 4 completely OFF at zero cost to verify autonomous energy.' : 'Fornitura completa per 3 mesi (90 giorni ON) + 4° mese completamente OFF a costo zero per verificare autonomia reale.') + '</div>' +
+        '</div>' +
+        '<a href="' + item.u90 + '" target="_blank" class="btn-buy prm">' + (isEn ? 'ACTIVATE 90+4 PROTOCOL →' : 'ATTIVA FORMULA 90+4 →') + '</a>' +
+      '</div>' +
+    '</div>';
+}
+
 function toggleLang() {
-lang = (lang === 'it') ? 'en' : 'it';
-const isEn = (lang === 'en');
-document.getElementById('t-badge').innerText = isEn ? APPLIED EPIGENETIC ENGINEERING • NUMBERED LAB BATCHES : INGEGNERIA EPIGENETICA APPLICATA • LOTTI NUMERATI DI LABORATORIO;
-document.getElementById('t-h1').innerText = isEn ? HAZR is the precise bio-regenerative process that makes you Never Better: -70mV cellular repolarization, zero stimulants, zero dependencies. : HAZR è il processo bio-rigenerativo preciso che ti rende Never Better: ripolarizzazione cellulare a -70mV, zero stimolanti, zero dipendenze.;
-document.getElementById('t-sub').innerText = isEn ? While Transactional Analysis dismantles limiting psychological life scripts, the HAZR Protocol operates on the cellular matrix through 5 Molecular Vectors calibrated to your neuro-endocrine profile. : Mentre l'analisi transazionale smantella i limiti psicologici dei copioni arcaici, il Protocollo HAZR opera sulla matrice cellulare attraverso 5 Vettori Molecolari calibrati sul tuo profilo neuro-endocrino.;
-document.getElementById('t-rule').innerHTML = isEn ? <strong>THE 90 + 4 GOLDEN RULE (ZERO DEPENDENCIES):</strong> Every protocol works for <strong>90 days ON</strong> on mitochondrial regeneration (-70mV) followed by a <strong>4th Month completely OFF (zero bottles, zero charges)</strong> to verify in the field that your Biological Adult runs autonomously. : <strong>LA REGOLA D'ORO 90 + 4 (ZERO DIPENDENZE):</strong> Ogni protocollo lavora per <strong>90 giorni ON</strong> sulla rigenerazione mitocondriale (-70mV) e prevede un <strong>4° mese completamente OFF (zero flaconi, zero addebiti)</strong> per verificare sul campo che l'Adulto Biologico cammini in totale autonomia.;
-document.getElementById('t-eng-lbl').innerText = isEn ? MOLECULAR ARCHITECTURE • FUNCTIONAL BIOCHEMICAL ENGINE : ARCHITETTURA MOLECOLARE • MOTORE BIOCHIMICO FUNZIONALE;
-document.getElementById('t-eng-h2').innerText = isEn ? The 5 Molecular Vectors of the HAZR Protocol : I 5 Vettori Molecolari del Protocollo HAZR;
-document.getElementById('t-eng-intro').innerHTML = isEn ? Without restoring transmembrane electrical potential to <strong>-70mV</strong>, the HPA stress axis remains chronically overstimulated, forcing cognition back into defensive Child or rigid Parent states. Explore the 5 Vectors powering our protocols: : Senza il ripristino del potenziale elettrochimico a <strong>-70mV</strong>, l'asse stressogeno HPA resta sovrastimolato e costringe la mente a retrocedere nel Bambino difensivo o nel Genitore rigido. Esplora i 5 Vettori che alimentano i nostri protocolli:;
-document.getElementById('t-sel').innerText = isEn ? 2. SELECT YOUR OPERATIONAL COMPILER (CALIBRATED MULTI-VECTOR MATRIX) : 2. SCEGLI IL TUO COMPILATORE OPERATIVO (MATRICE POLIVETTORIALE CALIBRATA);
-document.getElementById('t-lib-tag').innerText = isEn ? SCIENTIFIC ARCHITECTURE & OFFICIAL AMAZON SERIES : ARCHITETTURA SCIENTIFICA & COLLANA UFFICIALE AMAZON;
-document.getElementById('t-lib-h2').innerText = isEn ? The Joe Fenix Method: Build · Protect · Fuel : The Joe Fenix Method: Build · Protect · Fuel;
-document.getElementById('t-lib-p').innerText = isEn ? Want to master the biophysics of -70mV cellular voltage, PGC-1α mitochondrial biogenesis, and endogenous GLP-1 / NAD+ activation? Access the official Amazon series page and individual manuals. : Vuoi approfondire la biofisica del voltaggio cellulare a -70mV, la biogenesi mitocondriale via PGC-1α e l'attivazione endogena GLP-1 / NAD+? Accedi alla pagina ufficiale della collana e ai singoli manuali su Amazon.;
-document.getElementById('t-b-it').innerText = isEn ? BOOK MAI STATO MEGLIO (ITALIAN) → : LIBRO MAI STATO MEGLIO (IT) →;
-document.getElementById('t-b-en').innerText = isEn ? BOOK NEVER BETTER (ENGLISH / GLOBAL) → : BOOK NEVER BETTER (EN / GLOBALE) →;
-document.getElementById('t-b-all').innerText = isEn ? EXPLORE OFFICIAL AMAZON SERIES & AUTHOR BIO → : ESPLORA LA COLLANA UFFICIALE & BIOGRAFIA SU AMAZON →;
-renderVec();
-renderProd();
+  lang = (lang === 'it') ? 'en' : 'it';
+  const isEn = (lang === 'en');
+  document.getElementById('t-badge').innerText = isEn ? 'APPLIED EPIGENETIC ENGINEERING • NUMBERED LAB BATCHES' : 'INGEGNERIA EPIGENETICA APPLICATA • LOTTI NUMERATI DI LABORATORIO';
+  document.getElementById('t-h1').innerText = isEn ? 'HAZR is the precise bio-regenerative process that makes you Never Better: -70mV cellular repolarization, zero stimulants, zero dependencies.' : 'HAZR è il processo bio-rigenerativo preciso che ti rende Never Better: ripolarizzazione cellulare a -70mV, zero stimolanti, zero dipendenze.';
+  document.getElementById('t-sub').innerText = isEn ? 'While Transactional Analysis dismantles limiting psychological life scripts, the HAZR Protocol operates on the cellular matrix through 5 Molecular Vectors calibrated to your neuro-endocrine profile.' : 'Mentre l&apos;analisi transazionale smantella i limiti psicologici dei copioni arcaici, il Protocollo HAZR opera sulla matrice cellulare attraverso 5 Vettori Molecolari calibrati sul tuo profilo neuro-endocrino.';
+  document.getElementById('t-rule').innerHTML = isEn ? '<strong>THE 90 + 4 GOLDEN RULE (ZERO DEPENDENCIES):</strong> Every protocol works for <strong>90 days ON</strong> on mitochondrial regeneration (-70mV) followed by a <strong>4th Month completely OFF (zero bottles, zero charges)</strong> to verify in the field that your Biological Adult runs autonomously.' : '<strong>LA REGOLA D&apos;ORO 90 + 4 (ZERO DIPENDENZE):</strong> Ogni protocollo lavora per <strong>90 giorni ON</strong> sulla rigenerazione mitocondriale (-70mV) e prevede un <strong>4° mese completamente OFF (zero flaconi, zero addebiti)</strong> per verificare sul campo che l&apos;Adulto Biologico cammini in totale autonomia.';
+  document.getElementById('t-eng-lbl').innerText = isEn ? 'MOLECULAR ARCHITECTURE • FUNCTIONAL BIOCHEMICAL ENGINE' : 'ARCHITETTURA MOLECOLARE • MOTORE BIOCHIMICO FUNZIONALE';
+  document.getElementById('t-eng-h2').innerText = isEn ? 'The 5 Molecular Vectors of the HAZR Protocol' : 'I 5 Vettori Molecolari del Protocollo HAZR';
+  document.getElementById('t-eng-intro').innerHTML = isEn ? 'Without restoring transmembrane electrical potential to <strong>-70mV</strong>, the HPA stress axis remains chronically overstimulated, forcing cognition back into defensive Child or rigid Parent states. Explore the 5 Vectors powering our protocols:' : 'Senza il ripristino del potenziale elettrochimico a <strong>-70mV</strong>, l&apos;asse stressogeno HPA resta sovrastimolato e costringe la mente a retrocedere nel Bambino difensivo o nel Genitore rigido. Esplora i 5 Vettori che alimentano i nostri protocolli:';
+  document.getElementById('t-sel').innerText = isEn ? '2. SELECT YOUR OPERATIONAL COMPILER (CALIBRATED MULTI-VECTOR MATRIX)' : '2. SCEGLI IL TUO COMPILATORE OPERATIVO (MATRICE POLIVETTORIALE CALIBRATA)';
+  document.getElementById('t-lib-tag').innerText = isEn ? 'SCIENTIFIC ARCHITECTURE & OFFICIAL AMAZON SERIES' : 'ARCHITETTURA SCIENTIFICA & COLLANA UFFICIALE AMAZON';
+  document.getElementById('t-lib-h2').innerText = 'The Joe Fenix Method: Build · Protect · Fuel';
+  document.getElementById('t-lib-p').innerText = isEn ? 'Want to master the biophysics of -70mV cellular voltage, PGC-1a mitochondrial biogenesis, and endogenous GLP-1 / NAD+ activation? Access the official Amazon series page and individual manuals.' : 'Vuoi approfondire la biofisica del voltaggio cellulare a -70mV, la biogenesi mitocondriale via PGC-1a e l&apos;attivazione endogena GLP-1 / NAD+? Accedi alla pagina ufficiale della collana e ai singoli manuali su Amazon.';
+  document.getElementById('t-b-it').innerText = isEn ? 'BOOK MAI STATO MEGLIO (ITALIAN) →' : 'LIBRO MAI STATO MEGLIO (IT) →';
+  document.getElementById('t-b-en').innerText = isEn ? 'BOOK NEVER BETTER (ENGLISH / GLOBAL) →' : 'BOOK NEVER BETTER (EN / GLOBALE) →';
+  document.getElementById('t-b-all').innerText = isEn ? 'EXPLORE OFFICIAL AMAZON SERIES & AUTHOR BIO →' : 'ESPLORA LA COLLANA UFFICIALE & BIOGRAFIA SU AMAZON →';
+  renderVec();
+  renderProd();
 }
-// BRIDGE AUTOMATICO CON EM-CALCULATOR.JS & PARAMETRI URL
+
 function initFromCalculator() {
-const params = new URLSearchParams(window.location.search);
-const urlLang = params.get('lang');
-if (urlLang === 'en') {
-lang = 'it';
-toggleLang();
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get('lang');
+  if (urlLang === 'en') {
+    lang = 'it';
+    toggleLang();
+  }
+  const profile = (params.get('profile') || '').toLowerCase();
+  const vector = (params.get('vector') || '').toLowerCase();
+  const hpa = params.get('hpa');
+  const status = params.get('status');
+  const mvp = params.get('mvp');
+  const cob = params.get('cob');
+
+  if (DATA[profile]) { selectProd(profile); } else { renderProd(); }
+  if (VECTORS[vector]) { selectVec(vector); } else { renderVec(); }
+
+  if (hpa || status || mvp || cob) {
+    const banner = document.getElementById('calcBanner');
+    const metrics = document.getElementById('cb-metrics');
+    banner.style.display = 'block';
+    let html = '';
+    if (hpa) html += '<div class="calc-pill">HPA Overload: <span>' + hpa + '</span></div>';
+    if (status) html += '<div class="calc-pill">Status: <span>' + status + '</span></div>';
+    if (mvp) html += '<div class="calc-pill">MVP Target: <span>' + mvp + ' (-70mV)</span></div>';
+    if (cob) html += '<div class="calc-pill">COB Override: <span>' + cob + '</span></div>';
+    metrics.innerHTML = html;
+  }
 }
-const profile = (params.get('profile') || '').toLowerCase();
-const vector = (params.get('vector') || '').toLowerCase();
-const hpa = params.get('hpa');
-const status = params.get('status');
-const mvp = params.get('mvp');
-const cob = params.get('cob');
-if (DATA[profile]) {
-selectProd(profile);
-} else {
-renderProd();
-}
-if (VECTORS[vector]) {
-selectVec(vector);
-} else {
-renderVec();
-}
-if (hpa || status || mvp || cob) {
-const banner = document.getElementById('calcBanner');
-const metrics = document.getElementById('cb-metrics');
-banner.style.display = 'block';
-let html = '';
-if (hpa) html += <div class="calc-pill">HPA Overload: <span>${hpa}</span></div>;
-if (status) html += <div class="calc-pill">Status: <span>${status}</span></div>;
-if (mvp) html += <div class="calc-pill">MVP Target: <span>${mvp} (-70mV)</span></div>;
-if (cob) html += <div class="calc-pill">COB Override: <span>${cob}</span></div>;
-metrics.innerHTML = html;
-}
-}
+
 initFromCalculator();
 </script>
 </body>
